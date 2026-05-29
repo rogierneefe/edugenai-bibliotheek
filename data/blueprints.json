@@ -1,0 +1,853 @@
+[
+  {
+    "id": "BP-01",
+    "title": "Rubric-feedback assistent",
+    "hora_process": "toetsing",
+    "rollen": [
+      "docent",
+      "onderwijskundig"
+    ],
+    "use_case_ids": [
+      "uc-001",
+      "uc-006",
+      "uc-008"
+    ],
+    "tagline": "AI genereert gepersonaliseerde feedbackteksten op basis van je beoordelingsrubric.",
+    "pijn": "Docenten besteden veel tijd aan het schrijven van individuele feedbackteksten bij open opdrachten. Dit leidt tot inconsistentie in feedback, vermoeidheid en risico op oppervlakkige opmerkingen. Tegelijk willen studenten sneller en meer gerichte reactie krijgen op hun werk.",
+    "wat_het_doet": "Je voert je rubric in (criteria en beoordelingsniveaus) en laadt studentenwerk in. De AI analyseert het werk tegen de rubric, bepaalt welk niveau de student heeft bereikt per criterium en genereert een coherente feedbacktekst met concrete verbeterpunten. Je controleert en bewerkt de feedback voordat je deze verstuurt.",
+    "ingredienten": [
+      {
+        "naam": "Rubric-template",
+        "type": "data",
+        "toelichting": "Gestructureerde criteria met beoordelingsniveaus (bijv. onvoldoende-voldoende-goed-uitstekend) en descriptoringen per niveau."
+      },
+      {
+        "naam": "Studentenwerk (tekst/PDF)",
+        "type": "data",
+        "toelichting": "Essays, verslagen, rapporten of ander schriftelijk werk dat tegen de rubric beoordeeld moet worden."
+      },
+      {
+        "naam": "Large Language Model met rubric-context",
+        "type": "tool",
+        "toelichting": "Model dat je rubric begrijpt, werk analyseert en feedback genereert in jouw stijl en vakinhoud."
+      },
+      {
+        "naam": "Docent als kwaliteitsbewaker",
+        "type": "mens",
+        "toelichting": "Je leest gegenereerde feedback, corrigeert inhoudelijke fouten, personaliseert waar nodig en geeft finaal goed."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Voer je rubric in en laat deze valideren: zijn alle criteria en niveaus duidelijk opgesteld?",
+      "Stap 2: Upload studentenwerk (één of meerdere inzendingen tegelijk).",
+      "Stap 3: AI analyseert werk tegen rubric en genereert feedbackteksten met scorepunten per criterium.",
+      "Stap 4: Controleer gegenereerde feedback, bewerk waar nodig (inhoud, toon, precisie) en stuur uit naar studenten."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Communicatietrainer laadt 25 persoonlijke reflectieverslagen in van studenten na stage. Rubric bevat criteria als 'zelfreflectie', 'leeruitkomsten identificeren' en 'academisch niveau'. AI genereert in twee minuten 25 feedback-drafts.",
+        "resultaat": "Docent kon feedback binnen een uur afmaken in plaats van 4 uur; kwaliteit werd hoger door consistentie tussen studenten."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Elektrotechniek-docent gebruikt AI om 30 technische rapporten te beoordelen op criteria als 'schakelbeschrijving', 'veiligheid' en 'meetgegevens'. Feedback moet praktisch en begrijpelijk zijn voor 16-jarigen.",
+        "resultaat": "Studenten kregen dezelfde dag nog feedback; docent kon zich concentreren op complexe concepten in plaats of routineuze feedback."
+      }
+    ],
+    "team_vraag": "Welke rubrics gebruiken wij het vaakst en zouden baat hebben bij automatische feedback-generatie?",
+    "valkuilen": [
+      "AI genereert soms generieke feedback die niet voelt als 'van jou'. Plan 10-15 minuten in voor personalisering per student.",
+      "Rubric moet écht helder zijn — onduidelijke criteria leiden tot willekeurige feedback. Investeer eerst in rubric-kwaliteit.",
+      "Risk: je controleert gegenereerde feedback te oppervlakkig. Zet dit nooit direct uit zonder check — inhoudelijke fouten schaden student.",
+      "Niet geschikt voor zeer open, creatief werk waar nuance en subjectiviteit centraal staan (tenzij je rubric daar zeer specifiek op is afgestemd)."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "gestandaardiseerd",
+      "aiValue": "verkennen"
+    },
+    "personaValues": [
+      {
+        "personaId": "docent",
+        "valueStatement": "Minder tijd kwijt aan rubric-feedback schrijven, meer aandacht voor gesprek met student.",
+        "primaryBenefit": "Tijdsbesparing bij beoordeling",
+        "adoptionConcern": "Menselijke eindcontrole op toon en nuance blijft essentieel"
+      },
+      {
+        "personaId": "onderwijskundig",
+        "valueStatement": "Rubrics worden consistent toegepast en snel vertaald naar bruikbare feedback.",
+        "primaryBenefit": "Kwaliteitsborging in beoordeling",
+        "adoptionConcern": "Kalibratie tussen docenten vereist aandacht"
+      }
+    ]
+  },
+  {
+    "id": "BP-02",
+    "title": "Nakijk- en beoordelingsassistent",
+    "hora_process": "toetsing",
+    "rollen": [
+      "docent"
+    ],
+    "use_case_ids": [
+      "uc-002",
+      "uc-003"
+    ],
+    "tagline": "AI leest en beoordeelt studentwerk, jij controleert en beslist.",
+    "pijn": "Nakijken kost enorm veel tijd, vooral bij grote groepen. Je mist snel inconsistenties in je eigen beoordeling. En studenten wachten weken op feedback terwijl je door stapels papier ploegt.",
+    "wat_het_doet": "Je uploadt studentwerk (essays, opgaven, antwoorden). De AI analyseert dit tegen je beoordelingscriteria en geeft per student een voorstel: score, sterke punten, verbeterpunten en feedback. Jij bekijkt de voorstellen, past aan wat nodig is, en verstuurt definitieve feedback.",
+    "ingredienten": [
+      {
+        "naam": "Studentwerk",
+        "type": "data",
+        "toelichting": "Word-documenten, PDFs, gescande antwoorden of koppelingen naar leeromgevingen."
+      },
+      {
+        "naam": "Beoordelingscriteria",
+        "type": "data",
+        "toelichting": "Jouw rubric, puntenschaal of kwaliteitskaders voor het vak of opdracht."
+      },
+      {
+        "naam": "LLM (bijv. ChatGPT, Claude)",
+        "type": "tool",
+        "toelichting": "Analyseert tekst, herkent sterke/zwakke punten, genereert feedback op basis van criteria."
+      },
+      {
+        "naam": "Nakijkinterface",
+        "type": "tool",
+        "toelichting": "Dashboard waarin je AI-voorstellen in één oogopslag ziet en snel kunt goedkeuren of aanpassen."
+      },
+      {
+        "naam": "Docent als eindverantwoordelijk",
+        "type": "mens",
+        "toelichting": "Jij valideert elke score, voegt context toe en maakt uiteindelijke beoordelingsbeslissing."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Upload alle studentwerk en laad je beoordelingscriteria in de interface.",
+      "Stap 2: AI analyseert elk stuk werk, genereert score-voorstel en concept-feedback.",
+      "Stap 3: Jij bekijkt per student het AI-voorstel, controleert op juistheid en voegt persoonlijke observaties toe.",
+      "Stap 4: Jij geeft groen licht en feedback wordt automatisch naar leeromgeving gestuurd; alle scores zijn in je beoordelingslijst."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Communicatie-docent moet 80 reflectieessays nakijken. Zij voert rubric in (bronnen, eigenstandigheid, schrijfkwaliteit) en uploadt alle essays. AI geeft per essay een score en puntsgewijze feedback in 2 uur.",
+        "resultaat": "Docent concentreert zich op edge cases en afwijkingen; gemiddeld 60% tijdwinst, en feedback is consistent."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Elektrotechniek-docent verzamelt antwoorden van praktijktoets (foto's en notities). AI herkent welke onderdelen correct zijn afgestemd, welke installatie veilig en welke niet.",
+        "resultaat": "Score-voorstel klaar in 1 uur; docent voert alleen in-person verificatie uit voor twijfelgevallen."
+      }
+    ],
+    "team_vraag": "Welke criteria gebruiken we nu eigenlijk voor beoordeling—zijn die helder genoeg om aan AI uit te leggen?",
+    "valkuilen": [
+      "Je verliest controle als je de AI-voorsellen niet echt controleert. Gaatjes in criteria worden vergroot, niet gevonden.",
+      "AI penaliseert onconventionele schrijfstijl of creatieve oplossingen; je moet altijd contextbewust reviseren.",
+      "Privacy: studentwerk gaat via cloud naar AI-systeem. Zorg dat je school en wet ervan op de hoogte zijn.",
+      "Tijdwinst verdwijnt als je toch alles zelf opnieuw naleest. Vertrouw het systeem, maar spot-check regelmatig."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "gestandaardiseerd",
+      "aiValue": "verkennen"
+    },
+    "personaValues": [
+      {
+        "personaId": "docent",
+        "valueStatement": "Nakijken gaat sneller zonder in te boeten op zorgvuldigheid.",
+        "primaryBenefit": "Tijdsbesparing bij nakijken",
+        "adoptionConcern": "Eindbesluit blijft altijd bij de docent"
+      }
+    ]
+  },
+  {
+    "id": "BP-03",
+    "title": "Toetsconstructie assistent",
+    "hora_process": "toetsing",
+    "rollen": [
+      "docent",
+      "onderwijskundig"
+    ],
+    "use_case_ids": [
+      "uc-004",
+      "uc-005"
+    ],
+    "tagline": "Sterke toetsvragen in minuten in plaats van uren.",
+    "pijn": "Docenten besteden veel tijd aan het schrijven en controleren van toetsvragen. Veel vragen zijn ambigu, te makkelijk of te moeilijk — wat leidt tot onbetrouwbare resultaten. Kwaliteitscontrole gebeurt ad-hoc en inconsistent.",
+    "wat_het_doet": "Je voert de leeruitkomsten en het niveau van je vak in (bijv. 'studenten kunnen een meerkeuzevraag onderscheiden van een open vraag'). De AI genereert toetsvragen met duidelijke antwoordsleutels, cognitief niveau-aanduidingen en variatieën. Je bewerkt, kiest en valideert — de AI doet het zware schrijfwerk.",
+    "ingredienten": [
+      {
+        "naam": "Leeruitkomsten en toetskader",
+        "type": "data",
+        "toelichting": "Beschrijving van wat studenten moeten kunnen, gekoppeld aan blooms-niveaus."
+      },
+      {
+        "naam": "Toetsvraag-generator (LLM-gebaseerd)",
+        "type": "tool",
+        "toelichting": "AI die vraagvarianten genereert op basis van invoer en onderwijskundig format."
+      },
+      {
+        "naam": "Onderwijskundig review door docent",
+        "type": "mens",
+        "toelichting": "Jij controleert semantiek, context, geschiktheid en moeilijkheidsgraad van gegenereerde vragen."
+      },
+      {
+        "naam": "Antwoordsleutel-template",
+        "type": "proces",
+        "toelichting": "Gestandaardiseerd format voor juiste antwoorden en partieel-krediet rubrics."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Voer leeruitkomsten in (wat moeten studenten kunnen?), plus de toetsvorm (MC, open, essay) en cognitief niveau (kennis, analyse, synthese).",
+      "Stap 2: AI genereert 5-8 vraagvarianten met antwoordsleutels en moeilijkheidsrating per vraag.",
+      "Stap 3: Jij selecteert, bewerkt en valideert (taal, context, juistheid, niveau-fit) — AI leert van je feedback.",
+      "Stap 4: Exporteer final toets met antwoordsleutel en scorerubric in je LMS of Word-format."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Een HR-docent moet voor Arbeidsrecht een hertoetsing voorbereiden. Ze voert in: 'Student kan de rechtspositie van werkneemers vs. zzp'ers onderscheiden, niveau: analyse.' AI genereert in 3 minuten 7 verschillende multiple-choice vragen met casussen.",
+        "resultaat": "Docent selecteert 5 vragen, bewerkt 2 casussen, heeft in 20 minuten betrouwbare toets i.p.v. 2 uur handmatig schrijven."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Een elektrotechniek-docent wil practicum-toets aanvullen met theorievragen. Input: 'Diagnose van elektrische schakelingen, niveau: toepassing.' AI maakt 6 scenariofragen met antwoordsleutels in 2 minuten.",
+        "resultaat": "Docent valideert en past aan op werkplekcontext, bespaart 1,5 uur voorbereidingstijd per toets."
+      }
+    ],
+    "team_vraag": "Welke toetsvraag-typen kosten jullie het meest tijd en geven het meest fricties bij beoordeling?",
+    "valkuilen": [
+      "Valkuil 1: Je neemt gegenereerde vragen over zonder review — risico op onduidelijke of feitelijk foutieve vragen. AI geeft geen garantie. Altijd zelf controleren op vakinhoud en formulering.",
+      "Valkuil 2: Je voert vage leeruitkomsten in ('student begrijpt managementtheorie') — AI genereert dan oeverloze of niet-toetsbare vragen. Zorg voor scherpe, gedragsgericht geformuleerde inputs.",
+      "Valkuil 3: Je verwacht dat AI direct je exacte moeilijkheidsgraad raakt. Gegenereerde vragen vereisen iteratie. Feedback aan AI helpt, maar docent-review blijft cruciaal.",
+      "Valkuil 4: Je gebruikt dezelfde vraagvarianten elk jaar — studenten delen antwoorden. Zet gegenereerde basis in, maar varieer jaarlijks en mix met eigen vragen."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "gestandaardiseerd",
+      "aiValue": "verkennen"
+    },
+    "personaValues": [
+      {
+        "personaId": "docent",
+        "valueStatement": "Toetsvragen zijn sneller op niveau en beter afgestemd op leeruitkomsten.",
+        "primaryBenefit": "Betere toetskwaliteit in minder tijd",
+        "adoptionConcern": "Contextkennis over opleiding kan missen"
+      },
+      {
+        "personaId": "onderwijskundig",
+        "valueStatement": "Constructive alignment wordt getoetst en verbeterd vóór afname.",
+        "primaryBenefit": "Systematische kwaliteitscheck",
+        "adoptionConcern": "Vraagt bereidheid om ontwerp te heroverwegen"
+      }
+    ]
+  },
+  {
+    "id": "BP-04",
+    "title": "Leeruitkomsten- en curriculumassistent",
+    "hora_process": "onderwijs-ontwerpen",
+    "rollen": [
+      "onderwijskundig",
+      "manager"
+    ],
+    "use_case_ids": [
+      "uc-011",
+      "uc-013"
+    ],
+    "tagline": "Slimme assistent die leeruitkomsten en curriculumonderdelen in elkaar zet.",
+    "pijn": "Docenten besteden veel tijd aan het herschrijven en afstemmen van leeruitkomsten op nieuwe eisen. Curriculumcommissies zitten vast in versies zonder overzicht. Het risico dat onderdelen niet aansluiten op de officiële kwalificaties groeit.",
+    "wat_het_doet": "Je voert bestaande kwalificatiedossiers, leeruitkomstensets en cursorische eisen in. De AI analyseert de verbanden, identificeert gaten en overlap, en genereert aanpassingsvoorstellen met toelichting. Je kunt die voorstellen controleren, wijzigen en direct in je onderwijsplan overnemen.",
+    "ingredienten": [
+      {
+        "naam": "Kwalificatiedossiers en NLQF-niveaus",
+        "type": "data",
+        "toelichting": "Officiële eisen waaraan de opleiding moet voldoen, aangeleverd door SBB of accrediteur."
+      },
+      {
+        "naam": "Bestaande leeruitkomstensets",
+        "type": "data",
+        "toelichting": "Huidge formulering uit je cursorisch ontwerp, per semester of module."
+      },
+      {
+        "naam": "LLM-analyse met domeinprompts",
+        "type": "tool",
+        "toelichting": "AI-model getraind op onderwijs-taxonomieën (Bloom, SOLO) om semantische verbanden en niveaus te herkennen."
+      },
+      {
+        "naam": "Onderwijskundig reviewer",
+        "type": "mens",
+        "toelichting": "Jij (of je onderwijskundig team) beoordeelt voorstellen op inhoudelijke juistheid en pedagogische fit."
+      },
+      {
+        "naam": "Versiecontrolesysteem",
+        "type": "proces",
+        "toelichting": "Trackeert wijzigingen, met wie wat aanpaste en waarom, voor audit en teamdialoog."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Upload je actuele curriculumdocument en kwalificatiedossier in een beveiligde workspace.",
+      "Stap 2: Definieer samen met je team welke koppeling je wilt — bijv. 'Welke leereenheden dekken competentie X volledig en waar zijn gaten?'",
+      "Stap 3: AI analyseert, markeert overlaps, gaten en niveauverschillen, en stelt rewording voor met korte toelichting.",
+      "Stap 4: Jij en je team accepteren, wijzigen of verwerpen voorstellen; export naar je onderwijsplan."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Een hogeschool Toegepaste Psychologie wilde leeruitkomsten van vier jaar beter afstemmen op het NLQF-niveau 6 en de BIG-eisen. De AI-assistent mappte 187 leeruitkomsten tegen 23 kerncompetenties en vond dat 'onderzoeksvaardigheden' alleen in jaar 3 stonden, maar al in jaar 1 nodig waren.",
+        "resultaat": "In twee werkdagen hadden ze een herziene structuur met één gezamenlijk voorstel per semester — audit-proof en klaar voor accreditatie."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Een mbo-school voor logistiek probeerde haar tweede-jaarsmodules in lijn te brengen met vernieuwde EQF-eisen. Docenten werkten in eigen tempo en format; niemand had overzicht.",
+        "resultaat": "De assistent visualiseerde welke modules al goed waren en welke herschrijving nodig hadden — teamleden konden daadwerkelijk samenwerken in plaats van elk apart in hun syllabus te rommelen."
+      }
+    ],
+    "team_vraag": "Welke leeruitkomsten zijn moeilijkst te meten, en kan AI ons daar systematisch beter in maken?",
+    "valkuilen": [
+      "Valkuil 1: Je vertrouwt volledig op de AI-suggesties zonder pedagogische check — risico dat je leeruitkomsten gaan voelen als automatisch gegenereerd.",
+      "Valkuil 2: Je uploadt gevoelige curriculumgegevens naar onbeveiligde platforms — hou altijd versiebeheer en toegangsrechten strak.",
+      "Valkuil 3: Je voert slechts één keer in en verwacht dat alles dan klaar is — de waarde zit in iteratie en teamdialoog, niet in automatisering."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "frequent",
+      "processVariability": "gemengd",
+      "aiValue": "versnellen"
+    },
+    "personaValues": [
+      {
+        "personaId": "onderwijskundig",
+        "valueStatement": "Leeruitkomsten worden sneller geformuleerd en beter afgestemd op beroepsprofiel.",
+        "primaryBenefit": "Versnelling van curriculumontwerp",
+        "adoptionConcern": "Inhoudelijke validatie door vakexperts blijft nodig"
+      },
+      {
+        "personaId": "manager",
+        "valueStatement": "Curriculumwijzigingen zijn sneller doorgevoerd en gedocumenteerd.",
+        "primaryBenefit": "Snellere besluitvorming over curriculum",
+        "adoptionConcern": "Draagvlak bij docenten vraagt apart traject"
+      }
+    ]
+  },
+  {
+    "id": "BP-05",
+    "title": "Onderwijsontwerp / constructive alignment",
+    "hora_process": "onderwijs-ontwerpen",
+    "rollen": [
+      "onderwijskundig",
+      "docent"
+    ],
+    "use_case_ids": [
+      "uc-017"
+    ],
+    "tagline": "AI helpt lesdoelen, toetsing en onderwijs perfect op elkaar afstemmen.",
+    "pijn": "Docenten besteden veel tijd aan het ontwerp van onderwijs, maar lesdoelen, lesactiviteiten en toetsing sluiten vaak niet goed op elkaar aan. Dit leidt tot verwarring bij studenten en onduidelijkheid over wat je echt meet. AI kan dit proces versnellen en consistenter maken.",
+    "wat_het_doet": "Je voedt lesdoelen in, en AI genereert aligned lesactiviteiten en toetsvragen die precies aansluiten. Het systeem controleert of elke lesdoelgroep gedekt is en stelt ontbrekende elementen voor. De docent beoordeelt en verfijnt tot het curriculum klopt.",
+    "ingredienten": [
+      {
+        "naam": "Lesdoelen (Bloom/Dublin-descriptoren)",
+        "type": "data",
+        "toelichting": "Je startpunt: heldere, meetbare lesdoelen op verschillende niveaus."
+      },
+      {
+        "naam": "AI-model voor curriculumontwerp",
+        "type": "tool",
+        "toelichting": "Een LLM getraind op constructive alignment-principes genereren passende lesactiviteiten en toetsitems."
+      },
+      {
+        "naam": "Alignment-checklist",
+        "type": "proces",
+        "toelichting": "Systematische check of lesdoel, activiteit en toets echt op elkaar aansluiten."
+      },
+      {
+        "naam": "Onderwijskundig review",
+        "type": "mens",
+        "toelichting": "Een collega of onderwijskundig specialist controleert of de gegenereerde output pedagogisch klopt."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Formuleer of verzamel je lesdoelen per onderwijsmodule of cursus.",
+      "Stap 2: Voer deze in in de AI en specificeer doelgroep, niveau en contacturen.",
+      "Stap 3: AI genereert aligned lesactiviteiten, toetsvormen en rubrics; docent beoordeelt en past aan.",
+      "Stap 4: Controleer alignment via checklist en test met studentencohort; verfijn op basis van feedback."
+    ],
+    "maturity": "pilot",
+    "automatisering": "middel",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Een hogeschool voor commerciële economie had vaag omschreven lesdoelen voor een module 'Financieel Management'. Docenten waren niet zeker welke toetsitems echt pasten. Met AI werden doelen vertaald naar concrete activiteiten (case-studies, dashboards) en een aligned examen.",
+        "resultaat": "Docenten bespaard 8 uur ontwerptijd; studenten begrijpen sneller wat er van ze verwacht wordt."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Een mbo-school voor ambachten had probleem dat theorie en praktijk niet goed gekoppeld waren. Leerlingen konden kennis niet toepassen in praktijkopdrachten. AI hielp lesdoelen, werkplekactiviteiten en praktijktoetsen op elkaar afstemmen.",
+        "resultaat": "Afstemming duurde 1 dag in plaats van 2 weken; praktijkexamens werden relevanter en betrouwbaarder."
+      }
+    ],
+    "team_vraag": "Welke lesdoelen in ons curriculum voelen vaag of zijn slecht afgestemd op onze toetsing?",
+    "valkuilen": [
+      "Valkuil 1: AI-output klakkeloos overnemen zonder didactische review. Gegenereerde activiteiten kunnen te generiek of onpraktisch zijn voor jouw context.",
+      "Valkuil 2: Te veel vertrouwen op AI voor nuance. Constructive alignment vereist mensenkennis: weet je waar je groep zit en wat motiveert hen?",
+      "Valkuil 3: Lesdoelen slecht formuleren. Garbage in, garbage out: als je input fuzzy is, wordt de output dat ook."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "frequent",
+      "processVariability": "gemengd",
+      "aiValue": "versnellen"
+    },
+    "personaValues": [
+      {
+        "personaId": "onderwijskundig",
+        "valueStatement": "Alignment-gaps worden vroeg gesignaleerd en opgelost.",
+        "primaryBenefit": "Hogere onderwijskwaliteit bij accreditatie",
+        "adoptionConcern": "Vereist complete en actuele programma-informatie"
+      },
+      {
+        "personaId": "docent",
+        "valueStatement": "Ik zie direct hoe mijn vak bijdraagt aan de leeruitkomsten.",
+        "primaryBenefit": "Meer grip op eigen bijdrage",
+        "adoptionConcern": "Wijzigingen vragen tijd en teamoverleg"
+      }
+    ]
+  },
+  {
+    "id": "BP-06",
+    "title": "AI-tutor / course Q&A (RAG)",
+    "hora_process": "studentbegeleiding",
+    "rollen": [
+      "student",
+      "docent"
+    ],
+    "use_case_ids": [
+      "uc-020",
+      "uc-022",
+      "uc-023",
+      "uc-025"
+    ],
+    "tagline": "AI beantwoordt studentenvragen direct op basis van jouw cursusmateriaal.",
+    "pijn": "Docenten krijgen dezelfde vragen tien keer per week gesteld. Studenten wachten uren op antwoord en geven op. De werkdruk neemt toe terwijl studenten frustratie voelen bij wachten op antwoorden.",
+    "wat_het_doet": "Een AI-tutor leest al je lesmateriaal en oude toetsvragen in. Studenten stellen vragen in natuurlijk Nederlands. De AI zoekt het relevante deel van jouw materiaal, combineert het, en geeft een antwoord met verwijzingen naar waar het vandaan komt.",
+    "ingredienten": [
+      {
+        "naam": "Cursusmateriaal (PDF's, slides, transcripties)",
+        "type": "data",
+        "toelichting": "Alle lesstof wordt opgeslagen zodat de AI er tegenaan kan zoeken."
+      },
+      {
+        "naam": "Eerdere Q&A of FAQ's van de docent",
+        "type": "data",
+        "toelichting": "Aanvullen met vragen die je al beantwoord hebt maakt antwoorden beter en consistenter."
+      },
+      {
+        "naam": "LLM met retrieval (RAG-systeem)",
+        "type": "tool",
+        "toelichting": "Software die relevant materiaal opzoekt en daar antwoorden op genereert, niet zomaar iets verzint."
+      },
+      {
+        "naam": "Docent als kwaliteitsbewaker",
+        "type": "mens",
+        "toelichting": "Jij checkt maandelijks of antwoorden kloppen en past ze aan als nodig."
+      },
+      {
+        "naam": "Feedback-lus van studenten",
+        "type": "proces",
+        "toelichting": "Studenten kunnen aangeven of antwoord nuttig was; dit maakt het systeem beter."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Verzamel al je cursusmateriaal (slides, handouts, videotranscripties, oude examens) op één plek.",
+      "Stap 2: Upload het in een RAG-platform (bijv. Retrieval Augmented Generation tool) en test of het goed wordt geïndexeerd.",
+      "Stap 3: Schrijf 5-10 test-vragen waar je het antwoord al kent, en controleer of de AI het goed doet.",
+      "Stap 4: Zet de Q&A live voor studenten; je kijkt de eerste twee weken wekelijks of antwoorden kloppen en past ze aan."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Een hogeschool voor bedrijfskunde laadt 200 pagina's theorie en case studies over marketingstrategie in een RAG-systeem. Student vraagt: 'Wat is het verschil tussen pull en push marketing?' De AI geeft antwoord met drie voorbeelden uit het materiaal.",
+        "resultaat": "Docent ontvangt 80% minder dezelfde vragen; studenten krijgen binnen 5 seconden antwoord in plaats van op afroep."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Een MBO-school voor elektrotechniek uploadt syllabus, stap-voor-stap instructies en veel gestelde vragen. Leerling vraagt: 'Hoe test ik of een relais defect is?' De AI geeft de procedure met verwijzing naar paragraaf 4.2.",
+        "resultaat": "Praktijkdocent bespaard per week twee uur klassikale vragen, meer tijd voor werkplekbegeleiding."
+      }
+    ],
+    "team_vraag": "Welke vragen krijgen we nu minstens drie keer per week, en willen we daarvan antwoorden in een AI-tutor inladen?",
+    "valkuilen": [
+      "Verouderd materiaal uploaden: Als je powerpoint van drie jaar geleden gebruikt, geeft de AI verouderde antwoorden. Zorg dat materiaal actueel is.",
+      "AI-antwoorden niet checken: De AI hallucineerde soms iets wat logisch klinkt maar fout is. Je moet de eerste maand echt nakijken.",
+      "Geen feedback van studenten: Zonder terugmelding weet je niet welke antwoorden nutteloos zijn. Zet een kleine 'Was dit nuttig?' knop erbij.",
+      "Verwachtingsmanagement: Studenten denken dat de AI alles kan. Zeg duidelijk: dit werkt voor kennisonderwerpen, niet voor persoonlijk advies of creativiteit."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "gemengd",
+      "aiValue": "verkennen"
+    },
+    "personaValues": [
+      {
+        "personaId": "student",
+        "valueStatement": "24/7 antwoord op studievragen zonder te wachten op de docent.",
+        "primaryBenefit": "Zelfstandiger studeren",
+        "adoptionConcern": "Risico op te gemakkelijk 'antwoord halen' ipv leren"
+      },
+      {
+        "personaId": "docent",
+        "valueStatement": "Studenten komen beter voorbereid naar de les.",
+        "primaryBenefit": "Meer diepgang in contactmomenten",
+        "adoptionConcern": "Kwaliteit van RAG-bronnen moet bewaakt worden"
+      }
+    ]
+  },
+  {
+    "id": "BP-07",
+    "title": "Simulatie- en roleplay-omgeving",
+    "hora_process": "studentbegeleiding",
+    "rollen": [
+      "docent",
+      "student"
+    ],
+    "use_case_ids": [
+      "uc-019"
+    ],
+    "tagline": "AI genereert realistische scenario's voor veilig oefenen met moeilijke gesprekken",
+    "pijn": "Docenten besteden veel tijd aan het uitvoeren van roleplays en het geven van feedback op gesprekstechnieken. Studenten krijgen beperkt aantal oefenmomenten en voelen zich onzeker in echte situaties. De kwaliteit van feedback varieert sterk tussen docenten.",
+    "wat_het_doet": "Je voert in wat voor soort gesprek de student moet oefenen (bijvoorbeeld: moeilijk personeelsgesprek, klantklacht, counseling). De AI genereert een realistische tegenspeler met karakter, doelstelling en emotionele reacties. De student voert het gesprek, krijgt live feedback op toon en aanpak, en ontvangt daarna een analyse met suggesties voor verbetering.",
+    "ingredienten": [
+      {
+        "naam": "Scriptbibliotheek met scenario's",
+        "type": "data",
+        "toelichting": "Verzameling van realistische situaties per sector en beroepsrol met relevante complicaties."
+      },
+      {
+        "naam": "LLM voor tegenspeler-simulatie",
+        "type": "tool",
+        "toelichting": "Genereert authentieke reacties als virtuele gesprekspartner met consistente karaktertrekken."
+      },
+      {
+        "naam": "Feedback-engine",
+        "type": "tool",
+        "toelichting": "Analyseert transcripten op communicatievaardigheden, empathie en vakkundige keuzes."
+      },
+      {
+        "naam": "Docent als validator en gids",
+        "type": "mens",
+        "toelichting": "Bepaalt moeilijkheidsgraad, bewaakt ethische grenzen en verdiept leerresultaten in nabespreking."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Docent selecteert scenario-type en stelt parameters in (sector, moeilijkheidsgraad, taalvoorkeur)",
+      "Stap 2: Student krijgt briefing over context, rol tegenspeler en leerdoelen",
+      "Stap 3: AI voert tegenspeler, student voert het gesprek via chat of videocall",
+      "Stap 4: AI geeft real-time hints en genereert daarna schriftelijk feedback met aandachtspunten",
+      "Stap 5: Docent voert korte reflectiegesprek en sluit aan op moeilijke momenten"
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Sociaal werkers van een hogeschool oefenen huisbezoeken en kritische gesprekken met cliënten. Studenten voeren 5 verschillende scenario's uit (agressieve cliënt, financiële crisis, kindermishandeling-verdenkingen) met dezelfde AI-tegenspeler.",
+        "resultaat": "Studenten doen zelfverzekerder hun eerste echte huisbezoeken en voelen zich beter voorbereid op emotioneel lastige situaties."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Verzorgenden in opleiding oefenen bezwaarlijke onderwerpen (incontinentie, dood, verlies) met patiënten. De AI speelt rolpatiënten met verschillende achtergronden en gevoeligheden.",
+        "resultaat": "Meer empathie, minder schaamte; studenten voelen zich getraind voordat ze de afdeling ingaan."
+      }
+    ],
+    "team_vraag": "Hoe zouden we AI-gesprekspartners kunnen inzetten zodat studenten vaker kunnen oefenen zonder docenten massaal in te zetten?",
+    "valkuilen": [
+      "Studenten zien het als 'gratis' en overslaan voorbereiding — AI werkt alleen als studenten context begrijpen en bewust reflecteren.",
+      "De AI genereert te glad, onrealistisch gedrag — je moet scenario's testen met echte professionals en aanscherpen op basis van feedback.",
+      "Privacy en ethiek: wie ziet de transcripten en hoe bewaar je gevoelige data? Maak duidelijke afspraken vooraf.",
+      "Docenten voelen zich overbodig — frame dit als versterking (meer tijd voor coaching) niet vervanging."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "gemengd",
+      "aiValue": "verkennen"
+    },
+    "personaValues": [
+      {
+        "personaId": "docent",
+        "valueStatement": "Studenten oefenen complexe gespreks- of beslissituaties vaker en veiliger.",
+        "primaryBenefit": "Meer oefentijd in veilige omgeving",
+        "adoptionConcern": "Scenario's vragen zorgvuldige didactische inbedding"
+      },
+      {
+        "personaId": "student",
+        "valueStatement": "Ik kan fouten maken zonder gevolgen en leer van directe feedback.",
+        "primaryBenefit": "Veilig oefenen op professionele situaties",
+        "adoptionConcern": "Simulatie vervangt echte praktijk niet"
+      }
+    ]
+  },
+  {
+    "id": "BP-08",
+    "title": "Document- en contractanalyse",
+    "hora_process": "besturing",
+    "rollen": [
+      "medewerker",
+      "manager"
+    ],
+    "use_case_ids": [
+      "uc-050"
+    ],
+    "tagline": "AI leest contracten en documenten, u bespaart uren handwerk.",
+    "pijn": "Medewerkers besteden veel tijd aan het handmatig uitpluizen van contracten, offertes en overeenkomsten. Fouten sluipen erin omdat niemand alles goed leest. Managers hebben geen goed inzicht in wat er allemaal in documenten staat voordat ze besluiten nemen.",
+    "wat_het_doet": "Je uploadt een contract of document (PDF, Word, afbeelding). De AI leest het, herkent kernonderdelen (partijen, termijnen, financiële bedragen, risico's, deadlines) en maakt er een samenvatting van. Je krijgt een gestructureerd overzicht met flagging van mogelijke risico's of belangrijke punten.",
+    "ingredienten": [
+      {
+        "naam": "Documenten (contracten, offertes, overeenkomsten)",
+        "type": "data",
+        "toelichting": "PDF, Word, gescande papier of foto's van teksten die geanalyseerd moeten worden."
+      },
+      {
+        "naam": "Groot taalmodel met OCR en extractie",
+        "type": "tool",
+        "toelichting": "Leest tekst (ook handschrift), herkent structuur en haalt sleutelgegevens eruit."
+      },
+      {
+        "naam": "Checklist met kritische clausules",
+        "type": "proces",
+        "toelichting": "Voorgedefinieerde punten (looptijd, financiën, aansprakelijkheid) waarop de AI let."
+      },
+      {
+        "naam": "Jurist of manager voor review",
+        "type": "mens",
+        "toelichting": "Controleert de AI-analyse op volledigheid en neemt uiteindelijk beslissingen."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Upload document (contract, offerte, handtekening formulier) via portal of chatinterface.",
+      "Stap 2: AI scant document, herkent tekst en structuur, identificeert kernonderdelen.",
+      "Stap 3: AI genereert gestructureerde samenvatting met partijen, bedragen, data en risicovlaggen.",
+      "Stap 4: Manager/jurist controleert samenvatting, voegt notities toe, neemt besluit."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Een hbo-instelling ontvangt elk jaar tientallen onderwijssamenwerkingsovereenkomsten van bedrijven. Een medewerker moest alles handmatig nalezen. Met AI-analyse krijgt zij in 30 seconden een samenvatting, inclusief waarschuwing als een bedrijf ongebruikelijke voorwaarden stelt.",
+        "resultaat": "Van 3 uur lezen naar 15 minuten controle per contract; minder fouten, snellere besluitvorming."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Een mbo-school sluit jaarlijks 50+ stageplek-overeenkomsten met bedrijven. Managers wilden snel zien: waar mag de stageplaats voor gebruikt worden, wat zijn de verzekeringsclaims, wat zijn de einddatums? Handmatig was dit een dagwerkje.",
+        "resultaat": "Overzicht van alle 50 overeenkomsten in één keersamenvatting; risico's en deadlines meteen zichtbaar."
+      }
+    ],
+    "team_vraag": "Welke documenten kosten ons team het meest tijd om handmatig uit te pluizen — kunnen we daar AI voor inzetten?",
+    "valkuilen": [
+      "AI mist context: een clausule lijkt riskant, maar is standaard in je sector — daarom review door expert blijft nodig.",
+      "Geheimhouding: zorg dat gevoelige contractdata niet in cloud-systemen belandt; check GDPR/security met je IT.",
+      "AI 'ziet' niet alles: complexe of oude contracten met rare opmaak worden soms verkeerd gelezen — vergelijk altijd met origineel.",
+      "Oververtrouwen: managers nemen besluit op AI-samenvatting zonder zelf het contract te checken; dat scheelt tijd maar creëert risico's."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "variabel",
+      "aiValue": "augmenteren"
+    },
+    "personaValues": [
+      {
+        "personaId": "medewerker",
+        "valueStatement": "Juridische of complexe documenten zijn sneller doorgelicht op risico's.",
+        "primaryBenefit": "Tijdsbesparing bij documentanalyse",
+        "adoptionConcern": "Interpretatie van nuances vraagt menselijk oordeel"
+      },
+      {
+        "personaId": "manager",
+        "valueStatement": "Beslissingen worden sneller onderbouwd met relevante documentanalyse.",
+        "primaryBenefit": "Snellere en beter onderbouwde besluitvorming",
+        "adoptionConcern": "Juridische eindverantwoordelijkheid blijft bij de professional"
+      }
+    ]
+  },
+  {
+    "id": "BP-09",
+    "title": "Kwaliteitszorg / vergader- en rapportageassistent",
+    "hora_process": "besturing",
+    "rollen": [
+      "medewerker",
+      "manager"
+    ],
+    "use_case_ids": [
+      "uc-037",
+      "uc-038",
+      "uc-041",
+      "uc-042"
+    ],
+    "tagline": "AI schrijft vergaderverslagen en kwaliteitsrapporten in één keer klaar.",
+    "pijn": "Medewerkers besteden uren aan het uitwerken van vergaderverslagen en het samenstellen van kwaliteitsrapporten. Informatie gaat verloren, deadlines worden gemist, en managers moeten alles opnieuw nakijken. Dit kost tijd die beter naar inhoud kan gaan.",
+    "wat_het_doet": "Je geeft audio van een vergadering, notities en relevante documenten in. De AI luistert mee, herkent onderwerpen, actiepunten en risico's. Uit komt een volledig verslag met afspraken, verantwoordelijken en een kwaliteitsrapportage met bevindingen.",
+    "ingredienten": [
+      {
+        "naam": "Vergaderopname (audio/transcript)",
+        "type": "data",
+        "toelichting": "Audio of getranscribeerde gesprekken als invoer voor de AI."
+      },
+      {
+        "naam": "Templatebibliotheek (verslag en rapportage)",
+        "type": "data",
+        "toelichting": "Standaardformaten voor verslagen en kwaliteitsrapporten specifiek voor jouw instelling."
+      },
+      {
+        "naam": "Kwaliteitscriteria en risicohandleiding",
+        "type": "data",
+        "toelichting": "Checklist met thema's die altijd moeten worden gecontroleerd en risicocategorieën."
+      },
+      {
+        "naam": "AI-schrijver (GPT of vergelijkbaar)",
+        "type": "tool",
+        "toelichting": "Genereert verslag en rapport op basis van input en templates."
+      },
+      {
+        "naam": "Kwaliteitsmanger als reviewer",
+        "type": "mens",
+        "toelichting": "Leest, corrigeert en geeft goed voor publicatie."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Zet vergaderopname en notulen in het systeem; voeg context toe (welke commissie, thema's).",
+      "Stap 2: AI luistert, transcribeert en haalt kernpunten uit (agendapunten, besluiten, actiepunten).",
+      "Stap 3: AI vult template in en checkt automatisch tegen kwaliteitscriteria en risicogebruiken.",
+      "Stap 4: Manager/voorzitter leest draft in 10 minuten, corrigeert inhoud, AI publiceert definitief verslag."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Een examencommissie heeft wekelijks vergaderingen waar veel wordt besproken over studiepogingen, fraude en procedurele wijzigingen. Verslagen worden nu handmatig uitgetikt en duren twee uur per week. De AI transcribeert, vat samen en vult automatisch alle verplichte gegevens in.",
+        "resultaat": "Verslag klaar in 20 minuten; geen informatie verloren; managers besparen 80 uur per jaar."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Een managementteam voert maandelijks toetsingsronde-gesprekken met docenten. Daarna moet een samenvattend rapport naar de directie, waarin risico's rond lesuitval, leerlingenuitval en kwaliteit worden benoemd. Dit took altijd 3 uur per maand.",
+        "resultaat": "Rapport wordt in één uur gegenereerd en gereviewd; directie ziet risico's sneller; teams voelen zich beter gehoord."
+      }
+    ],
+    "team_vraag": "Wat kost ons nu het meest tijd: verslagen schrijven, rapportages samenvoegen, of beide nakijken?",
+    "valkuilen": [
+      "Valkuil 1: AI vergeet context of schrijft 'platte' samenvattingen zonder nuance — zorg voor menselijke review en training van de AI op jouw taalgebruik.",
+      "Valkuil 2: Veel verslagen blijken in het 'archief' terecht te komen en niemand leest ze echt — zorg dat je het systeem niet alleen sneller maakt, maar ook korter en leesbaar.",
+      "Valkuil 3: Privacygevoelige gegevens (namen, prestaties) kunnen in de output terechtkomen — zet altijd anonimisering in en check output op gevoelige data.",
+      "Valkuil 4: Managers delegeren gelijk hun verantwoording aan de AI en lezen niet meer goed — maak duidelijk dat AI helpt, maar QA blijft mens-werk."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "regelmatig",
+      "processVariability": "gemengd",
+      "aiValue": "verkennen"
+    },
+    "personaValues": [
+      {
+        "personaId": "medewerker",
+        "valueStatement": "Vergaderingen worden beter gedocumenteerd met minder handmatig werk.",
+        "primaryBenefit": "Tijdsbesparing bij verslaglegging",
+        "adoptionConcern": "Actiepunten moeten altijd menselijk gevalideerd worden"
+      },
+      {
+        "personaId": "manager",
+        "valueStatement": "Rapportages zijn sneller op orde en consistent van kwaliteit.",
+        "primaryBenefit": "Efficiëntere kwaliteitscyclus",
+        "adoptionConcern": "Context en nuance in besluiten kan verloren gaan"
+      }
+    ]
+  },
+  {
+    "id": "BP-10",
+    "title": "Communicatie- en contentassistent",
+    "hora_process": "marketing",
+    "rollen": [
+      "medewerker"
+    ],
+    "use_case_ids": [
+      "uc-027",
+      "uc-028",
+      "uc-029",
+      "uc-030",
+      "uc-031",
+      "uc-034",
+      "uc-035"
+    ],
+    "tagline": "Van ruw materiaal naar polished content in minuten, niet uren.",
+    "pijn": "Communicatiemedewerkers besteden veel tijd aan het schrijven, herschrijven en opmaken van dezelfde soorten berichten: nieuwsbrieven, sociale media, persberichten. Dit kost uren per week terwijl de kwaliteit afhangt van wie het schrijft. Tegelijk groeit de vraag naar meer kanalen en snellere uitvoering.",
+    "wat_het_doet": "Je voedt de AI informatie in: een onderwerp, doelgroep, toon en lengte. De assistent genereert verschillende versies van teksten, aanpassingen voor verschillende kanalen (LinkedIn, WhatsApp, persberichten) en suggesties voor headlines en call-to-actions. De medewerker kiest, verfijnt en publiceert—het zware schrijfwerk is gedaan.",
+    "ingredienten": [
+      {
+        "naam": "Basisinformatie (fact sheet, persbericht, nieuwsitem)",
+        "type": "data",
+        "toelichting": "De ruwe input: wat moet er gecommuniceerd worden?"
+      },
+      {
+        "naam": "Huisstijlgids en brand voice",
+        "type": "data",
+        "toelichting": "Toonvallen, kernwoorden en communicatieprincipes van de instelling."
+      },
+      {
+        "naam": "LLM (ChatGPT, Claude of Gemini)",
+        "type": "tool",
+        "toelichting": "Genereert diverse tekstversies op basis van prompt en context."
+      },
+      {
+        "naam": "Communicatiemedewerker als redacteur",
+        "type": "mens",
+        "toelichting": "Selecteert, nuanceert en verantwoordt de inhoud voordat deze uitgaat."
+      }
+    ],
+    "stappen": [
+      "Stap 1: Medewerker uploadt of typt kerngegevens (onderwerp, doelgroep, kanaal, toonvallen).",
+      "Stap 2: AI genereert 3-5 tekstversies met verschillende invalshoeken en lengtes.",
+      "Stap 3: Medewerker bekijkt opties, kiest beste versie en vraagt aanpassingen ('korter', 'meer zakelijk', 'accent op inclusie').",
+      "Stap 4: AI refineert, medewerker keurt goed, tekst wordt klaar voor publicatie of review door management."
+    ],
+    "maturity": "pilot",
+    "automatisering": "hoog",
+    "voorbeelden": [
+      {
+        "sector": "hbo",
+        "beschrijving": "Marketingmedewerker van hogeschool moet elke week berichten schrijven over events, programma's en studentenverhalen voor LinkedIn, Instagram en de interne nieuwsbrief. Dit kost nu 8 uur per week omdat alles handmatig wordt geschreven en aangepast.",
+        "resultaat": "Met AI genereert ze nu in 2 uur ruwversies, past ze aan haar merkvoorkeur aan, en publiceert ze—tijdbesparing van 75%, consistenter toon."
+      },
+      {
+        "sector": "mbo",
+        "beschrijving": "Communicatiecoördinator van mbo-school krijgt veel ad-hoc aanvragen voor brieven aan ouders, persberichten en vakberichten. Elk schrijven kost tijd en leidt tot variatie in kwaliteit en toon.",
+        "resultaat": "AI genereert sjablonen en eerste versies; coördinator voegt school-specifieke details toe en stuurt af—sneller, consistenter, minder fouten."
+      }
+    ],
+    "team_vraag": "Welke communicatietaken nemen nu het meest tijd in beslag en zou AI-ondersteuning echte verlichting brengen?",
+    "valkuilen": [
+      "Valkuil 1: AI-teksten voelen generiek of onpersoonlijk; je vergeet dat de tool input nodig heeft over jouw merkkarakter en context—hoe beter de instructie, hoe beter het resultaat.",
+      "Valkuil 2: Volledige automation zonder mensentoets: AI maakt soms subtiele fouten of onnauwkeurigheden; altijd laten nakijken door iemand die het onderwerp kent.",
+      "Valkuil 3: Je wacht te lang op perfectie van AI; zie het als 'eerste schets', niet als eindproduct—bespaar tijd op het zware werk, niet op de menselijke check."
+    ],
+    "opportunityPosition": {
+      "processFrequency": "frequent",
+      "processVariability": "gestandaardiseerd",
+      "aiValue": "automatiseren"
+    },
+    "personaValues": [
+      {
+        "personaId": "medewerker",
+        "valueStatement": "Standaardcommunicatie is sneller klaar en consistent van toon.",
+        "primaryBenefit": "Grote tijdsbesparing op repetitieve communicatietaken",
+        "adoptionConcern": "Toon en accuratesse vereisen altijd menselijke review"
+      }
+    ]
+  }
+]

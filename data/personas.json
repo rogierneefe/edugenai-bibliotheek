@@ -1,0 +1,66 @@
+[
+  {
+    "id": "docent",
+    "name": "Docent",
+    "role": "Ontwerpt, begeleidt en beoordeelt onderwijs in de dagelijkse praktijk",
+    "sector": "breed",
+    "goals": ["Werkdruk verlagen", "Feedbackkwaliteit verhogen", "Meer tijd voor studenten"],
+    "concerns": ["Betrouwbaarheid van AI-output", "Professionele autonomie", "Afhankelijkheid van tools"]
+  },
+  {
+    "id": "onderwijskundig",
+    "name": "Onderwijskundig adviseur",
+    "role": "Ondersteunt opleidingen op curriculum, didactiek en toetskwaliteit",
+    "sector": "breed",
+    "goals": ["Ontwerpkwaliteit versterken", "Docenten praktisch ondersteunen", "Schaalbare aanpakken vinden"],
+    "concerns": ["Teamadoptie", "Didactische kwaliteit borgen", "Generieke tools vs. contextspecifiek"]
+  },
+  {
+    "id": "student",
+    "name": "Student",
+    "role": "Gebruikt AI als leerhulp, studieplanner en oefenpartner",
+    "sector": "breed",
+    "goals": ["Gericht oefenen", "Sneller passende hulp", "Zelfstandiger worden"],
+    "concerns": ["Privacy", "AI-afhankelijkheid", "Academische integriteit"]
+  },
+  {
+    "id": "manager",
+    "name": "Opleidings- of teammanager",
+    "role": "Stuurt op onderwijskwaliteit, planning, capaciteit en verbetering",
+    "sector": "breed",
+    "goals": ["Impact prioriteren", "Capaciteit slimmer inzetten", "Kwaliteitscyclus versnellen"],
+    "concerns": ["Governance", "Schaalbaarheid", "Draagvlak bij team"]
+  },
+  {
+    "id": "medewerker",
+    "name": "Ondersteunend medewerker",
+    "role": "Verwerkt informatie, communicatie, planning en administratieve processen",
+    "sector": "breed",
+    "goals": ["Repetitief werk versnellen", "Consistente communicatie", "Meer focus op inhoud"],
+    "concerns": ["Outputcontrole", "Procesafspraken", "Fouten in gegenereerde tekst"]
+  },
+  {
+    "id": "ict",
+    "name": "ICT- en informatiemanager",
+    "role": "Bewaakt integratie, beveiliging, data en platformkeuzes rondom AI",
+    "sector": "breed",
+    "goals": ["Veilige AI-integratie", "Herbruikbare voorzieningen bouwen", "Grip op datastromen"],
+    "concerns": ["Beveiliging en privacy", "Architectuur en beheer", "Vendor lock-in"]
+  },
+  {
+    "id": "onderzoeker",
+    "name": "Onderzoeker",
+    "role": "Analyseert literatuur, data en kennisproducten voor praktijkgericht onderzoek",
+    "sector": "hbo",
+    "goals": ["Snellere analyse", "Kennis toegankelijk maken", "Hogere reproductie"],
+    "concerns": ["Bronkwaliteit", "Reproduceerbaarheid", "Hallucinaties in bronverwijzingen"]
+  },
+  {
+    "id": "hr",
+    "name": "HR-professional",
+    "role": "Werkt aan professionalisering, rollen en organisatieontwikkeling",
+    "sector": "breed",
+    "goals": ["AI-geletterdheid verhogen", "Loopbaanprocessen ondersteunen", "Onboarding versnellen"],
+    "concerns": ["Menselijke maat", "Bias in AI-tools", "Privacywetgeving"]
+  }
+]
