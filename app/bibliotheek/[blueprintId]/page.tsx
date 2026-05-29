@@ -97,6 +97,11 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
           <div className="flex flex-wrap gap-2 mb-2">
             <MaturityBadge maturity={bp.maturity} />
             <ProcessBadge horaId={bp.hora_process} horaProcessen={horaProcessen} />
+            {bp.evidence_label && (
+              <span className="text-xs rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 font-medium text-blue-700">
+                {bp.evidence_label}
+              </span>
+            )}
             <span className={`text-xs flex items-center gap-1 ${auto.color}`}>
               <span className="w-1.5 h-1.5 rounded-full inline-block bg-current" />
               {auto.label}
@@ -202,7 +207,7 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
 
         {/* Voorbeelden */}
         <section className="mb-6">
-          <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Voorbeelden uit de praktijk</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Voorbeelden en sectorcontext</p>
           <div className="space-y-3">
             {bp.voorbeelden.map((vb, i) => (
               <div key={i} className="bg-white border border-gray-200 rounded-lg p-4">
@@ -246,13 +251,14 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
         {bpUseCases.length > 0 && (
           <section className="mb-6">
             <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
-              Use cases die dit recept voeden ({bpUseCases.length})
+              Ideeën die dit recept voeden ({bpUseCases.length})
             </p>
             <ul className="space-y-1.5">
               {bpUseCases.slice(0, 10).map(uc => (
                 <li key={uc.id} className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: procesKleur }} />
                   <span className="text-sm text-gray-700 flex-1">{uc.title}</span>
+                  <span className="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded">{uc.origin_type ?? 'idee'}</span>
                   <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">{uc.rol[0]}</span>
                 </li>
               ))}

@@ -1,16 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
-import { Blueprint, HoraProces } from '@/lib/types';
+import { Blueprint, HoraProces, ProcessView } from '@/lib/types';
 import MaturityBadge from './MaturityBadge';
 import { aiValueConfig } from '@/lib/opportunity';
+import { getProcessLabel } from '@/lib/processViews';
 
 interface Props {
   blueprint: Blueprint;
   horaProcessen: HoraProces[];
   compact?: boolean;
+  processView?: ProcessView;
 }
 
-export default function BlueprintCard({ blueprint, horaProcessen, compact = false }: Props) {
+export default function BlueprintCard({ blueprint, horaProcessen, compact = false, processView = 'hora' }: Props) {
   const proces = horaProcessen.find(p => p.id === blueprint.hora_process);
   const procesKleur = proces?.kleur ?? '#888888';
 
@@ -76,8 +78,8 @@ export default function BlueprintCard({ blueprint, horaProcessen, compact = fals
             )}
           </div>
           <div className="flex items-center justify-between text-xs text-gray-400">
-            <span>Gebruikt door {blueprint.use_case_ids.length} teams</span>
-            <span style={{ color: procesKleur }}>{proces?.naam ?? blueprint.hora_process}</span>
+            <span>{blueprint.evidence_label ?? `${blueprint.use_case_ids.length} use cases`}</span>
+            <span style={{ color: procesKleur }}>{proces ? getProcessLabel(proces, processView) : blueprint.hora_process}</span>
           </div>
         </div>
       </div>

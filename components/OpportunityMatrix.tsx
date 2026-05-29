@@ -1,7 +1,9 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { HoraProces } from '@/lib/types';
+import { HoraProces, ProcessView } from '@/lib/types';
 import { aiValueConfig, getAIValue, getFrequencyLabel, getVariabilityLabel } from '@/lib/opportunity';
+import { getProcessId, getProcessLabel, getVisibleProcesses } from '@/lib/processViews';
 
 interface Props {
   horaProcessen: HoraProces[];
@@ -67,8 +69,10 @@ const QUADRANTS: Quadrant[] = [
 ];
 
 export default function OpportunityMatrix({ horaProcessen }: Props) {
+  const [processView, setProcessView] = useState<ProcessView>('hora');
+  const visibleProcesses = getVisibleProcesses(horaProcessen);
   const getProcessenForQuadrant = (aiValue: string) =>
-    horaProcessen.filter(p => getAIValue(p) === aiValue);
+    visibleProcesses.filter(p => getAIValue(p) === aiValue);
 
   return (
     <div className="space-y-6">
@@ -92,6 +96,24 @@ export default function OpportunityMatrix({ horaProcessen }: Props) {
             <p className="mt-2 text-xs leading-5 text-gray-500">{item.text}</p>
           </div>
         ))}
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white p-4">
+        <div>
+          <p className="text-sm font-medium text-gray-900">Procesdefinitie</p>
+          <p className="text-xs text-gray-500">Bekijk dezelfde opportunity-logica apart over HORA of MORA.</p>
+        </div>
+        <div className="flex gap-1.5">
+          {(['hora', 'mora'] as ProcessView[]).map(view => (
+            <button
+              key={view}
+              onClick={() => setProcessView(view)}
+              className={`rounded-full border px-3 py-1 text-xs font-medium ${processView === view ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200 bg-white text-gray-700'}`}
+            >
+              {view.toUpperCase()}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* 2x2 Grid */}
@@ -134,7 +156,7 @@ export default function OpportunityMatrix({ horaProcessen }: Props) {
                   {processen.map(p => (
                     <li key={p.id}>
                       <Link
-                        href={`/bibliotheek?hora=${p.id}`}
+                        href={`/bibliotheek?${processView}=${getProcessId(p, processView)}`}
                         className="flex items-center justify-between group"
                       >
                         <div className="flex items-center gap-2 min-w-0">
@@ -143,7 +165,7 @@ export default function OpportunityMatrix({ horaProcessen }: Props) {
                             style={{ backgroundColor: p.kleur }}
                           />
                           <span className="text-sm text-gray-700 group-hover:text-gray-900 truncate">
-                            {p.naam}
+                            {getProcessLabel(p, processView)}
                           </span>
                           {p.is_hotspot && <span className="text-xs flex-shrink-0">🔥</span>}
                           {p.is_witte_vlek && (
@@ -153,7 +175,7 @@ export default function OpportunityMatrix({ horaProcessen }: Props) {
                           )}
                         </div>
                         <span className="text-xs text-gray-400 flex-shrink-0 ml-2">
-                          {p.use_case_count} uc
+                          {p.use_case_count} ideeën
                         </span>
                       </Link>
                       <div className="ml-4 mt-1 flex flex-wrap gap-1">

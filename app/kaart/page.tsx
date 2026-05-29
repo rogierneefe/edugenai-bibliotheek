@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import horaProcessen from '@/data/hora-processen.json';
 import usecasesData from '@/data/usecases.json';
-import { HoraProces, UseCase } from '@/lib/types';
+import sourceSummary from '@/data/source-summary.json';
+import { HoraProces, ProcessView, Sector, UseCase, UseCaseOrigin } from '@/lib/types';
 import { aiValueConfig, getAIValue, getOpportunityLabel } from '@/lib/opportunity';
+import { getProcessId, getProcessLabel } from '@/lib/processViews';
 
 const processen = horaProcessen as HoraProces[];
 const usecases = usecasesData as UseCase[];
@@ -17,10 +19,14 @@ const ROL_MAP: Record<string, string> = {
 export default function KaartPage() {
   const [selectedProcess, setSelectedProcess] = useState<HoraProces | null>(null);
   const [activeRollen, setActiveRollen] = useState<string[]>([]);
+  const [processView, setProcessView] = useState<ProcessView>('hora');
+  const [sectorFilter, setSectorFilter] = useState<Sector | ''>('');
+  const [originFilter, setOriginFilter] = useState<UseCaseOrigin | ''>('idee');
   const [filtersOpen, setFiltersOpen] = useState(false);
 
-  const maxCount = Math.max(...processen.map(p => p.use_case_count));
-  const sorted = [...processen].sort((a, b) => b.use_case_count - a.use_case_count);
+  const visibleProcesses = processen.filter(p => !p.is_mapping_bucket);
+  const maxCount = Math.max(...visibleProcesses.map(p => p.use_case_count));
+  const sorted = [...visibleProcesses].sort((a, b) => b.use_case_count - a.use_case_count);
 
   const toggleRol = (rol: string) => {
     setActiveRollen(prev =>
@@ -29,16 +35,26 @@ export default function KaartPage() {
   };
 
   const getFilteredUseCases = (proces: HoraProces) => {
-    let cases = usecases.filter(uc => uc.hora_process === proces.id);
+    const processId = getProcessId(proces, processView);
+    let cases = usecases.filter(uc => {
+      const ucProcess = processView === 'mora' ? uc.mora_process : uc.hora_process;
+      return ucProcess === processId;
+    });
     if (activeRollen.length > 0) {
       const mappedRollen = activeRollen.map(r => ROL_MAP[r] ?? r);
       cases = cases.filter(uc => mappedRollen.some(r => uc.rol.includes(r)));
+    }
+    if (sectorFilter) {
+      cases = cases.filter(uc => uc.sectoren?.includes(sectorFilter));
+    }
+    if (originFilter) {
+      cases = cases.filter(uc => uc.origin_type === originFilter);
     }
     return cases;
   };
 
   const getBarWidth = (proces: HoraProces) => {
-    if (activeRollen.length === 0) {
+    if (activeRollen.length === 0 && !sectorFilter && originFilter === '') {
       return (proces.use_case_count / maxCount) * 100;
     }
     const filtered = getFilteredUseCases(proces);
@@ -56,16 +72,16 @@ export default function KaartPage() {
           Waar zit energie, en waar zit de beste AI-kans?
         </h1>
         <p className="text-sm leading-6 text-gray-600 mb-6 max-w-2xl">
-          Bekijk use case-dichtheid per HORA/MORA-proces. Combineer de beleving van onderwijsprofessionals
+          Bekijk use case-dichtheid per HORA- of MORA-proces. Combineer de beleving van onderwijsprofessionals
           met opportunity-labels voor prioritering.
         </p>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {[
-            { getal: '72', label: 'use cases in kaart' },
-            { getal: '11', label: 'HORA-processen gedekt' },
-            { getal: '10', label: 'recepten beschikbaar' },
-            { getal: '4', label: 'opportunity-routes' },
-          ].map(item => (
+            {[
+              { getal: String(sourceSummary.ideaUseCasesLoaded), label: 'ideeën uit xlsx' },
+              { getal: String(sourceSummary.mappedIdeaUseCases), label: 'gekoppeld aan proces' },
+              { getal: String(sourceSummary.unmappedIdeaUseCases + sourceSummary.notPrimaryIdeaUseCases), label: 'nog/niet primair' },
+              { getal: String(sourceSummary.pilotUseCasesLoaded), label: 'pilots geladen' },
+            ].map(item => (
             <div key={item.label} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
               <div className="text-2xl font-medium text-gray-900">{item.getal}</div>
               <div className="text-sm text-gray-500">{item.label}</div>
@@ -81,12 +97,14 @@ export default function KaartPage() {
             <div>
               <p className="text-sm font-medium text-gray-900">Zoekcriteria</p>
               <p className="text-xs text-gray-500">
-                {activeRollen.length > 0 ? `${activeRollen.length} rolfilter(s) actief` : 'Alle rollen en sectoren zichtbaar'}
+                {activeRollen.length > 0 || sectorFilter || originFilter !== 'idee'
+                  ? `${[activeRollen.length > 0, sectorFilter, originFilter !== 'idee'].filter(Boolean).length} lensfilter(s) actief`
+                  : 'Ideeën voor alle rollen en sectoren zichtbaar'}
               </p>
             </div>
             <div className="flex gap-2">
-              {activeRollen.length > 0 && (
-                <button onClick={() => setActiveRollen([])} className="text-sm text-gray-500 underline">
+              {(activeRollen.length > 0 || sectorFilter || originFilter !== 'idee') && (
+                <button onClick={() => { setActiveRollen([]); setSectorFilter(''); setOriginFilter('idee'); }} className="text-sm text-gray-500 underline">
                   Wis filters
                 </button>
               )}
@@ -100,14 +118,42 @@ export default function KaartPage() {
           </div>
           {filtersOpen && (
             <div className="mt-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-400">Procesview</p>
+              <div className="mb-4 flex flex-wrap gap-1.5">
+                {(['hora', 'mora'] as ProcessView[]).map(view => (
+                  <button
+                    key={view}
+                    onClick={() => {
+                      setProcessView(view);
+                      setSelectedProcess(null);
+                    }}
+                    className={`text-xs px-3 py-1 rounded-full border ${processView === view ? 'bg-gray-900 text-white border-gray-900' : 'bg-white border-gray-200 text-gray-700'}`}
+                  >
+                    {view.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-400">Bron</p>
+              <div className="mb-4 flex flex-wrap gap-1.5">
+                {(['', 'idee', 'pilot'] as const).map(origin => (
+                  <button
+                    key={origin}
+                    onClick={() => setOriginFilter(origin)}
+                    className={`text-xs px-3 py-1 rounded-full border ${originFilter === origin ? 'bg-gray-900 text-white border-gray-900' : 'bg-white border-gray-200 text-gray-700'}`}
+                  >
+                    {origin === '' ? 'Alle bronnen' : origin === 'idee' ? 'Ideeën' : 'Pilots'}
+                  </button>
+                ))}
+              </div>
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-400">Sector</p>
               <div className="flex flex-wrap gap-1.5">
-            {(['Alle sectoren', 'mbo', 'hbo', 'wo'] as const).map(s => (
+            {(['', 'mbo', 'hbo', 'wo'] as const).map(s => (
               <button
                 key={s}
-                className={`text-xs px-3 py-1 rounded-full border ${s === 'Alle sectoren' ? 'bg-gray-900 text-white border-gray-900' : 'bg-white border-gray-200 text-gray-700'}`}
+                onClick={() => setSectorFilter(s)}
+                className={`text-xs px-3 py-1 rounded-full border ${sectorFilter === s ? 'bg-gray-900 text-white border-gray-900' : 'bg-white border-gray-200 text-gray-700'}`}
               >
-                {s}
+                {s === '' ? 'Alle sectoren' : s.toUpperCase()}
               </button>
             ))}
               </div>
@@ -141,7 +187,7 @@ export default function KaartPage() {
         <div className="flex-1 space-y-1">
           {sorted.map(proces => {
             const barWidth = getBarWidth(proces);
-            const isSelected = selectedProcess?.id === proces.id;
+                const isSelected = selectedProcess?.id === proces.id;
             const value = getAIValue(proces);
             const opportunity = aiValueConfig[value];
             return (
@@ -154,8 +200,8 @@ export default function KaartPage() {
               >
                 {/* Linkerkolom */}
                 <div className="w-56 flex-shrink-0">
-                  <div className="text-sm font-medium text-gray-800">{proces.naam}</div>
-                  <div className="text-xs text-gray-400">{proces.mora_equivalent}</div>
+                  <div className="text-sm font-medium text-gray-800">{getProcessLabel(proces, processView)}</div>
+                  <div className="text-xs text-gray-400">{processView.toUpperCase()}</div>
                 </div>
                 {/* Balk */}
                 <div className="flex-1 flex items-center gap-2">
@@ -186,7 +232,7 @@ export default function KaartPage() {
                 {/* Rechterkolom */}
                 <div className="w-24 text-right flex-shrink-0">
                   <span className="text-sm font-medium text-gray-800">
-                    {activeRollen.length > 0 ? getFilteredUseCases(proces).length : proces.use_case_count}
+                    {getFilteredUseCases(proces).length}
                   </span>
                   <span className={`text-[10px] block font-medium ${opportunity.color}`}>{opportunity.label}</span>
                 </div>
@@ -203,8 +249,8 @@ export default function KaartPage() {
               <div className="p-4">
                 <div className="flex items-start justify-between mb-1">
                   <div>
-                    <h2 className="text-base font-medium text-gray-900">{selectedProcess.naam}</h2>
-                    <p className="text-sm text-gray-400">{selectedProcess.mora_equivalent}</p>
+                    <h2 className="text-base font-medium text-gray-900">{getProcessLabel(selectedProcess, processView)}</h2>
+                    <p className="text-sm text-gray-400">{processView.toUpperCase()}-view</p>
                   </div>
                   <button
                     onClick={() => setSelectedProcess(null)}
@@ -247,7 +293,7 @@ export default function KaartPage() {
                 <Link
                   href={
                     selectedProcess.blueprint_count > 0
-                      ? `/bibliotheek?hora=${selectedProcess.id}`
+                      ? `/bibliotheek?${processView}=${getProcessId(selectedProcess, processView)}`
                       : '#'
                   }
                   className={`block w-full text-center text-sm py-2 px-4 rounded-lg font-medium transition-colors ${
@@ -272,8 +318,8 @@ export default function KaartPage() {
             <div className="p-4">
               <div className="flex items-start justify-between mb-1">
                 <div>
-                  <h2 className="text-base font-medium text-gray-900">{selectedProcess.naam}</h2>
-                  <p className="text-sm text-gray-400">{selectedProcess.mora_equivalent}</p>
+                  <h2 className="text-base font-medium text-gray-900">{getProcessLabel(selectedProcess, processView)}</h2>
+                  <p className="text-sm text-gray-400">{processView.toUpperCase()}-view</p>
                 </div>
                 <button onClick={() => setSelectedProcess(null)} className="text-gray-400 text-xl">×</button>
               </div>
@@ -287,7 +333,7 @@ export default function KaartPage() {
                 ))}
               </ul>
               <Link
-                href={selectedProcess.blueprint_count > 0 ? `/bibliotheek?hora=${selectedProcess.id}` : '#'}
+                href={selectedProcess.blueprint_count > 0 ? `/bibliotheek?${processView}=${getProcessId(selectedProcess, processView)}` : '#'}
                 className={`block w-full text-center text-sm py-2.5 px-4 rounded-lg font-medium ${
                   selectedProcess.blueprint_count > 0
                     ? 'bg-gray-900 text-white'
@@ -311,7 +357,7 @@ export default function KaartPage() {
               ) : (
                 <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: p.kleur }} />
               )}
-              <span className="text-xs text-gray-600">{p.naam}</span>
+              <span className="text-xs text-gray-600">{getProcessLabel(p, processView)}</span>
             </div>
           ))}
         </div>

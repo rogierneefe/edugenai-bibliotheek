@@ -1,0 +1,15 @@
+{
+  "ideaUseCasesLoaded": 242,
+  "ideaSourceFile": "usecasesEstellaHORAMORA.xlsx",
+  "pilotUseCasesLoaded": 0,
+  "pilotUseCasesExpectedApprox": 110,
+  "mappedIdeaUseCases": 156,
+  "notPrimaryIdeaUseCases": 31,
+  "unmappedIdeaUseCases": 55,
+  "sectorLabelPolicy": "De xlsx bevat geen sectorspecifieke herkomst; ideeën zijn daarom breed gelabeld voor mbo, hbo en wo.",
+  "notes": [
+    "De aangeleverde xlsx is als ideeënbron gemetadateerd.",
+    "Pilot-use-cases uit instellingen zijn nog niet als aparte dataset geladen.",
+    "Blueprints met deze bronkoppeling zijn gelabeld als idee-recept, niet als pilot."
+  ]
+}

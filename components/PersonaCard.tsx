@@ -49,7 +49,7 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
           </div>
           <div className="text-right flex-shrink-0 ml-3">
             <div className="text-lg font-medium text-gray-900">{relevantUsecases.length}</div>
-            <div className="text-[10px] text-gray-400">use cases</div>
+            <div className="text-[10px] text-gray-400">ideeën</div>
           </div>
         </div>
 
@@ -68,7 +68,7 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
           </div>
           <div className="flex-1 bg-stone-50 rounded-lg p-2.5 text-center">
             <div className="text-sm font-medium text-gray-800">{relevantUsecases.length}</div>
-            <div className="text-[10px] text-gray-400">use cases</div>
+            <div className="text-[10px] text-gray-400">ideeën</div>
           </div>
           {topOpportunity && (
             <div className={`flex-1 rounded-lg border p-2.5 text-center ${aiValueConfig[topOpportunity].bg} ${aiValueConfig[topOpportunity].border}`}>
@@ -145,7 +145,7 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
       {/* Use cases preview */}
       {relevantUsecases.length > 0 && (
         <div className="border-t border-gray-100 px-5 py-3 bg-stone-50">
-          <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-2">Top use cases</p>
+          <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-2">Top ideeën</p>
           <ul className="space-y-1">
             {relevantUsecases.slice(0, 5).map(uc => {
               const proces = horaProcessen.find(p => p.id === uc.hora_process);

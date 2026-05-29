@@ -54,7 +54,7 @@ export default function FilterBar({ filters, onChange, horaProcessen, showSearch
         ))}
       </div>
       <div className="flex flex-wrap gap-1.5">
-        {(['', 'pilot', 'bewezen', 'schaalbaar'] as const).map(m => (
+        {(['', 'idee', 'pilot', 'bewezen', 'schaalbaar'] as const).map(m => (
           <button
             key={m}
             onClick={() => update('maturity', m)}

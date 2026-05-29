@@ -43,7 +43,7 @@
       "Stap 3: AI analyseert werk tegen rubric en genereert feedbackteksten met scorepunten per criterium.",
       "Stap 4: Controleer gegenereerde feedback, bewerk waar nodig (inhoud, toon, precisie) en stuur uit naar studenten."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -82,7 +82,17 @@
         "primaryBenefit": "Kwaliteitsborging in beoordeling",
         "adoptionConcern": "Kalibratie tussen docenten vereist aandacht"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-02",
@@ -131,7 +141,7 @@
       "Stap 3: Jij bekijkt per student het AI-voorstel, controleert op juistheid en voegt persoonlijke observaties toe.",
       "Stap 4: Jij geeft groen licht en feedback wordt automatisch naar leeromgeving gestuurd; alle scores zijn in je beoordelingslijst."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -164,7 +174,17 @@
         "primaryBenefit": "Tijdsbesparing bij nakijken",
         "adoptionConcern": "Eindbesluit blijft altijd bij de docent"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-03",
@@ -209,7 +229,7 @@
       "Stap 3: Jij selecteert, bewerkt en valideert (taal, context, juistheid, niveau-fit) — AI leert van je feedback.",
       "Stap 4: Exporteer final toets met antwoordsleutel en scorerubric in je LMS of Word-format."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -248,7 +268,17 @@
         "primaryBenefit": "Systematische kwaliteitscheck",
         "adoptionConcern": "Vraagt bereidheid om ontwerp te heroverwegen"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-04",
@@ -298,7 +328,7 @@
       "Stap 3: AI analyseert, markeert overlaps, gaten en niveauverschillen, en stelt rewording voor met korte toelichting.",
       "Stap 4: Jij en je team accepteren, wijzigen of verwerpen voorstellen; export naar je onderwijsplan."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -336,7 +366,17 @@
         "primaryBenefit": "Snellere besluitvorming over curriculum",
         "adoptionConcern": "Draagvlak bij docenten vraagt apart traject"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-05",
@@ -380,7 +420,7 @@
       "Stap 3: AI genereert aligned lesactiviteiten, toetsvormen en rubrics; docent beoordeelt en past aan.",
       "Stap 4: Controleer alignment via checklist en test met studentencohort; verfijn op basis van feedback."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "middel",
     "voorbeelden": [
       {
@@ -418,7 +458,17 @@
         "primaryBenefit": "Meer grip op eigen bijdrage",
         "adoptionConcern": "Wijzigingen vragen tijd en teamoverleg"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-06",
@@ -470,7 +520,7 @@
       "Stap 3: Schrijf 5-10 test-vragen waar je het antwoord al kent, en controleer of de AI het goed doet.",
       "Stap 4: Zet de Q&A live voor studenten; je kijkt de eerste twee weken wekelijks of antwoorden kloppen en past ze aan."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -509,7 +559,17 @@
         "primaryBenefit": "Meer diepgang in contactmomenten",
         "adoptionConcern": "Kwaliteit van RAG-bronnen moet bewaakt worden"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-07",
@@ -554,7 +614,7 @@
       "Stap 4: AI geeft real-time hints en genereert daarna schriftelijk feedback met aandachtspunten",
       "Stap 5: Docent voert korte reflectiegesprek en sluit aan op moeilijke momenten"
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -593,7 +653,17 @@
         "primaryBenefit": "Veilig oefenen op professionele situaties",
         "adoptionConcern": "Simulatie vervangt echte praktijk niet"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-08",
@@ -637,7 +707,7 @@
       "Stap 3: AI genereert gestructureerde samenvatting met partijen, bedragen, data en risicovlaggen.",
       "Stap 4: Manager/jurist controleert samenvatting, voegt notities toe, neemt besluit."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -676,7 +746,17 @@
         "primaryBenefit": "Snellere en beter onderbouwde besluitvorming",
         "adoptionConcern": "Juridische eindverantwoordelijkheid blijft bij de professional"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-09",
@@ -728,7 +808,7 @@
       "Stap 3: AI vult template in en checkt automatisch tegen kwaliteitscriteria en risicogebruiken.",
       "Stap 4: Manager/voorzitter leest draft in 10 minuten, corrigeert inhoud, AI publiceert definitief verslag."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -767,7 +847,17 @@
         "primaryBenefit": "Efficiëntere kwaliteitscyclus",
         "adoptionConcern": "Context en nuance in besluiten kan verloren gaan"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   },
   {
     "id": "BP-10",
@@ -816,7 +906,7 @@
       "Stap 3: Medewerker bekijkt opties, kiest beste versie en vraagt aanpassingen ('korter', 'meer zakelijk', 'accent op inclusie').",
       "Stap 4: AI refineert, medewerker keurt goed, tekst wordt klaar voor publicatie of review door management."
     ],
-    "maturity": "pilot",
+    "maturity": "idee",
     "automatisering": "hoog",
     "voorbeelden": [
       {
@@ -848,6 +938,16 @@
         "primaryBenefit": "Grote tijdsbesparing op repetitieve communicatietaken",
         "adoptionConcern": "Toon en accuratesse vereisen altijd menselijke review"
       }
-    ]
+    ],
+    "origin_type": "idee",
+    "source_type": "derived_from_xlsx_ideas",
+    "source_label": "Recept afgeleid uit ideeëninventarisatie; pilotbrondata niet geladen",
+    "evidence_label": "Idee-recept",
+    "sectoren": [
+      "mbo",
+      "hbo",
+      "wo"
+    ],
+    "sector_scope": "breed"
   }
 ]

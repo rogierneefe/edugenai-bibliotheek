@@ -5,9 +5,11 @@ import { useSearchParams } from 'next/navigation';
 import blueprintsData from '@/data/blueprints.json';
 import horaProcessenData from '@/data/hora-processen.json';
 import personasData from '@/data/personas.json';
-import { AIValue, Blueprint, HoraProces, Persona } from '@/lib/types';
+import sourceSummary from '@/data/source-summary.json';
+import { AIValue, Blueprint, HoraProces, Persona, ProcessView, Sector, UseCaseOrigin } from '@/lib/types';
 import BlueprintCard from '@/components/BlueprintCard';
 import { aiValueConfig } from '@/lib/opportunity';
+import { blueprintMatchesProcess, getProcessId, getProcessLabel, getVisibleProcesses } from '@/lib/processViews';
 
 const blueprints = blueprintsData as Blueprint[];
 const horaProcessen = horaProcessenData as HoraProces[];
@@ -16,25 +18,37 @@ const personas = personasData as Persona[];
 function BibliotheekContent() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
-  const [horaFilter, setHoraFilter] = useState('');
+  const [processView, setProcessView] = useState<ProcessView>('hora');
+  const [processFilter, setProcessFilter] = useState('');
   const [maturityFilter, setMaturityFilter] = useState('');
   const [autoFilter, setAutoFilter] = useState('');
   const [personaFilter, setPersonaFilter] = useState('');
   const [aiFilter, setAiFilter] = useState<AIValue | ''>('');
+  const [sectorFilter, setSectorFilter] = useState<Sector | ''>('');
+  const [originFilter, setOriginFilter] = useState<UseCaseOrigin | ''>('');
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   useEffect(() => {
     const hora = searchParams.get('hora');
     if (hora) {
-      setHoraFilter(hora);
+      setProcessFilter(hora);
+      setProcessView('hora');
+      setFiltersOpen(true);
+    }
+    const mora = searchParams.get('mora');
+    if (mora) {
+      setProcessFilter(mora);
+      setProcessView('mora');
       setFiltersOpen(true);
     }
   }, [searchParams]);
 
   const filtered = useMemo(() => {
     return blueprints.filter(bp => {
-      if (horaFilter && bp.hora_process !== horaFilter && bp.hora_secondary !== horaFilter) return false;
+      if (!blueprintMatchesProcess(bp, horaProcessen, processView, processFilter)) return false;
       if (maturityFilter && bp.maturity !== maturityFilter) return false;
+      if (originFilter && bp.origin_type !== originFilter) return false;
+      if (sectorFilter && !bp.sectoren?.includes(sectorFilter)) return false;
       if (autoFilter && bp.automatisering !== autoFilter) return false;
       if (personaFilter && !bp.rollen.includes(personaFilter)) return false;
       if (aiFilter && bp.opportunityPosition?.aiValue !== aiFilter) return false;
@@ -45,18 +59,21 @@ function BibliotheekContent() {
       }
       return true;
     });
-  }, [aiFilter, autoFilter, horaFilter, maturityFilter, personaFilter, query]);
+  }, [aiFilter, autoFilter, maturityFilter, originFilter, personaFilter, processFilter, processView, query, sectorFilter]);
 
-  const activeCount = [horaFilter, maturityFilter, autoFilter, personaFilter, aiFilter, query].filter(Boolean).length;
-  const selectedProcess = horaProcessen.find(p => p.id === horaFilter);
+  const activeCount = [processFilter, maturityFilter, autoFilter, personaFilter, aiFilter, query, sectorFilter, originFilter].filter(Boolean).length;
+  const selectableProcesses = getVisibleProcesses(horaProcessen);
+  const selectedProcess = selectableProcesses.find(p => getProcessId(p, processView) === processFilter);
 
   const clearFilters = () => {
     setQuery('');
-    setHoraFilter('');
+    setProcessFilter('');
     setMaturityFilter('');
     setAutoFilter('');
     setPersonaFilter('');
     setAiFilter('');
+    setSectorFilter('');
+    setOriginFilter('');
   };
 
   const chipBase = 'text-xs px-3 py-1 rounded-full border cursor-pointer transition-colors whitespace-nowrap';
@@ -82,12 +99,15 @@ function BibliotheekContent() {
           <div className="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
             <div className="text-xs font-semibold uppercase tracking-wide text-gray-400">Huidige selectie</div>
             <div className="mt-2 text-2xl font-semibold text-gray-950">{filtered.length}</div>
-            <div className="text-sm text-gray-500">van {blueprints.length} recepten</div>
+            <div className="text-sm text-gray-500">van {blueprints.length} idee-recepten</div>
             {selectedProcess && (
               <div className="mt-3 rounded-lg bg-stone-50 p-3 text-xs text-gray-600">
-                Proces: <span className="font-medium text-gray-900">{selectedProcess.naam}</span>
+                {processView.toUpperCase()}: <span className="font-medium text-gray-900">{getProcessLabel(selectedProcess, processView)}</span>
               </div>
             )}
+            <div className="mt-3 text-xs leading-5 text-gray-500">
+              {sourceSummary.ideaUseCasesLoaded} ideeën geladen; pilotdataset nog niet geladen.
+            </div>
           </div>
         </div>
       </div>
@@ -117,20 +137,38 @@ function BibliotheekContent() {
 
           {filtersOpen && (
             <div className="mt-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-              <FilterGroup label="Proces">
-                <button onClick={() => setHoraFilter('')} className={`${chipBase} ${!horaFilter ? activeChip : inactiveChip}`}>
-                  Alle processen
-                </button>
-                {horaProcessen.map(p => (
+              <FilterGroup label="Procesview">
+                {(['hora', 'mora'] as ProcessView[]).map(view => (
                   <button
-                    key={p.id}
-                    onClick={() => setHoraFilter(p.id)}
-                    className={`${chipBase} ${horaFilter === p.id ? 'text-white border-transparent' : inactiveChip}`}
-                    style={horaFilter === p.id ? { backgroundColor: p.kleur, borderColor: p.kleur } : {}}
+                    key={view}
+                    onClick={() => {
+                      setProcessView(view);
+                      setProcessFilter('');
+                    }}
+                    className={`${chipBase} ${processView === view ? activeChip : inactiveChip}`}
                   >
-                    {p.naam}
+                    {view.toUpperCase()}
                   </button>
                 ))}
+              </FilterGroup>
+
+              <FilterGroup label={`${processView.toUpperCase()}-proces`}>
+                <button onClick={() => setProcessFilter('')} className={`${chipBase} ${!processFilter ? activeChip : inactiveChip}`}>
+                  Alle processen
+                </button>
+                {selectableProcesses.map(p => {
+                  const id = getProcessId(p, processView);
+                  return (
+                  <button
+                    key={id}
+                    onClick={() => setProcessFilter(id)}
+                    className={`${chipBase} ${processFilter === id ? 'text-white border-transparent' : inactiveChip}`}
+                    style={processFilter === id ? { backgroundColor: p.kleur, borderColor: p.kleur } : {}}
+                  >
+                    {getProcessLabel(p, processView)}
+                  </button>
+                  );
+                })}
               </FilterGroup>
 
               <FilterGroup label="Persona">
@@ -163,8 +201,21 @@ function BibliotheekContent() {
                 ))}
               </FilterGroup>
 
+              <FilterGroup label="Bron en sector">
+                {(['', 'idee', 'pilot'] as const).map(origin => (
+                  <button key={origin} onClick={() => setOriginFilter(origin)} className={`${chipBase} ${originFilter === origin ? activeChip : inactiveChip}`}>
+                    {origin === '' ? 'Alle bronnen' : origin === 'idee' ? 'Ideeën' : 'Pilots'}
+                  </button>
+                ))}
+                {(['', 'mbo', 'hbo', 'wo'] as const).map(sector => (
+                  <button key={sector} onClick={() => setSectorFilter(sector)} className={`${chipBase} ${sectorFilter === sector ? activeChip : inactiveChip}`}>
+                    {sector === '' ? 'Alle sectoren' : sector.toUpperCase()}
+                  </button>
+                ))}
+              </FilterGroup>
+
               <FilterGroup label="Fase en automatisering">
-                {(['', 'pilot', 'bewezen', 'schaalbaar'] as const).map(m => (
+                {(['', 'idee', 'pilot', 'bewezen', 'schaalbaar'] as const).map(m => (
                   <button key={m} onClick={() => setMaturityFilter(m)} className={`${chipBase} ${maturityFilter === m ? activeChip : inactiveChip}`}>
                     {m === '' ? 'Alle fases' : m.charAt(0).toUpperCase() + m.slice(1)}
                   </button>
@@ -191,7 +242,7 @@ function BibliotheekContent() {
         ) : (
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
             {filtered.map(bp => (
-              <BlueprintCard key={bp.id} blueprint={bp} horaProcessen={horaProcessen} />
+              <BlueprintCard key={bp.id} blueprint={bp} horaProcessen={horaProcessen} processView={processView} />
             ))}
           </div>
         )}

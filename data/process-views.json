@@ -1,0 +1,200 @@
+{
+  "hora": [
+    {
+      "id": "marketing",
+      "label": "Marketing, communicatie en voorlichting",
+      "description": ""
+    },
+    {
+      "id": "onderwijs-ontwerpen",
+      "label": "Onderwijs ontwerpen en ontwikkelen",
+      "description": ""
+    },
+    {
+      "id": "ict",
+      "label": "ICT-dienstverlening / informatiemanagement",
+      "description": ""
+    },
+    {
+      "id": "besturing",
+      "label": "Besturing, bedrijfsvoering en kwaliteitszorg",
+      "description": ""
+    },
+    {
+      "id": "onderzoek",
+      "label": "Onderzoek uitvoeren / onderzoeksondersteuning",
+      "description": ""
+    },
+    {
+      "id": "onderwijscontent",
+      "label": "Onderwijscontent ontwikkelen / communicatie",
+      "description": ""
+    },
+    {
+      "id": "innovatie",
+      "label": "Procesoverstijgend / innovatie",
+      "description": ""
+    },
+    {
+      "id": "logistiek",
+      "label": "Onderwijslogistiek / planning",
+      "description": ""
+    },
+    {
+      "id": "hrm",
+      "label": "HRM / professionalisering",
+      "description": ""
+    },
+    {
+      "id": "toetsing",
+      "label": "Toetsing en examinering",
+      "description": ""
+    },
+    {
+      "id": "studentbegeleiding",
+      "label": "Studentbegeleiding / onderwijsuitvoering",
+      "description": ""
+    }
+  ],
+  "mora": [
+    {
+      "id": "communicatie-werving-en-relatiebeheer",
+      "label": "Communicatie, werving en relatiebeheer",
+      "description": ""
+    },
+    {
+      "id": "onderwijs-ontwikkelen",
+      "label": "Onderwijs ontwikkelen",
+      "description": ""
+    },
+    {
+      "id": "ict-en-informatiemanagement",
+      "label": "ICT en informatiemanagement",
+      "description": ""
+    },
+    {
+      "id": "besturing-bedrijfsvoering-en-kwaliteitszorg",
+      "label": "Besturing, bedrijfsvoering en kwaliteitszorg",
+      "description": ""
+    },
+    {
+      "id": "onderzoek-kwaliteit-en-kennisontwikkeling",
+      "label": "Onderzoek, kwaliteit en kennisontwikkeling",
+      "description": ""
+    },
+    {
+      "id": "leermiddelen-ontwikkelen-communicatie",
+      "label": "Leermiddelen ontwikkelen / communicatie",
+      "description": ""
+    },
+    {
+      "id": "procesoverstijgend-innovatie",
+      "label": "Procesoverstijgend / innovatie",
+      "description": ""
+    },
+    {
+      "id": "onderwijslogistiek-roosteren",
+      "label": "Onderwijslogistiek / roosteren",
+      "description": ""
+    },
+    {
+      "id": "hrm-professionalisering",
+      "label": "HRM / professionalisering",
+      "description": ""
+    },
+    {
+      "id": "examineren-en-beoordelen",
+      "label": "Examineren en beoordelen",
+      "description": ""
+    },
+    {
+      "id": "begeleiden-student-onderwijs-uitvoeren",
+      "label": "Begeleiden student / onderwijs uitvoeren",
+      "description": ""
+    }
+  ],
+  "mappings": [
+    {
+      "hora_id": "marketing",
+      "hora_label": "Marketing, communicatie en voorlichting",
+      "mora_id": "communicatie-werving-en-relatiebeheer",
+      "mora_label": "Communicatie, werving en relatiebeheer"
+    },
+    {
+      "hora_id": "onderwijs-ontwerpen",
+      "hora_label": "Onderwijs ontwerpen en ontwikkelen",
+      "mora_id": "onderwijs-ontwikkelen",
+      "mora_label": "Onderwijs ontwikkelen"
+    },
+    {
+      "hora_id": "ict",
+      "hora_label": "ICT-dienstverlening / informatiemanagement",
+      "mora_id": "ict-en-informatiemanagement",
+      "mora_label": "ICT en informatiemanagement"
+    },
+    {
+      "hora_id": "besturing",
+      "hora_label": "Besturing, bedrijfsvoering en kwaliteitszorg",
+      "mora_id": "besturing-bedrijfsvoering-en-kwaliteitszorg",
+      "mora_label": "Besturing, bedrijfsvoering en kwaliteitszorg"
+    },
+    {
+      "hora_id": "onderzoek",
+      "hora_label": "Onderzoek uitvoeren / onderzoeksondersteuning",
+      "mora_id": "onderzoek-kwaliteit-en-kennisontwikkeling",
+      "mora_label": "Onderzoek, kwaliteit en kennisontwikkeling"
+    },
+    {
+      "hora_id": "onderwijscontent",
+      "hora_label": "Onderwijscontent ontwikkelen / communicatie",
+      "mora_id": "leermiddelen-ontwikkelen-communicatie",
+      "mora_label": "Leermiddelen ontwikkelen / communicatie"
+    },
+    {
+      "hora_id": "innovatie",
+      "hora_label": "Procesoverstijgend / innovatie",
+      "mora_id": "procesoverstijgend-innovatie",
+      "mora_label": "Procesoverstijgend / innovatie"
+    },
+    {
+      "hora_id": "logistiek",
+      "hora_label": "Onderwijslogistiek / planning",
+      "mora_id": "onderwijslogistiek-roosteren",
+      "mora_label": "Onderwijslogistiek / roosteren"
+    },
+    {
+      "hora_id": "hrm",
+      "hora_label": "HRM / professionalisering",
+      "mora_id": "hrm-professionalisering",
+      "mora_label": "HRM / professionalisering"
+    },
+    {
+      "hora_id": "toetsing",
+      "hora_label": "Toetsing en examinering",
+      "mora_id": "examineren-en-beoordelen",
+      "mora_label": "Examineren en beoordelen"
+    },
+    {
+      "hora_id": "studentbegeleiding",
+      "hora_label": "Studentbegeleiding / onderwijsuitvoering",
+      "mora_id": "begeleiden-student-onderwijs-uitvoeren",
+      "mora_label": "Begeleiden student / onderwijs uitvoeren"
+    }
+  ],
+  "mapping_buckets": [
+    {
+      "hora_id": "nog-te-koppelen",
+      "hora_label": "Nog te koppelen",
+      "mora_id": "nog-te-koppelen",
+      "mora_label": "Nog te koppelen",
+      "count": 55
+    },
+    {
+      "hora_id": "niet-primair-hora",
+      "hora_label": "Niet primair HORA-proces",
+      "mora_id": "niet-primair-mora-proces",
+      "mora_label": "Niet primair MORA-proces",
+      "count": 31
+    }
+  ]
+}

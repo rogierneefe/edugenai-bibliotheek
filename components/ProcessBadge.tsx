@@ -1,12 +1,14 @@
 import React from 'react';
-import { HoraProces } from '@/lib/types';
+import { HoraProces, ProcessView } from '@/lib/types';
+import { getProcessLabel } from '@/lib/processViews';
 
 interface Props {
   horaId: string;
   horaProcessen: HoraProces[];
+  processView?: ProcessView;
 }
 
-export default function ProcessBadge({ horaId, horaProcessen }: Props) {
+export default function ProcessBadge({ horaId, horaProcessen, processView = 'hora' }: Props) {
   const proces = horaProcessen.find(p => p.id === horaId);
   if (!proces) return null;
 
@@ -20,7 +22,7 @@ export default function ProcessBadge({ horaId, horaProcessen }: Props) {
         border: `1px solid ${proces.kleur}`,
       }}
     >
-      {proces.naam}
+      {getProcessLabel(proces, processView)}
     </span>
   );
 }

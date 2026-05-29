@@ -1,17 +1,19 @@
 import React from 'react';
 
 interface Props {
-  maturity: 'pilot' | 'bewezen' | 'schaalbaar';
+  maturity: 'idee' | 'pilot' | 'bewezen' | 'schaalbaar';
 }
 
 export default function MaturityBadge({ maturity }: Props) {
   const styles = {
+    idee: 'bg-blue-50 text-blue-700 border border-blue-200',
     pilot: 'bg-gray-100 text-gray-600 border border-gray-300',
     bewezen: 'bg-orange-50 text-orange-700 border border-orange-200',
     schaalbaar: 'bg-green-50 text-green-700 border border-green-200',
   };
 
   const labels = {
+    idee: 'Idee',
     pilot: 'Pilot',
     bewezen: 'Bewezen',
     schaalbaar: 'Schaalbaar',

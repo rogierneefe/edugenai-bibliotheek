@@ -29,8 +29,8 @@ export default function PersonasPage() {
           <div>
             <h1 className="text-3xl font-semibold text-gray-950 mb-2">Persona Lens</h1>
             <p className="text-sm leading-6 text-gray-600 max-w-2xl">
-              Welke AI-toepassingen zijn relevant voor jouw rol? Verken {totalUsecases} use cases en{' '}
-              {totalBlueprints} recepten door de bril van onderwijsprofessionals, studenten, ondersteuners,
+              Welke AI-toepassingen zijn relevant voor jouw rol? Verken {totalUsecases} ideeën en{' '}
+              {totalBlueprints} idee-recepten door de bril van onderwijsprofessionals, studenten, ondersteuners,
               adviseurs en leidinggevenden.
             </p>
           </div>

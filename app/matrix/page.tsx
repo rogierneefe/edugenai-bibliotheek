@@ -1,19 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 import horaProcessenData from '@/data/hora-processen.json';
+import sourceSummary from '@/data/source-summary.json';
 import { HoraProces } from '@/lib/types';
 import OpportunityMatrix from '@/components/OpportunityMatrix';
 
 const horaProcessen = horaProcessenData as HoraProces[];
+const mappedProcessen = horaProcessen.filter(p => !p.is_mapping_bucket);
 
 export const metadata = { title: 'Opportunity Matrix — EduGenAI Bibliotheek' };
 
 export default function MatrixPage() {
   const quadrantCounts = {
-    automatiseren: horaProcessen.filter(p => p.ai_value === 'automatiseren').length,
-    versnellen: horaProcessen.filter(p => p.ai_value === 'versnellen').length,
-    augmenteren: horaProcessen.filter(p => p.ai_value === 'augmenteren').length,
-    verkennen: horaProcessen.filter(p => p.ai_value === 'verkennen').length,
+    automatiseren: mappedProcessen.filter(p => p.ai_value === 'automatiseren').length,
+    versnellen: mappedProcessen.filter(p => p.ai_value === 'versnellen').length,
+    augmenteren: mappedProcessen.filter(p => p.ai_value === 'augmenteren').length,
+    verkennen: mappedProcessen.filter(p => p.ai_value === 'verkennen').length,
   };
 
   return (
@@ -25,9 +27,9 @@ export default function MatrixPage() {
         </Link>
         <h1 className="text-3xl font-semibold text-gray-950 mb-2">Opportunity Matrix</h1>
         <p className="text-sm leading-6 text-gray-600 max-w-2xl mb-4">
-          Waar kun je AI het best inzetten? De 11 HORA-processen gepositioneerd op frequentie en
-          variabiliteit. Niet als eindantwoord, maar als gespreksstarter voor prioritering,
-          randvoorwaarden en opschaling.
+          Waar kun je AI het best inzetten? De HORA- en MORA-processen worden als aparte views
+          gepositioneerd op frequentie en variabiliteit. De huidige bron bevat {sourceSummary.ideaUseCasesLoaded}
+          ideeën uit de xlsx; pilot-use-cases zijn nog niet als aparte dataset geladen.
         </p>
 
         {/* Summary stats */}
