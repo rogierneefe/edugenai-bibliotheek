@@ -78,7 +78,11 @@ export default function BlueprintCard({ blueprint, horaProcessen, compact = fals
             )}
           </div>
           <div className="flex items-center justify-between text-xs text-gray-400">
-            <span>{blueprint.evidence_label ?? `${blueprint.use_case_ids.length} use cases`}</span>
+            <span>
+              {blueprint.communityStats
+                ? `${blueprint.communityStats.startedUseCaseCount} gestart · ${blueprint.communityStats.pilotCount} pilots`
+                : blueprint.evidence_label ?? `${blueprint.use_case_ids.length} use cases`}
+            </span>
             <span style={{ color: procesKleur }}>{proces ? getProcessLabel(proces, processView) : blueprint.hora_process}</span>
           </div>
         </div>

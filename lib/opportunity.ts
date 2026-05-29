@@ -108,7 +108,19 @@ export function getVariabilityLabel(value?: number): ProcessVariability {
 }
 
 export function getAIValue(proces: HoraProces): AIValue {
-  return proces.ai_value ?? 'verkennen';
+  const frequency = getFrequencyLabel(proces.frequency);
+  const variability = getVariabilityLabel(proces.variability);
+  return getAIValueFromProcessCharacter(frequency, variability);
+}
+
+export function getAIValueFromProcessCharacter(
+  frequency: ProcessFrequency,
+  variability: ProcessVariability
+): AIValue {
+  if (variability === 'variabel') return 'augmenteren';
+  if (variability === 'gestandaardiseerd' && frequency !== 'incidenteel') return 'automatiseren';
+  if (variability === 'gemengd' && frequency !== 'incidenteel') return 'versnellen';
+  return 'verkennen';
 }
 
 export function getOpportunityLabel(proces: HoraProces): string {

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "persona-agent",
+    "title": "Persona/agent",
+    "count": 18,
+    "interpretation": "AI wordt vaak als rol- of taakgerichte assistent geformuleerd; dit vraagt om duidelijke taakgrenzen en overdracht naar mensen.",
+    "blueprintIds": [
+      "BP-06",
+      "BP-07"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ]
+  },
+  {
+    "id": "feedback-rubric",
+    "title": "Feedback/rubric",
+    "count": 16,
+    "interpretation": "Rubrics en feedback zijn een volwassen herhaalpatroon met hoge procesdruk en duidelijke kwaliteitsvragen.",
+    "blueprintIds": [
+      "BP-01",
+      "BP-02",
+      "BP-03"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ]
+  },
+  {
+    "id": "inclusie-toegankelijkheid",
+    "title": "Inclusie/toegankelijkheid",
+    "count": 8,
+    "interpretation": "Toegankelijkheid komt terug als ondersteunend patroon, maar is nog beperkt als zelfstandige blueprint uitgewerkt.",
+    "blueprintIds": [
+      "BP-06"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling"
+    ]
+  },
+  {
+    "id": "chatbot-qa",
+    "title": "Chatbot/Q&A",
+    "count": 14,
+    "interpretation": "Q&A-cases richten zich op beschikbaarheid van informatie en reductie van herhaalde vragen.",
+    "blueprintIds": [
+      "BP-06"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling"
+    ]
+  },
+  {
+    "id": "rag-document-qa",
+    "title": "RAG/document-Q&A",
+    "count": 12,
+    "interpretation": "Document-Q&A maakt verspreide bronnen bruikbaar, vooral in beleid, contracten en kennisintensieve ondersteuning.",
+    "blueprintIds": [
+      "BP-08"
+    ],
+    "painPointIds": [
+      "pp-documentanalyse"
+    ]
+  },
+  {
+    "id": "simulatie-roleplay",
+    "title": "Simulatie/roleplay",
+    "count": 9,
+    "interpretation": "Simulaties worden gebruikt om veilig te oefenen met beroepssituaties, gesprek en handelen.",
+    "blueprintIds": [
+      "BP-07"
+    ],
+    "painPointIds": [
+      "pp-simulatie-oefenen"
+    ]
+  },
+  {
+    "id": "contentgeneratie",
+    "title": "Contentgeneratie",
+    "count": 15,
+    "interpretation": "Contentgeneratie versnelt ontwerp en communicatie, maar vraagt toetsing op kwaliteit en context.",
+    "blueprintIds": [
+      "BP-04",
+      "BP-10"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming",
+      "pp-communicatie-volume"
+    ]
+  },
+  {
+    "id": "toetsvragen",
+    "title": "Toetsvragen",
+    "count": 10,
+    "interpretation": "Toetsvragen zijn een duidelijk ontwerppatroon, gekoppeld aan toetskwaliteit en consistentie.",
+    "blueprintIds": [
+      "BP-03"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ]
+  },
+  {
+    "id": "survey-analyse",
+    "title": "Survey-analyse",
+    "count": 6,
+    "interpretation": "Survey-analyse ontsluit open tekst en evaluaties, vooral voor kwaliteitszorg en onderzoek.",
+    "blueprintIds": [
+      "BP-09"
+    ],
+    "painPointIds": [
+      "pp-open-evaluaties"
+    ]
+  },
+  {
+    "id": "contractanalyse",
+    "title": "Contractanalyse",
+    "count": 4,
+    "interpretation": "Contractanalyse is klein in volume maar hoog in compliancewaarde.",
+    "blueprintIds": [
+      "BP-08"
+    ],
+    "painPointIds": [
+      "pp-documentanalyse"
+    ]
+  }
+]

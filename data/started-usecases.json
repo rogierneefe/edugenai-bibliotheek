@@ -1,0 +1,3160 @@
+[
+  {
+    "id": "suc-001",
+    "titel": "Toetsing & feedback communitycase 1",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gevalideerde-aanpak",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-002",
+    "titel": "Toetsing & feedback communitycase 2",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "pilot",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-003",
+    "titel": "Toetsing & feedback communitycase 3",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "pilot",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-004",
+    "titel": "Toetsing & feedback communitycase 4",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-005",
+    "titel": "Toetsing & feedback communitycase 5",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "pilot",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-006",
+    "titel": "Toetsing & feedback communitycase 6",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "pilot",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-007",
+    "titel": "Toetsing & feedback communitycase 7",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-008",
+    "titel": "Toetsing & feedback communitycase 8",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-009",
+    "titel": "Toetsing & feedback communitycase 9",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-010",
+    "titel": "Toetsing & feedback communitycase 10",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-011",
+    "titel": "Toetsing & feedback communitycase 11",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-012",
+    "titel": "Toetsing & feedback communitycase 12",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-013",
+    "titel": "Toetsing & feedback communitycase 13",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-014",
+    "titel": "Toetsing & feedback communitycase 14",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-015",
+    "titel": "Toetsing & feedback communitycase 15",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-016",
+    "titel": "Toetsing & feedback communitycase 16",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-017",
+    "titel": "Toetsing & feedback communitycase 17",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-018",
+    "titel": "Toetsing & feedback communitycase 18",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-019",
+    "titel": "Toetsing & feedback communitycase 19",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-020",
+    "titel": "Toetsing & feedback communitycase 20",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-021",
+    "titel": "Toetsing & feedback communitycase 21",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-022",
+    "titel": "Toetsing & feedback communitycase 22",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-023",
+    "titel": "Toetsing & feedback communitycase 23",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-024",
+    "titel": "Toetsing & feedback communitycase 24",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-025",
+    "titel": "Toetsing & feedback communitycase 25",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-01"
+    ]
+  },
+  {
+    "id": "suc-026",
+    "titel": "Toetsing & feedback communitycase 26",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "toetsvragen"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-02"
+    ]
+  },
+  {
+    "id": "suc-027",
+    "titel": "Toetsing & feedback communitycase 27",
+    "beschrijving": "Community-inbreng rond toetsing & feedback. De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "toetsing-feedback",
+    "functionelePatronen": [
+      "feedback-rubric"
+    ],
+    "processen": [
+      "toetsing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-feedback-tijd"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprints": [
+      "BP-03"
+    ]
+  },
+  {
+    "id": "suc-028",
+    "titel": "Onderwijsontwikkeling communitycase 1",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-029",
+    "titel": "Onderwijsontwikkeling communitycase 2",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "pilot",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-030",
+    "titel": "Onderwijsontwikkeling communitycase 3",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "pilot",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-031",
+    "titel": "Onderwijsontwikkeling communitycase 4",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-032",
+    "titel": "Onderwijsontwikkeling communitycase 5",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-033",
+    "titel": "Onderwijsontwikkeling communitycase 6",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-034",
+    "titel": "Onderwijsontwikkeling communitycase 7",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-035",
+    "titel": "Onderwijsontwikkeling communitycase 8",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-036",
+    "titel": "Onderwijsontwikkeling communitycase 9",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-037",
+    "titel": "Onderwijsontwikkeling communitycase 10",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-038",
+    "titel": "Onderwijsontwikkeling communitycase 11",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-039",
+    "titel": "Onderwijsontwikkeling communitycase 12",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-040",
+    "titel": "Onderwijsontwikkeling communitycase 13",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-041",
+    "titel": "Onderwijsontwikkeling communitycase 14",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-042",
+    "titel": "Onderwijsontwikkeling communitycase 15",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-043",
+    "titel": "Onderwijsontwikkeling communitycase 16",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-044",
+    "titel": "Onderwijsontwikkeling communitycase 17",
+    "beschrijving": "Community-inbreng rond onderwijsontwikkeling. Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsontwikkeling",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "onderwijs-ontwerpen"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-045",
+    "titel": "Onderwijsuitvoering & leren communitycase 1",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "pilot",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-046",
+    "titel": "Onderwijsuitvoering & leren communitycase 2",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "inclusie-toegankelijkheid"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-07"
+    ]
+  },
+  {
+    "id": "suc-047",
+    "titel": "Onderwijsuitvoering & leren communitycase 3",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "pilot",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "chatbot-qa"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-048",
+    "titel": "Onderwijsuitvoering & leren communitycase 4",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "simulatie-roleplay"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-07"
+    ]
+  },
+  {
+    "id": "suc-049",
+    "titel": "Onderwijsuitvoering & leren communitycase 5",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-050",
+    "titel": "Onderwijsuitvoering & leren communitycase 6",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "inclusie-toegankelijkheid"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-07"
+    ]
+  },
+  {
+    "id": "suc-051",
+    "titel": "Onderwijsuitvoering & leren communitycase 7",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "chatbot-qa"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-052",
+    "titel": "Onderwijsuitvoering & leren communitycase 8",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "simulatie-roleplay"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-07"
+    ]
+  },
+  {
+    "id": "suc-053",
+    "titel": "Onderwijsuitvoering & leren communitycase 9",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-054",
+    "titel": "Onderwijsuitvoering & leren communitycase 10",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "inclusie-toegankelijkheid"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-07"
+    ]
+  },
+  {
+    "id": "suc-055",
+    "titel": "Onderwijsuitvoering & leren communitycase 11",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "chatbot-qa"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-056",
+    "titel": "Onderwijsuitvoering & leren communitycase 12",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "simulatie-roleplay"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-07"
+    ]
+  },
+  {
+    "id": "suc-057",
+    "titel": "Onderwijsuitvoering & leren communitycase 13",
+    "beschrijving": "Community-inbreng rond onderwijsuitvoering & leren. Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderwijsuitvoering-leren",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootcauses": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-058",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 1",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-059",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 2",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "pilot",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-060",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 3",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-061",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 4",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-062",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 5",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-063",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 6",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-064",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 7",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-065",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 8",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-066",
+    "titel": "Onderzoek & kwaliteitszorg communitycase 9",
+    "beschrijving": "Community-inbreng rond onderzoek & kwaliteitszorg. AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onderzoek-kwaliteitszorg",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "onderzoek",
+      "besturing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-open-evaluaties"
+    ],
+    "rootcauses": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-067",
+    "titel": "Bedrijfsvoering & support communitycase 1",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "rag-document-qa"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-08"
+    ]
+  },
+  {
+    "id": "suc-068",
+    "titel": "Bedrijfsvoering & support communitycase 2",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "pilot",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-069",
+    "titel": "Bedrijfsvoering & support communitycase 3",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-10"
+    ]
+  },
+  {
+    "id": "suc-070",
+    "titel": "Bedrijfsvoering & support communitycase 4",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "contractanalyse"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-08"
+    ]
+  },
+  {
+    "id": "suc-071",
+    "titel": "Bedrijfsvoering & support communitycase 5",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "rag-document-qa"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-072",
+    "titel": "Bedrijfsvoering & support communitycase 6",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-10"
+    ]
+  },
+  {
+    "id": "suc-073",
+    "titel": "Bedrijfsvoering & support communitycase 7",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "survey-analyse"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-08"
+    ]
+  },
+  {
+    "id": "suc-074",
+    "titel": "Bedrijfsvoering & support communitycase 8",
+    "beschrijving": "Community-inbreng rond bedrijfsvoering & support. Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "bedrijfsvoering-support",
+    "functionelePatronen": [
+      "contractanalyse"
+    ],
+    "processen": [
+      "besturing",
+      "marketing"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprints": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "suc-075",
+    "titel": "Studentbegeleiding & coaching communitycase 1",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "pilot",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-076",
+    "titel": "Studentbegeleiding & coaching communitycase 2",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "inclusie-toegankelijkheid"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-077",
+    "titel": "Studentbegeleiding & coaching communitycase 3",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "chatbot-qa"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-078",
+    "titel": "Studentbegeleiding & coaching communitycase 4",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-079",
+    "titel": "Studentbegeleiding & coaching communitycase 5",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "inclusie-toegankelijkheid"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-080",
+    "titel": "Studentbegeleiding & coaching communitycase 6",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "chatbot-qa"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-081",
+    "titel": "Studentbegeleiding & coaching communitycase 7",
+    "beschrijving": "Community-inbreng rond studentbegeleiding & coaching. De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "studentbegeleiding-coaching",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "studentbegeleiding"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprints": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "suc-082",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 1",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "pilot",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-083",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 2",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-084",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 3",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-085",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 4",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-086",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 5",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-087",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 6",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-05"
+    ]
+  },
+  {
+    "id": "suc-088",
+    "titel": "Docentprofessionalisering & AI-literacy communitycase 7",
+    "beschrijving": "Community-inbreng rond docentprofessionalisering & ai-literacy. Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "docentprofessionalisering-ai-literacy",
+    "functionelePatronen": [
+      "contentgeneratie"
+    ],
+    "processen": [
+      "hrm",
+      "innovatie"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootcauses": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprints": [
+      "BP-04"
+    ]
+  },
+  {
+    "id": "suc-089",
+    "titel": "IT/Techniek & platform communitycase 1",
+    "beschrijving": "Community-inbreng rond it/techniek & platform. Er zijn weinig expliciete platformcases, terwijl veel toepassingen er wel afhankelijk van zijn. Dit is een architectuurwitte vlek.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "it-techniek-platform",
+    "functionelePatronen": [
+      "rag-document-qa"
+    ],
+    "processen": [
+      "ict"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar",
+      "rc-kwaliteit-betrouwbaarheid"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-090",
+    "titel": "IT/Techniek & platform communitycase 2",
+    "beschrijving": "Community-inbreng rond it/techniek & platform. Er zijn weinig expliciete platformcases, terwijl veel toepassingen er wel afhankelijk van zijn. Dit is een architectuurwitte vlek.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "it-techniek-platform",
+    "functionelePatronen": [
+      "rag-document-qa"
+    ],
+    "processen": [
+      "ict"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [
+      "pp-vragen-herhaling"
+    ],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar",
+      "rc-kwaliteit-betrouwbaarheid"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-091",
+    "titel": "Onvolledig/overig communitycase 1",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-092",
+    "titel": "Onvolledig/overig communitycase 2",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-093",
+    "titel": "Onvolledig/overig communitycase 3",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-094",
+    "titel": "Onvolledig/overig communitycase 4",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-095",
+    "titel": "Onvolledig/overig communitycase 5",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-096",
+    "titel": "Onvolledig/overig communitycase 6",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-097",
+    "titel": "Onvolledig/overig communitycase 7",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-098",
+    "titel": "Onvolledig/overig communitycase 8",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-099",
+    "titel": "Onvolledig/overig communitycase 9",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-100",
+    "titel": "Onvolledig/overig communitycase 10",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-101",
+    "titel": "Onvolledig/overig communitycase 11",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-102",
+    "titel": "Onvolledig/overig communitycase 12",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-103",
+    "titel": "Onvolledig/overig communitycase 13",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-104",
+    "titel": "Onvolledig/overig communitycase 14",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-105",
+    "titel": "Onvolledig/overig communitycase 15",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-106",
+    "titel": "Onvolledig/overig communitycase 16",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-107",
+    "titel": "Onvolledig/overig communitycase 17",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-108",
+    "titel": "Onvolledig/overig communitycase 18",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-109",
+    "titel": "Onvolledig/overig communitycase 19",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-110",
+    "titel": "Onvolledig/overig communitycase 20",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "onderwijskundig"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-111",
+    "titel": "Onvolledig/overig communitycase 21",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "docent"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-112",
+    "titel": "Onvolledig/overig communitycase 22",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "mbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "student"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-113",
+    "titel": "Onvolledig/overig communitycase 23",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "hbo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "medewerker"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  },
+  {
+    "id": "suc-114",
+    "titel": "Onvolledig/overig communitycase 24",
+    "beschrijving": "Community-inbreng rond onvolledig/overig. Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "instelling": "Community-inbreng, instelling niet gespecificeerd",
+    "sector": "wo",
+    "status": "gestarte-use-case",
+    "hotspotdomein": "onvolledig-overig",
+    "functionelePatronen": [
+      "persona-agent"
+    ],
+    "processen": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "personas": [
+      "manager"
+    ],
+    "painpoints": [],
+    "rootcauses": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprints": []
+  }
+]

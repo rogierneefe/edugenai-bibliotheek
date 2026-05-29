@@ -3,8 +3,11 @@ import Link from 'next/link';
 
 import blueprintsData from '@/data/blueprints.json';
 import usecasesData from '@/data/usecases.json';
+import startedUseCasesData from '@/data/started-usecases.json';
 import horaProcessenData from '@/data/hora-processen.json';
-import { Blueprint, UseCase, HoraProces } from '@/lib/types';
+import painpointsData from '@/data/painpoints.json';
+import rootCausesData from '@/data/root-causes.json';
+import { Blueprint, UseCase, HoraProces, PainPoint, RootCause, StartedUseCase } from '@/lib/types';
 import MaturityBadge from '@/components/MaturityBadge';
 import ProcessBadge from '@/components/ProcessBadge';
 import CopyButton from '@/components/CopyButton';
@@ -14,7 +17,10 @@ import { aiValueConfig, getFrequencyLabel, getVariabilityLabel } from '@/lib/opp
 
 const blueprints = blueprintsData as Blueprint[];
 const usecases = usecasesData as UseCase[];
+const startedUseCases = startedUseCasesData as StartedUseCase[];
 const horaProcessen = horaProcessenData as HoraProces[];
+const painpoints = painpointsData as PainPoint[];
+const rootCauses = rootCausesData as RootCause[];
 
 export async function generateStaticParams() {
   return blueprints.map(bp => ({ blueprintId: bp.id }));
@@ -66,6 +72,9 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
   const procesKleur = horaProces?.kleur ?? '#888888';
   const relatedBps = getRelatedBlueprints(blueprints, bp, 3);
   const bpUseCases = usecases.filter(uc => bp.use_case_ids.includes(uc.id));
+  const bpStartedUseCases = startedUseCases.filter(uc => uc.blueprints.includes(bp.id));
+  const bpPainpoints = painpoints.filter(painpoint => bp.painPointIds.includes(painpoint.id));
+  const bpRootCauses = rootCauses.filter(rootCause => bp.rootCauseIds.includes(rootCause.id));
   const currentIndex = blueprints.findIndex(b => b.id === bp.id);
   const prevBp = currentIndex > 0 ? blueprints[currentIndex - 1] : null;
   const nextBp = currentIndex < blueprints.length - 1 ? blueprints[currentIndex + 1] : null;
@@ -138,6 +147,99 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
                 Procesinschatting: {getFrequencyLabel(horaProces.frequency)} frequentie · {getVariabilityLabel(horaProces.variability)} variabiliteit.
               </p>
             )}
+          </section>
+        )}
+
+        <section className="mb-6 rounded-xl border border-gray-200 bg-white p-4">
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">BPI-analyse</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold text-gray-900 mb-2">Knelpunten</p>
+              <ul className="space-y-2">
+                {bpPainpoints.map(painpoint => (
+                  <li key={painpoint.id} className="text-sm leading-5 text-gray-600">
+                    {painpoint.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-gray-900 mb-2">Oorzaken</p>
+              <div className="flex flex-wrap gap-1.5">
+                {bpRootCauses.map(rootCause => (
+                  <span key={rootCause.id} className="rounded-full border border-gray-200 bg-stone-50 px-2 py-0.5 text-[11px] text-gray-600">
+                    {rootCause.informationDimension}: {rootCause.title}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {bp.valueDrivers.map(driver => (
+              <span key={driver} className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-700">
+                {driver}
+              </span>
+            ))}
+            {bp.improvementGoals.map(goal => (
+              <span key={goal} className="rounded-full bg-green-50 px-2 py-0.5 text-[11px] font-medium text-green-700">
+                {goal}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {bp.communityStats && (
+          <section className="mb-6 rounded-xl border border-gray-200 bg-white p-4">
+            <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Communitylaag</p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <MiniStat label="ideeën" value={bp.communityStats.ideaCount} />
+              <MiniStat label="gestarte use cases" value={bp.communityStats.startedUseCaseCount} />
+              <MiniStat label="pilots" value={bp.communityStats.pilotCount} />
+              <MiniStat label="gevalideerd" value={bp.communityStats.validatedCount} />
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div>
+                <p className="mb-2 text-xs font-semibold text-gray-900">Hotspotdomeinen</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {bp.hotspotDomains?.map(domain => (
+                    <span key={domain} className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-700">
+                      {domain}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="mb-2 text-xs font-semibold text-gray-900">Functionele patronen</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {bp.functionalPatterns?.map(pattern => (
+                    <span key={pattern} className="rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-medium text-indigo-700">
+                      {pattern}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {bpStartedUseCases.length > 0 && (
+          <section className="mb-6 rounded-xl border border-gray-200 bg-white p-4">
+            <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
+              Gestarte use cases in de community ({bpStartedUseCases.length})
+            </p>
+            <div className="space-y-2">
+              {bpStartedUseCases.slice(0, 8).map(useCase => (
+                <div key={useCase.id} className="rounded-lg bg-stone-50 p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-sm font-medium text-gray-800">{useCase.titel}</p>
+                    <span className="rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-gray-600">
+                      {useCase.status}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs leading-5 text-gray-500">{useCase.instelling} · {useCase.sector}</p>
+                </div>
+              ))}
+            </div>
           </section>
         )}
 
@@ -295,6 +397,15 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
           ) : <span />}
         </div>
       </div>
+    </div>
+  );
+}
+
+function MiniStat({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="rounded-lg bg-stone-50 p-3 text-center">
+      <div className="text-lg font-semibold text-gray-950">{value}</div>
+      <div className="text-[10px] uppercase tracking-wide text-gray-400">{label}</div>
     </div>
   );
 }

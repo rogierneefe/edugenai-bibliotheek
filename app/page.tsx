@@ -5,14 +5,37 @@ import horaProcessenData from '@/data/hora-processen.json';
 import personasData from '@/data/personas.json';
 import usecasesData from '@/data/usecases.json';
 import sourceSummary from '@/data/source-summary.json';
-import { Blueprint, HoraProces, Persona, UseCase } from '@/lib/types';
+import communityInsightsData from '@/data/community-insights.json';
+import hotspotSummaryData from '@/data/hotspot-summary.json';
+import functionalPatternsData from '@/data/functional-patterns.json';
+import painpointsData from '@/data/painpoints.json';
+import rootCausesData from '@/data/root-causes.json';
+import startedUseCasesData from '@/data/started-usecases.json';
+import {
+  Blueprint,
+  FunctionalPattern,
+  HoraProces,
+  HotspotDomain,
+  PainPoint,
+  Persona,
+  RootCause,
+  StartedUseCase,
+  UseCase,
+} from '@/lib/types';
 import BlueprintCard from '@/components/BlueprintCard';
+import CompassExplorer from '@/components/CompassExplorer';
 import { aiValueConfig, getAIValue, personaLensCopy } from '@/lib/opportunity';
 
 const blueprints = blueprintsData as Blueprint[];
 const horaProcessen = horaProcessenData as HoraProces[];
 const personas = personasData as Persona[];
 const usecases = usecasesData as UseCase[];
+const communityInsights = communityInsightsData;
+const hotspotSummary = hotspotSummaryData as HotspotDomain[];
+const functionalPatterns = functionalPatternsData as FunctionalPattern[];
+const painpoints = painpointsData as PainPoint[];
+const rootCauses = rootCausesData as RootCause[];
+const startedUseCases = startedUseCasesData as StartedUseCase[];
 
 const audienceOrder = ['docent', 'student', 'medewerker', 'manager', 'onderwijskundig'];
 
@@ -29,20 +52,29 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen surface-subtle">
+      <CompassExplorer
+        personas={personas}
+        painpoints={painpoints}
+        rootCauses={rootCauses}
+        blueprints={blueprints}
+        startedUseCases={startedUseCases}
+        processes={horaProcessen}
+      />
+
       <section className="border-b border-stone-200 bg-white/80">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_380px] lg:items-end">
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-gray-900 px-3 py-1 text-xs font-medium text-white">V2</span>
-                <span className="text-sm font-medium text-gray-500">EduGenAI Opportunity Bibliotheek · Npuls</span>
+                <span className="rounded-full bg-gray-900 px-3 py-1 text-xs font-medium text-white">V3C</span>
+                <span className="text-sm font-medium text-gray-500">EduGenAI Compass · Npuls</span>
               </div>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-gray-950 md:text-5xl">
-                Vind de AI-kansen die passen bij jouw onderwijspraktijk.
-              </h1>
+              <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-gray-950 md:text-4xl">
+                Van communitysignaal naar procesverbetering.
+              </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-600">
-                Combineer herkenbare idee-recepten met een opportunity map op HORA of MORA:
-                procesfrequentie, variabiliteit en waarde.
+                Gebruik de onderliggende data om patronen te toetsen: waar starten instellingen,
+                welke oorzaken keren terug, en welke blueprints zijn herbruikbaar?
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/personas" className="rounded-lg bg-gray-950 px-5 py-3 text-sm font-medium text-white hover:bg-gray-800">
@@ -59,11 +91,13 @@ export default function HomePage() {
 
             <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm">
               <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Databasis</p>
-              <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="mt-4 grid grid-cols-2 gap-3">
                 <Metric value={sourceSummary.ideaUseCasesLoaded} label="ideeën" />
-                <Metric value={sourceSummary.pilotUseCasesLoaded} label="pilots" />
-                <Metric value={blueprints.length} label="idee-recepten" />
+                <Metric value={communityInsights.totals.startedUseCases} label="gestarte use cases" />
+                <Metric value={blueprints.length} label="blueprints" />
+                <Metric value={communityInsights.totals.pilotExamples} label="pilotvoorbeelden" />
               </div>
+              <p className="mt-3 text-xs leading-5 text-gray-500">{communityInsights.totals.pilotEvidenceNote}</p>
               <div className="mt-5 grid grid-cols-2 gap-2">
                 {Object.entries(aiValueConfig).map(([value, config]) => (
                   <Link
@@ -77,6 +111,45 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-stone-200 bg-white py-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-5">
+            <h2 className="text-xl font-semibold text-gray-950">Community intelligence</h2>
+            <p className="mt-1 max-w-2xl text-sm text-gray-500">
+              Deze laag laat zien waar instellingen daadwerkelijk starten: hotspotdomeinen, patronen, oorzaken en witte vlekken.
+            </p>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+            <div className="rounded-xl border border-stone-200 bg-stone-50 p-4">
+              <h3 className="text-sm font-semibold text-gray-900">Hotspotdomeinen</h3>
+              <div className="mt-4 space-y-3">
+                {hotspotSummary.slice(0, 6).map(domain => (
+                  <div key={domain.id} className="grid gap-3 sm:grid-cols-[220px_minmax(0,1fr)_48px] sm:items-center">
+                    <div>
+                      <p className="text-sm font-medium text-gray-800">{domain.title}</p>
+                      <p className="line-clamp-1 text-xs text-gray-500">{domain.interpretation}</p>
+                    </div>
+                    <div className="h-2 rounded-full bg-white">
+                      <div className="h-full rounded-full bg-gray-900" style={{ width: `${(domain.count / hotspotSummary[0].count) * 100}%` }} />
+                    </div>
+                    <div className="text-right text-sm font-semibold text-gray-700">{domain.count}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-4">
+              <InsightList title="Meest voorkomende knelpunten" items={communityInsights.topPainPoints} />
+              <InsightList title="Meest voorkomende oorzaken" items={communityInsights.topRootCauses} />
+            </div>
+          </div>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            <InsightList title="Functionele patronen" items={functionalPatterns.slice(0, 5)} />
+            <InsightList title="Meest gebruikte blueprints" items={communityInsights.topBlueprints.map((item: { id: string; title: string; startedUseCaseCount: number; pilotCount: number }) => ({ ...item, count: item.startedUseCaseCount }))} />
+            <InsightList title="Witte vlekken" items={communityInsights.whiteSpots} />
           </div>
         </div>
       </section>
@@ -161,8 +234,27 @@ export default function HomePage() {
       </section>
 
       <footer className="py-8 text-center">
-        <p className="text-sm text-gray-400">EduGenAI Bibliotheek V2 · Npuls · 2026</p>
+        <p className="text-sm text-gray-400">EduGenAI Compass V3C · Npuls · 2026</p>
       </footer>
+    </div>
+  );
+}
+
+function InsightList({ title, items }: { title: string; items: Array<{ title: string; count: number; interpretation?: string }> }) {
+  return (
+    <div className="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
+      <h3 className="text-sm font-semibold text-gray-900">{title}</h3>
+      <div className="mt-3 space-y-2">
+        {items.map(item => (
+          <div key={item.title} className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm text-gray-700">{item.title}</p>
+              {item.interpretation && <p className="mt-0.5 line-clamp-2 text-xs text-gray-500">{item.interpretation}</p>}
+            </div>
+            <span className="rounded-full bg-stone-100 px-2 py-0.5 text-xs font-medium text-gray-600">{item.count}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,268 @@
+[
+  {
+    "id": "rc-tijd-niet-beschikbaar",
+    "title": "Informatie is niet beschikbaar op het moment van behoefte",
+    "description": "Professionals of studenten moeten wachten op feedback, duiding, planning of besluitinformatie.",
+    "informationDimension": "tijd",
+    "improvementGoals": [
+      "doorlooptijd",
+      "beschikbaarheid"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd",
+      "pp-vragen-herhaling"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02",
+      "BP-06"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "personalisatie"
+    ]
+  },
+  {
+    "id": "rc-tijd-wachttijden",
+    "title": "Wachttijden stapelen op in het proces",
+    "description": "Door afhankelijkheden tussen mensen, systemen of controles ontstaat vertraging voordat werk verder kan.",
+    "informationDimension": "tijd",
+    "improvementGoals": [
+      "doorlooptijd",
+      "kosten"
+    ],
+    "painPointIds": [
+      "pp-rapportage-verslaglegging"
+    ],
+    "blueprintIds": [
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "tijdswinst"
+    ]
+  },
+  {
+    "id": "rc-plaats-verspreid",
+    "title": "Informatie zit verspreid over bronnen",
+    "description": "Benodigde context staat in documenten, mails, systemen of notities en moet handmatig worden samengebracht.",
+    "informationDimension": "plaats",
+    "improvementGoals": [
+      "beschikbaarheid",
+      "kwaliteit"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming",
+      "pp-documentanalyse"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05",
+      "BP-08"
+    ],
+    "valueDrivers": [
+      "inzicht",
+      "tijdswinst"
+    ]
+  },
+  {
+    "id": "rc-plaats-niet-vindbaar",
+    "title": "Informatie is niet goed vindbaar",
+    "description": "Gebruikers weten niet waar de juiste bron staat of welke versie actueel is.",
+    "informationDimension": "plaats",
+    "improvementGoals": [
+      "beschikbaarheid",
+      "consistentie"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling"
+    ],
+    "blueprintIds": [
+      "BP-06"
+    ],
+    "valueDrivers": [
+      "inzicht",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "rc-vorm-herverwerking",
+    "title": "Informatie moet telkens opnieuw worden verwerkt",
+    "description": "Teksten, rubrics, verslagen of data moeten steeds opnieuw worden samengevat, herschreven of vertaald naar een bruikbare vorm.",
+    "informationDimension": "vorm",
+    "improvementGoals": [
+      "doorlooptijd",
+      "consistentie"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming",
+      "pp-communicatie-volume",
+      "pp-simulatie-oefenen",
+      "pp-rapportage-verslaglegging"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05",
+      "BP-10",
+      "BP-07",
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "rc-vorm-ongestructureerd",
+    "title": "Informatie is ongestructureerd",
+    "description": "Open antwoorden, documenten of gesprekken bevatten waardevolle signalen, maar niet in een vorm die makkelijk te analyseren is.",
+    "informationDimension": "vorm",
+    "improvementGoals": [
+      "kwaliteit",
+      "consistentie"
+    ],
+    "painPointIds": [
+      "pp-open-evaluaties",
+      "pp-rapportage-verslaglegging"
+    ],
+    "blueprintIds": [
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "inzicht",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "rc-kwantiteit-documenten",
+    "title": "Er zijn teveel documenten om handmatig te analyseren",
+    "description": "Het volume aan beleidsstukken, contracten, bronnen of dossiers is groter dan mensen praktisch kunnen verwerken.",
+    "informationDimension": "kwantiteit",
+    "improvementGoals": [
+      "doorlooptijd",
+      "compliance"
+    ],
+    "painPointIds": [
+      "pp-open-evaluaties",
+      "pp-documentanalyse"
+    ],
+    "blueprintIds": [
+      "BP-09",
+      "BP-08"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "compliance",
+      "inzicht"
+    ]
+  },
+  {
+    "id": "rc-kwantiteit-opdrachten",
+    "title": "Er zijn teveel opdrachten of producten om tijdig te beoordelen",
+    "description": "Grote aantallen studentproducten zorgen voor piekbelasting en late terugkoppeling.",
+    "informationDimension": "kwantiteit",
+    "improvementGoals": [
+      "doorlooptijd",
+      "kwaliteit"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "rc-kwantiteit-vragen",
+    "title": "Er komen teveel herhaalde vragen binnen",
+    "description": "Veel vragen gaan over bekende procedures, deadlines of uitleg en vragen steeds dezelfde afhandeling.",
+    "informationDimension": "kwantiteit",
+    "improvementGoals": [
+      "beschikbaarheid",
+      "kosten"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling",
+      "pp-communicatie-volume"
+    ],
+    "blueprintIds": [
+      "BP-06",
+      "BP-10"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "personalisatie"
+    ]
+  },
+  {
+    "id": "rc-kwaliteit-inconsistent",
+    "title": "Feedback of communicatie is inconsistent",
+    "description": "Verschillende mensen passen criteria, toon of inhoud net anders toe, waardoor kwaliteit wisselt.",
+    "informationDimension": "kwaliteit",
+    "improvementGoals": [
+      "consistentie",
+      "kwaliteit"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd",
+      "pp-communicatie-volume"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02",
+      "BP-10"
+    ],
+    "valueDrivers": [
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "rc-kwaliteit-interpretaties",
+    "title": "Interpretaties verschillen tussen beoordelaars of teams",
+    "description": "Criteria, beleid of signalen worden niet overal hetzelfde geïnterpreteerd.",
+    "informationDimension": "kwaliteit",
+    "improvementGoals": [
+      "consistentie",
+      "compliance"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming",
+      "pp-simulatie-oefenen"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05",
+      "BP-07"
+    ],
+    "valueDrivers": [
+      "kwaliteit",
+      "compliance"
+    ]
+  },
+  {
+    "id": "rc-kwaliteit-betrouwbaarheid",
+    "title": "Betrouwbaarheid van informatie is onzeker",
+    "description": "Bronnen, data of AI-output moeten worden gecontroleerd voordat ze verantwoord gebruikt kunnen worden.",
+    "informationDimension": "kwaliteit",
+    "improvementGoals": [
+      "kwaliteit",
+      "compliance"
+    ],
+    "painPointIds": [
+      "pp-open-evaluaties",
+      "pp-documentanalyse"
+    ],
+    "blueprintIds": [
+      "BP-09",
+      "BP-08"
+    ],
+    "valueDrivers": [
+      "kwaliteit",
+      "compliance"
+    ]
+  }
+]

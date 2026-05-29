@@ -14,7 +14,9 @@
     "mora_id": "communicatie-werving-en-relatiebeheer",
     "idea_count": 28,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "frequent",
+    "processVariability": "gestandaardiseerd"
   },
   {
     "id": "onderwijs-ontwerpen",
@@ -31,7 +33,9 @@
     "mora_id": "onderwijs-ontwikkelen",
     "idea_count": 19,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "frequent",
+    "processVariability": "gemengd"
   },
   {
     "id": "ict",
@@ -48,7 +52,9 @@
     "mora_id": "ict-en-informatiemanagement",
     "idea_count": 17,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "frequent",
+    "processVariability": "gestandaardiseerd"
   },
   {
     "id": "besturing",
@@ -59,13 +65,15 @@
     "blueprint_count": 2,
     "is_hotspot": false,
     "is_witte_vlek": false,
-    "ai_value": "verkennen",
+    "ai_value": "versnellen",
     "frequency": 3,
     "variability": 3,
     "mora_id": "besturing-bedrijfsvoering-en-kwaliteitszorg",
     "idea_count": 15,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "gemengd"
   },
   {
     "id": "onderzoek",
@@ -82,7 +90,9 @@
     "mora_id": "onderzoek-kwaliteit-en-kennisontwikkeling",
     "idea_count": 14,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "variabel"
   },
   {
     "id": "onderwijscontent",
@@ -99,7 +109,9 @@
     "mora_id": "leermiddelen-ontwikkelen-communicatie",
     "idea_count": 12,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "variabel"
   },
   {
     "id": "innovatie",
@@ -111,12 +123,14 @@
     "is_hotspot": false,
     "is_witte_vlek": true,
     "ai_value": "augmenteren",
-    "frequency": 3,
+    "frequency": 1,
     "variability": 5,
     "mora_id": "procesoverstijgend-innovatie",
     "idea_count": 12,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "incidenteel",
+    "processVariability": "variabel"
   },
   {
     "id": "logistiek",
@@ -127,13 +141,15 @@
     "blueprint_count": 0,
     "is_hotspot": false,
     "is_witte_vlek": true,
-    "ai_value": "verkennen",
+    "ai_value": "automatiseren",
     "frequency": 3,
     "variability": 1,
     "mora_id": "onderwijslogistiek-roosteren",
     "idea_count": 11,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "gestandaardiseerd"
   },
   {
     "id": "hrm",
@@ -144,13 +160,15 @@
     "blueprint_count": 0,
     "is_hotspot": false,
     "is_witte_vlek": false,
-    "ai_value": "verkennen",
+    "ai_value": "versnellen",
     "frequency": 3,
     "variability": 3,
     "mora_id": "hrm-professionalisering",
     "idea_count": 10,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "gemengd"
   },
   {
     "id": "toetsing",
@@ -161,13 +179,15 @@
     "blueprint_count": 3,
     "is_hotspot": true,
     "is_witte_vlek": false,
-    "ai_value": "verkennen",
+    "ai_value": "automatiseren",
     "frequency": 3,
     "variability": 1,
     "mora_id": "examineren-en-beoordelen",
     "idea_count": 9,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "gestandaardiseerd"
   },
   {
     "id": "studentbegeleiding",
@@ -178,13 +198,15 @@
     "blueprint_count": 2,
     "is_hotspot": false,
     "is_witte_vlek": true,
-    "ai_value": "verkennen",
+    "ai_value": "versnellen",
     "frequency": 3,
     "variability": 3,
     "mora_id": "begeleiden-student-onderwijs-uitvoeren",
     "idea_count": 9,
     "pilot_count": 0,
-    "is_mapping_bucket": false
+    "is_mapping_bucket": false,
+    "processFrequency": "regelmatig",
+    "processVariability": "gemengd"
   },
   {
     "id": "nog-te-koppelen",
@@ -193,8 +215,8 @@
     "kleur": "#9CA3AF",
     "is_hotspot": false,
     "is_witte_vlek": true,
-    "ai_value": "verkennen",
-    "frequency": 2,
+    "ai_value": "augmenteren",
+    "frequency": 1,
     "variability": 5,
     "description": "Ideeën uit de xlsx die nog geen HORA/MORA-proces hebben.",
     "mora_id": "nog-te-koppelen",
@@ -202,7 +224,9 @@
     "idea_count": 55,
     "pilot_count": 0,
     "blueprint_count": 0,
-    "is_mapping_bucket": true
+    "is_mapping_bucket": true,
+    "processFrequency": "incidenteel",
+    "processVariability": "variabel"
   },
   {
     "id": "niet-primair-hora",
@@ -211,15 +235,17 @@
     "kleur": "#6B7280",
     "is_hotspot": false,
     "is_witte_vlek": true,
-    "ai_value": "verkennen",
-    "frequency": 2,
-    "variability": 4,
+    "ai_value": "augmenteren",
+    "frequency": 1,
+    "variability": 5,
     "description": "Ideeën die in de xlsx buiten een primair HORA/MORA-proces zijn geplaatst.",
     "mora_id": "niet-primair-mora-proces",
     "use_case_count": 31,
     "idea_count": 31,
     "pilot_count": 0,
     "blueprint_count": 0,
-    "is_mapping_bucket": true
+    "is_mapping_bucket": true,
+    "processFrequency": "incidenteel",
+    "processVariability": "variabel"
   }
 ]

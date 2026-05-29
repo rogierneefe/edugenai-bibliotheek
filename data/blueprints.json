@@ -67,7 +67,7 @@
     "opportunityPosition": {
       "processFrequency": "regelmatig",
       "processVariability": "gestandaardiseerd",
-      "aiValue": "verkennen"
+      "aiValue": "automatiseren"
     },
     "personaValues": [
       {
@@ -92,7 +92,52 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit",
+      "personalisatie"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "kwaliteit",
+      "consistentie"
+    ],
+    "startedUseCaseIds": [
+      "suc-001",
+      "suc-004",
+      "suc-007",
+      "suc-010",
+      "suc-013",
+      "suc-016",
+      "suc-019",
+      "suc-022"
+    ],
+    "pilotUseCaseIds": [
+      "suc-004",
+      "suc-007"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "toetsing-feedback"
+    ],
+    "functionalPatterns": [
+      "feedback-rubric"
+    ],
+    "communityStats": {
+      "ideaCount": 25,
+      "startedUseCaseCount": 8,
+      "pilotCount": 2,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-02",
@@ -165,7 +210,7 @@
     "opportunityPosition": {
       "processFrequency": "regelmatig",
       "processVariability": "gestandaardiseerd",
-      "aiValue": "verkennen"
+      "aiValue": "automatiseren"
     },
     "personaValues": [
       {
@@ -184,7 +229,50 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-interpretaties",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "kwaliteit",
+      "consistentie"
+    ],
+    "startedUseCaseIds": [
+      "suc-002",
+      "suc-005",
+      "suc-008",
+      "suc-011",
+      "suc-014",
+      "suc-017",
+      "suc-020"
+    ],
+    "pilotUseCaseIds": [
+      "suc-002",
+      "suc-005"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "toetsing-feedback"
+    ],
+    "functionalPatterns": [
+      "feedback-rubric"
+    ],
+    "communityStats": {
+      "ideaCount": 16,
+      "startedUseCaseCount": 7,
+      "pilotCount": 2,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-03",
@@ -253,7 +341,7 @@
     "opportunityPosition": {
       "processFrequency": "regelmatig",
       "processVariability": "gestandaardiseerd",
-      "aiValue": "verkennen"
+      "aiValue": "automatiseren"
     },
     "personaValues": [
       {
@@ -278,7 +366,46 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-interpretaties",
+      "rc-vorm-herverwerking"
+    ],
+    "valueDrivers": [
+      "kwaliteit",
+      "inzicht"
+    ],
+    "improvementGoals": [
+      "kwaliteit",
+      "consistentie"
+    ],
+    "startedUseCaseIds": [
+      "suc-003",
+      "suc-006",
+      "suc-009",
+      "suc-012",
+      "suc-015"
+    ],
+    "pilotUseCaseIds": [
+      "suc-003"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "toetsing-feedback"
+    ],
+    "functionalPatterns": [
+      "toetsvragen",
+      "feedback-rubric"
+    ],
+    "communityStats": {
+      "ideaCount": 12,
+      "startedUseCaseCount": 5,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-04",
@@ -376,7 +503,49 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-herverwerking",
+      "rc-plaats-verspreid"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit",
+      "innovatie"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "kwaliteit"
+    ],
+    "startedUseCaseIds": [
+      "suc-028",
+      "suc-030",
+      "suc-032",
+      "suc-034",
+      "suc-036",
+      "suc-038",
+      "suc-040"
+    ],
+    "pilotUseCaseIds": [
+      "suc-028"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "onderwijsontwikkeling",
+      "docentprofessionalisering-ai-literacy"
+    ],
+    "functionalPatterns": [
+      "contentgeneratie"
+    ],
+    "communityStats": {
+      "ideaCount": 18,
+      "startedUseCaseCount": 7,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-05",
@@ -468,7 +637,44 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootCauseIds": [
+      "rc-plaats-verspreid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "valueDrivers": [
+      "kwaliteit",
+      "inzicht"
+    ],
+    "improvementGoals": [
+      "kwaliteit",
+      "consistentie"
+    ],
+    "startedUseCaseIds": [
+      "suc-029",
+      "suc-031",
+      "suc-033",
+      "suc-035"
+    ],
+    "pilotUseCaseIds": [
+      "suc-029"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "onderwijsontwikkeling"
+    ],
+    "functionalPatterns": [
+      "contentgeneratie"
+    ],
+    "communityStats": {
+      "ideaCount": 11,
+      "startedUseCaseCount": 4,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-06",
@@ -544,7 +750,7 @@
     "opportunityPosition": {
       "processFrequency": "regelmatig",
       "processVariability": "gemengd",
-      "aiValue": "verkennen"
+      "aiValue": "versnellen"
     },
     "personaValues": [
       {
@@ -569,7 +775,54 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-vragen-herhaling"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-vragen",
+      "rc-plaats-niet-vindbaar",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "valueDrivers": [
+      "personalisatie",
+      "tijdswinst"
+    ],
+    "improvementGoals": [
+      "beschikbaarheid",
+      "personalisatie",
+      "doorlooptijd"
+    ],
+    "startedUseCaseIds": [
+      "suc-045",
+      "suc-047",
+      "suc-049",
+      "suc-051",
+      "suc-053",
+      "suc-055",
+      "suc-057",
+      "suc-075"
+    ],
+    "pilotUseCaseIds": [
+      "suc-045",
+      "suc-047"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "onderwijsuitvoering-leren",
+      "studentbegeleiding-coaching"
+    ],
+    "functionalPatterns": [
+      "persona-agent",
+      "chatbot-qa",
+      "inclusie-toegankelijkheid"
+    ],
+    "communityStats": {
+      "ideaCount": 17,
+      "startedUseCaseCount": 8,
+      "pilotCount": 2,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-07",
@@ -638,7 +891,7 @@
     "opportunityPosition": {
       "processFrequency": "regelmatig",
       "processVariability": "gemengd",
-      "aiValue": "verkennen"
+      "aiValue": "versnellen"
     },
     "personaValues": [
       {
@@ -663,7 +916,47 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-simulatie-oefenen"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-herverwerking",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "valueDrivers": [
+      "personalisatie",
+      "innovatie",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "personalisatie",
+      "kwaliteit"
+    ],
+    "startedUseCaseIds": [
+      "suc-046",
+      "suc-048",
+      "suc-050",
+      "suc-052",
+      "suc-054"
+    ],
+    "pilotUseCaseIds": [
+      "suc-046"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "onderwijsuitvoering-leren"
+    ],
+    "functionalPatterns": [
+      "simulatie-roleplay",
+      "persona-agent"
+    ],
+    "communityStats": {
+      "ideaCount": 9,
+      "startedUseCaseCount": 5,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-08",
@@ -730,8 +1023,8 @@
     ],
     "opportunityPosition": {
       "processFrequency": "regelmatig",
-      "processVariability": "variabel",
-      "aiValue": "augmenteren"
+      "processVariability": "gemengd",
+      "aiValue": "versnellen"
     },
     "personaValues": [
       {
@@ -756,7 +1049,47 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-documentanalyse"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-documenten",
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-plaats-verspreid"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "inzicht",
+      "tijdswinst"
+    ],
+    "improvementGoals": [
+      "compliance",
+      "doorlooptijd",
+      "kwaliteit"
+    ],
+    "startedUseCaseIds": [
+      "suc-067",
+      "suc-070",
+      "suc-073"
+    ],
+    "pilotUseCaseIds": [
+      "suc-067"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "bedrijfsvoering-support"
+    ],
+    "functionalPatterns": [
+      "rag-document-qa",
+      "contractanalyse"
+    ],
+    "communityStats": {
+      "ideaCount": 10,
+      "startedUseCaseCount": 5,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-09",
@@ -832,7 +1165,7 @@
     "opportunityPosition": {
       "processFrequency": "regelmatig",
       "processVariability": "gemengd",
-      "aiValue": "verkennen"
+      "aiValue": "versnellen"
     },
     "personaValues": [
       {
@@ -857,7 +1190,51 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-open-evaluaties",
+      "pp-rapportage-verslaglegging"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-ongestructureerd",
+      "rc-vorm-herverwerking",
+      "rc-tijd-wachttijden"
+    ],
+    "valueDrivers": [
+      "inzicht",
+      "tijdswinst",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "consistentie",
+      "beschikbaarheid"
+    ],
+    "startedUseCaseIds": [
+      "suc-058",
+      "suc-059",
+      "suc-060",
+      "suc-061",
+      "suc-062"
+    ],
+    "pilotUseCaseIds": [
+      "suc-058"
+    ],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "onderzoek-kwaliteitszorg",
+      "bedrijfsvoering-support"
+    ],
+    "functionalPatterns": [
+      "survey-analyse",
+      "rag-document-qa"
+    ],
+    "communityStats": {
+      "ideaCount": 13,
+      "startedUseCaseCount": 5,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   },
   {
     "id": "BP-10",
@@ -948,6 +1325,41 @@
       "hbo",
       "wo"
     ],
-    "sector_scope": "breed"
+    "sector_scope": "breed",
+    "painPointIds": [
+      "pp-communicatie-volume"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-vragen",
+      "rc-vorm-herverwerking",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "consistentie",
+      "kosten"
+    ],
+    "startedUseCaseIds": [
+      "suc-069",
+      "suc-072"
+    ],
+    "pilotUseCaseIds": [],
+    "validatedUseCaseIds": [],
+    "hotspotDomains": [
+      "bedrijfsvoering-support"
+    ],
+    "functionalPatterns": [
+      "contentgeneratie"
+    ],
+    "communityStats": {
+      "ideaCount": 22,
+      "startedUseCaseCount": 6,
+      "pilotCount": 1,
+      "validatedCount": 0
+    }
   }
 ]

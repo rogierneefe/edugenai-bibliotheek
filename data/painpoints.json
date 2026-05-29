@@ -1,0 +1,255 @@
+[
+  {
+    "id": "pp-feedback-tijd",
+    "title": "Feedback geven kost veel tijd",
+    "description": "Docenten ervaren piekbelasting bij het formuleren van feedback op open opdrachten en verslagen.",
+    "processIds": [
+      "toetsing"
+    ],
+    "personaIds": [
+      "docent",
+      "onderwijskundig",
+      "examencommissie"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit",
+      "personalisatie"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "kwaliteit",
+      "consistentie"
+    ]
+  },
+  {
+    "id": "pp-vragen-herhaling",
+    "title": "Studenten stellen steeds dezelfde vragen",
+    "description": "Studenten hebben behoefte aan snelle, consistente antwoorden rond planning, begeleiding en procedures.",
+    "processIds": [
+      "studentbegeleiding",
+      "ict"
+    ],
+    "personaIds": [
+      "student",
+      "docent",
+      "medewerker",
+      "informatiemanager"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-vragen",
+      "rc-plaats-niet-vindbaar",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprintIds": [
+      "BP-06"
+    ],
+    "valueDrivers": [
+      "personalisatie",
+      "tijdswinst",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "beschikbaarheid",
+      "doorlooptijd",
+      "personalisatie"
+    ]
+  },
+  {
+    "id": "pp-curriculum-afstemming",
+    "title": "Curriculumontwikkeling kost veel afstemming",
+    "description": "Teams moeten leeruitkomsten, opdrachten, toetsing en constructive alignment over veel bronnen en perspectieven heen afstemmen.",
+    "processIds": [
+      "onderwijs-ontwerpen"
+    ],
+    "personaIds": [
+      "onderwijskundig",
+      "manager",
+      "architect",
+      "bestuurder"
+    ],
+    "rootCauseIds": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05"
+    ],
+    "valueDrivers": [
+      "kwaliteit",
+      "inzicht",
+      "innovatie"
+    ],
+    "improvementGoals": [
+      "kwaliteit",
+      "consistentie",
+      "doorlooptijd"
+    ]
+  },
+  {
+    "id": "pp-open-evaluaties",
+    "title": "Open evaluaties zijn moeilijk analyseerbaar",
+    "description": "Vrije tekst uit enquêtes, reflecties of evaluaties bevat signalen, maar vraagt veel handmatige codering en duiding.",
+    "processIds": [
+      "besturing",
+      "onderzoek"
+    ],
+    "personaIds": [
+      "manager",
+      "onderzoeker",
+      "bestuurder"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten",
+      "rc-kwaliteit-betrouwbaarheid"
+    ],
+    "blueprintIds": [
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "inzicht",
+      "kwaliteit",
+      "tijdswinst"
+    ],
+    "improvementGoals": [
+      "kwaliteit",
+      "doorlooptijd",
+      "consistentie"
+    ]
+  },
+  {
+    "id": "pp-documentanalyse",
+    "title": "Contracten en beleidsstukken kosten veel handmatige analyse",
+    "description": "Risico's, verplichtingen en beleidsimplicaties moeten uit lange documenten worden gehaald en gecontroleerd.",
+    "processIds": [
+      "besturing",
+      "onderzoek"
+    ],
+    "personaIds": [
+      "medewerker",
+      "manager",
+      "privacy-governance",
+      "bestuurder",
+      "informatiemanager"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-documenten",
+      "rc-plaats-verspreid",
+      "rc-kwaliteit-betrouwbaarheid"
+    ],
+    "blueprintIds": [
+      "BP-08"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "inzicht",
+      "tijdswinst"
+    ],
+    "improvementGoals": [
+      "compliance",
+      "doorlooptijd",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "pp-communicatie-volume",
+    "title": "Communicatie en mailverkeer vragen veel herhaalwerk",
+    "description": "Ondersteunende teams herschrijven, prioriteren en beantwoorden veel vergelijkbare berichten.",
+    "processIds": [
+      "marketing"
+    ],
+    "personaIds": [
+      "medewerker",
+      "manager"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-vragen",
+      "rc-vorm-herverwerking",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprintIds": [
+      "BP-10"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "consistentie",
+      "kosten"
+    ]
+  },
+  {
+    "id": "pp-simulatie-oefenen",
+    "title": "Realistisch oefenen vraagt veel voorbereiding",
+    "description": "Vaardigheidstrainingen en scenario's moeten aansluiten bij beroepscontext, niveau en leerdoel.",
+    "processIds": [
+      "studentbegeleiding"
+    ],
+    "personaIds": [
+      "docent",
+      "student",
+      "onderwijskundig"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-herverwerking",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprintIds": [
+      "BP-07"
+    ],
+    "valueDrivers": [
+      "personalisatie",
+      "kwaliteit",
+      "innovatie"
+    ],
+    "improvementGoals": [
+      "personalisatie",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "pp-rapportage-verslaglegging",
+    "title": "Verslaglegging en rapportage kosten veel verwerkingstijd",
+    "description": "Vergaderingen, besluiten en kwaliteitsinformatie moeten betrouwbaar worden samengevat en opgevolgd.",
+    "processIds": [
+      "besturing"
+    ],
+    "personaIds": [
+      "medewerker",
+      "manager",
+      "bestuurder"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-ongestructureerd",
+      "rc-vorm-herverwerking",
+      "rc-tijd-wachttijden"
+    ],
+    "blueprintIds": [
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "tijdswinst",
+      "inzicht",
+      "kwaliteit"
+    ],
+    "improvementGoals": [
+      "doorlooptijd",
+      "consistentie",
+      "beschikbaarheid"
+    ]
+  }
+]

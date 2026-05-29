@@ -1,0 +1,181 @@
+[
+  {
+    "id": "toetsing-feedback",
+    "title": "Toetsing & feedback",
+    "count": 27,
+    "interpretation": "De sterkste communityvraag zit bij beoordelen, feedback geven en toetskwaliteit. Dit is geen innovatie-niche maar een procesdrukpunt in de kern van onderwijs.",
+    "processIds": [
+      "toetsing"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-opdrachten",
+      "rc-kwaliteit-inconsistent"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02",
+      "BP-03"
+    ]
+  },
+  {
+    "id": "onderwijsontwikkeling",
+    "title": "Onderwijsontwikkeling",
+    "count": 17,
+    "interpretation": "Teams zoeken herbruikbare hulp bij ontwerp, leeruitkomsten, opdrachten en alignment. De waarde zit vooral in versnellen en kwaliteitsconsistentie.",
+    "processIds": [
+      "onderwijs-ontwerpen"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootCauseIds": [
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05"
+    ]
+  },
+  {
+    "id": "onderwijsuitvoering-leren",
+    "title": "Onderwijsuitvoering & leren",
+    "count": 13,
+    "interpretation": "Communitycases richten zich op oefenen, uitleg, studieplanning en leren in de context van studenten.",
+    "processIds": [
+      "studentbegeleiding",
+      "onderwijscontent"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootCauseIds": [
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-06",
+      "BP-07"
+    ]
+  },
+  {
+    "id": "onderzoek-kwaliteitszorg",
+    "title": "Onderzoek & kwaliteitszorg",
+    "count": 9,
+    "interpretation": "AI wordt ingezet om signalen uit tekst, evaluaties en bronnen sneller te ordenen en te duiden.",
+    "processIds": [
+      "onderzoek",
+      "besturing"
+    ],
+    "painPointIds": [
+      "pp-open-evaluaties"
+    ],
+    "rootCauseIds": [
+      "rc-vorm-ongestructureerd",
+      "rc-kwantiteit-documenten"
+    ],
+    "blueprintIds": [
+      "BP-09"
+    ]
+  },
+  {
+    "id": "bedrijfsvoering-support",
+    "title": "Bedrijfsvoering & support",
+    "count": 8,
+    "interpretation": "Ondersteunende processen gebruiken AI vooral voor documentanalyse, verslaglegging, communicatie en afhandeling.",
+    "processIds": [
+      "besturing",
+      "marketing"
+    ],
+    "painPointIds": [
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging",
+      "pp-communicatie-volume"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-documenten",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-08",
+      "BP-09",
+      "BP-10"
+    ]
+  },
+  {
+    "id": "studentbegeleiding-coaching",
+    "title": "Studentbegeleiding & coaching",
+    "count": 7,
+    "interpretation": "De vraag verschuift van generieke informatie naar persoonlijke begeleiding en laagdrempelige beschikbaarheid.",
+    "processIds": [
+      "studentbegeleiding"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling"
+    ],
+    "rootCauseIds": [
+      "rc-kwantiteit-vragen",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprintIds": [
+      "BP-06"
+    ]
+  },
+  {
+    "id": "docentprofessionalisering-ai-literacy",
+    "title": "Docentprofessionalisering & AI-literacy",
+    "count": 7,
+    "interpretation": "Instellingen experimenteren met AI-geletterdheid en docentondersteuning, maar deze laag is nog minder aan concrete blueprints gekoppeld.",
+    "processIds": [
+      "hrm",
+      "innovatie"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05"
+    ]
+  },
+  {
+    "id": "it-techniek-platform",
+    "title": "IT/Techniek & platform",
+    "count": 2,
+    "interpretation": "Er zijn weinig expliciete platformcases, terwijl veel toepassingen er wel afhankelijk van zijn. Dit is een architectuurwitte vlek.",
+    "processIds": [
+      "ict"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling"
+    ],
+    "rootCauseIds": [
+      "rc-plaats-niet-vindbaar",
+      "rc-kwaliteit-betrouwbaarheid"
+    ],
+    "blueprintIds": []
+  },
+  {
+    "id": "onvolledig-overig",
+    "title": "Onvolledig/overig",
+    "count": 24,
+    "interpretation": "Een substantieel deel is nog onvoldoende scherp gemetadateerd. Dit is vooral belangrijk voor triage, intake en communitycuratie.",
+    "processIds": [
+      "nog-te-koppelen",
+      "niet-primair-hora"
+    ],
+    "painPointIds": [],
+    "rootCauseIds": [
+      "rc-plaats-niet-vindbaar"
+    ],
+    "blueprintIds": []
+  }
+]

@@ -4,13 +4,17 @@ import personasData from '@/data/personas.json';
 import usecasesData from '@/data/usecases.json';
 import blueprintsData from '@/data/blueprints.json';
 import horaProcessenData from '@/data/hora-processen.json';
-import { Persona, UseCase, Blueprint, HoraProces } from '@/lib/types';
+import painpointsData from '@/data/painpoints.json';
+import rootCausesData from '@/data/root-causes.json';
+import { Persona, UseCase, Blueprint, HoraProces, PainPoint, RootCause } from '@/lib/types';
 import PersonaCard from '@/components/PersonaCard';
 
 const personas = personasData as Persona[];
 const usecases = usecasesData as UseCase[];
 const blueprints = blueprintsData as Blueprint[];
 const horaProcessen = horaProcessenData as HoraProces[];
+const painpoints = painpointsData as PainPoint[];
+const rootCauses = rootCausesData as RootCause[];
 
 export const metadata = { title: 'Persona Lens — EduGenAI Bibliotheek' };
 
@@ -93,6 +97,8 @@ export default function PersonasPage() {
               usecases={usecases}
               blueprints={blueprints}
               horaProcessen={horaProcessen}
+              painpoints={painpoints}
+              rootCauses={rootCauses}
             />
           ))}
         </div>

@@ -1,8 +1,9 @@
 import { AIValue, Blueprint, HoraProces, OpportunityPosition, Persona, ProcessView } from './types';
+import { getAIValueFromProcessCharacter } from './opportunity';
 import { blueprintMatchesProcess } from './processViews';
 
 export function getAIValueFromPosition(position: OpportunityPosition): AIValue {
-  return position.aiValue;
+  return getAIValueFromProcessCharacter(position.processFrequency, position.processVariability);
 }
 
 export function getQuadrantLabel(position: OpportunityPosition) {
@@ -13,7 +14,7 @@ export function getQuadrantLabel(position: OpportunityPosition) {
     verkennen: 'Verkennen',
   };
 
-  return labels[position.aiValue];
+  return labels[getAIValueFromPosition(position)];
 }
 
 export function getBlueprintsByProcess(

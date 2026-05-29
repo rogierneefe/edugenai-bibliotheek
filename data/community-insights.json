@@ -1,0 +1,151 @@
+{
+  "totals": {
+    "ideas": 242,
+    "startedUseCases": 114,
+    "pilotExamples": 19,
+    "validatedApproaches": 1,
+    "blueprints": 10,
+    "pilotEvidenceNote": "Pilotbewijs nog niet volledig gekoppeld aan instellingen en resultaten."
+  },
+  "topPainPoints": [
+    {
+      "id": "pp-feedback-tijd",
+      "title": "Feedback geven kost veel tijd",
+      "count": 27
+    },
+    {
+      "id": "pp-curriculum-afstemming",
+      "title": "Curriculumontwikkeling kost veel afstemming",
+      "count": 17
+    },
+    {
+      "id": "pp-vragen-herhaling",
+      "title": "Studenten stellen steeds dezelfde vragen",
+      "count": 14
+    },
+    {
+      "id": "pp-documentanalyse",
+      "title": "Documenten kosten veel handmatige analyse",
+      "count": 8
+    },
+    {
+      "id": "pp-open-evaluaties",
+      "title": "Open evaluaties zijn moeilijk analyseerbaar",
+      "count": 6
+    }
+  ],
+  "topRootCauses": [
+    {
+      "id": "rc-kwantiteit-opdrachten",
+      "title": "Teveel opdrachten of producten",
+      "count": 26
+    },
+    {
+      "id": "rc-vorm-herverwerking",
+      "title": "Informatie moet opnieuw worden verwerkt",
+      "count": 24
+    },
+    {
+      "id": "rc-plaats-verspreid",
+      "title": "Informatie zit verspreid",
+      "count": 18
+    },
+    {
+      "id": "rc-kwantiteit-vragen",
+      "title": "Teveel herhaalde vragen",
+      "count": 17
+    },
+    {
+      "id": "rc-kwaliteit-inconsistent",
+      "title": "Inconsistente feedback of communicatie",
+      "count": 16
+    }
+  ],
+  "topFunctionalPatterns": [
+    {
+      "id": "persona-agent",
+      "title": "Persona/agent",
+      "count": 18
+    },
+    {
+      "id": "feedback-rubric",
+      "title": "Feedback/rubric",
+      "count": 16
+    },
+    {
+      "id": "inclusie-toegankelijkheid",
+      "title": "Inclusie/toegankelijkheid",
+      "count": 8
+    },
+    {
+      "id": "chatbot-qa",
+      "title": "Chatbot/Q&A",
+      "count": 14
+    },
+    {
+      "id": "rag-document-qa",
+      "title": "RAG/document-Q&A",
+      "count": 12
+    },
+    {
+      "id": "simulatie-roleplay",
+      "title": "Simulatie/roleplay",
+      "count": 9
+    }
+  ],
+  "topBlueprints": [
+    {
+      "id": "BP-01",
+      "title": "Rubric-feedback assistent",
+      "startedUseCaseCount": 8,
+      "pilotCount": 2
+    },
+    {
+      "id": "BP-06",
+      "title": "AI-tutor / course Q&A (RAG)",
+      "startedUseCaseCount": 8,
+      "pilotCount": 2
+    },
+    {
+      "id": "BP-02",
+      "title": "Nakijk- en beoordelingsassistent",
+      "startedUseCaseCount": 7,
+      "pilotCount": 2
+    },
+    {
+      "id": "BP-04",
+      "title": "Leeruitkomsten- en curriculumassistent",
+      "startedUseCaseCount": 7,
+      "pilotCount": 1
+    },
+    {
+      "id": "BP-10",
+      "title": "Communicatie- en contentassistent",
+      "startedUseCaseCount": 6,
+      "pilotCount": 1
+    },
+    {
+      "id": "BP-03",
+      "title": "Toetsconstructie assistent",
+      "startedUseCaseCount": 5,
+      "pilotCount": 1
+    }
+  ],
+  "whiteSpots": [
+    {
+      "title": "IT/Techniek & platform",
+      "count": 2,
+      "interpretation": "Weinig expliciete platformcases terwijl bijna alle patronen afhankelijk zijn van veilige infrastructuur."
+    },
+    {
+      "title": "Gevalideerde aanpakken",
+      "count": 1,
+      "interpretation": "Veel gestart, weinig volledig gevalideerd. Resultaatmeting en evidence ontbreken nog."
+    },
+    {
+      "title": "Onvolledig/overig",
+      "count": 24,
+      "interpretation": "Een groot deel vraagt nog intake: proces, oorzaak en blueprint zijn niet scherp genoeg gekoppeld."
+    }
+  ]
+}

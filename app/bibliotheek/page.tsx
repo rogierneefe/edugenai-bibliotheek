@@ -6,6 +6,7 @@ import blueprintsData from '@/data/blueprints.json';
 import horaProcessenData from '@/data/hora-processen.json';
 import personasData from '@/data/personas.json';
 import sourceSummary from '@/data/source-summary.json';
+import communityInsights from '@/data/community-insights.json';
 import { AIValue, Blueprint, HoraProces, Persona, ProcessView, Sector, UseCaseOrigin } from '@/lib/types';
 import BlueprintCard from '@/components/BlueprintCard';
 import { aiValueConfig } from '@/lib/opportunity';
@@ -106,7 +107,7 @@ function BibliotheekContent() {
               </div>
             )}
             <div className="mt-3 text-xs leading-5 text-gray-500">
-              {sourceSummary.ideaUseCasesLoaded} ideeën geladen; pilotdataset nog niet geladen.
+              {sourceSummary.ideaUseCasesLoaded} ideeën · {communityInsights.totals.startedUseCases} gestarte use cases · {communityInsights.totals.pilotExamples} pilotvoorbeelden.
             </div>
           </div>
         </div>

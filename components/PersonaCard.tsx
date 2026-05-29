@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Persona, UseCase, Blueprint, HoraProces } from '@/lib/types';
+import { Persona, UseCase, Blueprint, HoraProces, PainPoint, RootCause } from '@/lib/types';
 import { aiValueConfig, getAIValue, personaLensCopy } from '@/lib/opportunity';
 
 interface Props {
@@ -9,13 +9,17 @@ interface Props {
   usecases: UseCase[];
   blueprints: Blueprint[];
   horaProcessen: HoraProces[];
+  painpoints: PainPoint[];
+  rootCauses: RootCause[];
 }
 
-export default function PersonaCard({ persona, usecases, blueprints, horaProcessen }: Props) {
+export default function PersonaCard({ persona, usecases, blueprints, horaProcessen, painpoints, rootCauses }: Props) {
   const [expanded, setExpanded] = useState(false);
 
   const relevantUsecases = usecases.filter(uc => uc.rol.includes(persona.id));
-  const relevantBlueprints = blueprints.filter(bp => bp.rollen.includes(persona.id));
+  const relevantBlueprints = blueprints.filter(bp => bp.rollen.includes(persona.id) || persona.blueprintIds.includes(bp.id));
+  const relevantPainpoints = painpoints.filter(painpoint => persona.painPointIds.includes(painpoint.id));
+  const relevantRootCauses = rootCauses.filter(rootCause => persona.rootCauseIds.includes(rootCause.id));
   const copy = personaLensCopy[persona.id];
   const opportunityCounts = relevantUsecases.reduce<Record<string, number>>((acc, uc) => {
     const proces = horaProcessen.find(p => p.id === uc.hora_process);
@@ -85,7 +89,7 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
           onClick={() => setExpanded(!expanded)}
           className="w-full text-left text-xs text-gray-400 flex items-center justify-between mb-2 hover:text-gray-600"
         >
-          <span className="uppercase tracking-wide">Doelen & zorgen</span>
+          <span className="uppercase tracking-wide">Doelen, zorgen en oorzaken</span>
           <span>{expanded ? '▲' : '▼'}</span>
         </button>
 
@@ -112,6 +116,44 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
                   </li>
                 ))}
               </ul>
+            </div>
+            {persona.valueDrivers.length > 0 && (
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-blue-600 mb-1">Value drivers</p>
+                <div className="flex flex-wrap gap-1">
+                  {persona.valueDrivers.map(driver => (
+                    <span key={driver} className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium text-blue-700">
+                      {driver}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {relevantPainpoints.length > 0 && (
+          <div className="mb-4">
+            <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-2">Knelpunten</p>
+            <div className="space-y-1.5">
+              {relevantPainpoints.slice(0, 3).map(painpoint => (
+                <div key={painpoint.id} className="rounded-lg border border-gray-100 bg-white px-3 py-2">
+                  <p className="text-xs font-medium text-gray-800">{painpoint.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {relevantRootCauses.length > 0 && (
+          <div className="mb-4">
+            <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-2">Oorzaken</p>
+            <div className="flex flex-wrap gap-1.5">
+              {relevantRootCauses.slice(0, 5).map(rootCause => (
+                <span key={rootCause.id} className="rounded-full border border-gray-200 bg-stone-50 px-2 py-0.5 text-[11px] text-gray-600">
+                  {rootCause.informationDimension}: {rootCause.title}
+                </span>
+              ))}
             </div>
           </div>
         )}

@@ -4,6 +4,7 @@ import horaProcessenData from '@/data/hora-processen.json';
 import sourceSummary from '@/data/source-summary.json';
 import { HoraProces } from '@/lib/types';
 import OpportunityMatrix from '@/components/OpportunityMatrix';
+import { getAIValue } from '@/lib/opportunity';
 
 const horaProcessen = horaProcessenData as HoraProces[];
 const mappedProcessen = horaProcessen.filter(p => !p.is_mapping_bucket);
@@ -12,10 +13,10 @@ export const metadata = { title: 'Opportunity Matrix — EduGenAI Bibliotheek' }
 
 export default function MatrixPage() {
   const quadrantCounts = {
-    automatiseren: mappedProcessen.filter(p => p.ai_value === 'automatiseren').length,
-    versnellen: mappedProcessen.filter(p => p.ai_value === 'versnellen').length,
-    augmenteren: mappedProcessen.filter(p => p.ai_value === 'augmenteren').length,
-    verkennen: mappedProcessen.filter(p => p.ai_value === 'verkennen').length,
+    automatiseren: mappedProcessen.filter(p => getAIValue(p) === 'automatiseren').length,
+    versnellen: mappedProcessen.filter(p => getAIValue(p) === 'versnellen').length,
+    augmenteren: mappedProcessen.filter(p => getAIValue(p) === 'augmenteren').length,
+    verkennen: mappedProcessen.filter(p => getAIValue(p) === 'verkennen').length,
   };
 
   return (

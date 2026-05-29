@@ -4,63 +4,469 @@
     "name": "Docent",
     "role": "Ontwerpt, begeleidt en beoordeelt onderwijs in de dagelijkse praktijk",
     "sector": "breed",
-    "goals": ["Werkdruk verlagen", "Feedbackkwaliteit verhogen", "Meer tijd voor studenten"],
-    "concerns": ["Betrouwbaarheid van AI-output", "Professionele autonomie", "Afhankelijkheid van tools"]
+    "goals": [
+      "Werkdruk verlagen",
+      "Feedbackkwaliteit verhogen",
+      "Meer tijd voor studenten"
+    ],
+    "concerns": [
+      "Betrouwbaarheid van AI-output",
+      "Professionele autonomie",
+      "Afhankelijkheid van tools"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd",
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-inconsistent",
+      "rc-kwaliteit-interpretaties",
+      "rc-kwantiteit-opdrachten",
+      "rc-kwantiteit-vragen",
+      "rc-plaats-niet-vindbaar",
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02",
+      "BP-06",
+      "BP-07"
+    ],
+    "valueDrivers": [
+      "innovatie",
+      "kwaliteit",
+      "personalisatie",
+      "tijdswinst"
+    ]
   },
   {
     "id": "onderwijskundig",
     "name": "Onderwijskundig adviseur",
     "role": "Ondersteunt opleidingen op curriculum, didactiek en toetskwaliteit",
     "sector": "breed",
-    "goals": ["Ontwerpkwaliteit versterken", "Docenten praktisch ondersteunen", "Schaalbare aanpakken vinden"],
-    "concerns": ["Teamadoptie", "Didactische kwaliteit borgen", "Generieke tools vs. contextspecifiek"]
+    "goals": [
+      "Ontwerpkwaliteit versterken",
+      "Docenten praktisch ondersteunen",
+      "Schaalbare aanpakken vinden"
+    ],
+    "concerns": [
+      "Teamadoptie",
+      "Didactische kwaliteit borgen",
+      "Generieke tools vs. contextspecifiek"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd",
+      "pp-curriculum-afstemming",
+      "pp-simulatie-oefenen"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-inconsistent",
+      "rc-kwaliteit-interpretaties",
+      "rc-kwantiteit-opdrachten",
+      "rc-plaats-verspreid",
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02",
+      "BP-04",
+      "BP-05",
+      "BP-07"
+    ],
+    "valueDrivers": [
+      "innovatie",
+      "inzicht",
+      "kwaliteit",
+      "personalisatie",
+      "tijdswinst"
+    ]
   },
   {
     "id": "student",
     "name": "Student",
     "role": "Gebruikt AI als leerhulp, studieplanner en oefenpartner",
     "sector": "breed",
-    "goals": ["Gericht oefenen", "Sneller passende hulp", "Zelfstandiger worden"],
-    "concerns": ["Privacy", "AI-afhankelijkheid", "Academische integriteit"]
+    "goals": [
+      "Gericht oefenen",
+      "Sneller passende hulp",
+      "Zelfstandiger worden"
+    ],
+    "concerns": [
+      "Privacy",
+      "AI-afhankelijkheid",
+      "Academische integriteit"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling",
+      "pp-simulatie-oefenen"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-interpretaties",
+      "rc-kwantiteit-vragen",
+      "rc-plaats-niet-vindbaar",
+      "rc-tijd-niet-beschikbaar",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-06",
+      "BP-07"
+    ],
+    "valueDrivers": [
+      "innovatie",
+      "kwaliteit",
+      "personalisatie",
+      "tijdswinst"
+    ]
   },
   {
     "id": "manager",
     "name": "Opleidings- of teammanager",
     "role": "Stuurt op onderwijskwaliteit, planning, capaciteit en verbetering",
     "sector": "breed",
-    "goals": ["Impact prioriteren", "Capaciteit slimmer inzetten", "Kwaliteitscyclus versnellen"],
-    "concerns": ["Governance", "Schaalbaarheid", "Draagvlak bij team"]
+    "goals": [
+      "Impact prioriteren",
+      "Capaciteit slimmer inzetten",
+      "Kwaliteitscyclus versnellen"
+    ],
+    "concerns": [
+      "Governance",
+      "Schaalbaarheid",
+      "Draagvlak bij team"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming",
+      "pp-open-evaluaties",
+      "pp-documentanalyse",
+      "pp-communicatie-volume",
+      "pp-rapportage-verslaglegging"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-inconsistent",
+      "rc-kwaliteit-interpretaties",
+      "rc-kwantiteit-documenten",
+      "rc-kwantiteit-vragen",
+      "rc-plaats-verspreid",
+      "rc-tijd-wachttijden",
+      "rc-vorm-herverwerking",
+      "rc-vorm-ongestructureerd"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05",
+      "BP-08",
+      "BP-09",
+      "BP-10"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "innovatie",
+      "inzicht",
+      "kwaliteit",
+      "tijdswinst"
+    ]
   },
   {
     "id": "medewerker",
     "name": "Ondersteunend medewerker",
     "role": "Verwerkt informatie, communicatie, planning en administratieve processen",
     "sector": "breed",
-    "goals": ["Repetitief werk versnellen", "Consistente communicatie", "Meer focus op inhoud"],
-    "concerns": ["Outputcontrole", "Procesafspraken", "Fouten in gegenereerde tekst"]
+    "goals": [
+      "Repetitief werk versnellen",
+      "Consistente communicatie",
+      "Meer focus op inhoud"
+    ],
+    "concerns": [
+      "Outputcontrole",
+      "Procesafspraken",
+      "Fouten in gegenereerde tekst"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling",
+      "pp-documentanalyse",
+      "pp-communicatie-volume",
+      "pp-rapportage-verslaglegging"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-inconsistent",
+      "rc-kwantiteit-documenten",
+      "rc-kwantiteit-vragen",
+      "rc-plaats-niet-vindbaar",
+      "rc-plaats-verspreid",
+      "rc-tijd-niet-beschikbaar",
+      "rc-tijd-wachttijden",
+      "rc-vorm-herverwerking",
+      "rc-vorm-ongestructureerd"
+    ],
+    "blueprintIds": [
+      "BP-06",
+      "BP-08",
+      "BP-09",
+      "BP-10"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "inzicht",
+      "kwaliteit",
+      "personalisatie",
+      "tijdswinst"
+    ]
   },
   {
     "id": "ict",
     "name": "ICT- en informatiemanager",
     "role": "Bewaakt integratie, beveiliging, data en platformkeuzes rondom AI",
     "sector": "breed",
-    "goals": ["Veilige AI-integratie", "Herbruikbare voorzieningen bouwen", "Grip op datastromen"],
-    "concerns": ["Beveiliging en privacy", "Architectuur en beheer", "Vendor lock-in"]
+    "goals": [
+      "Veilige AI-integratie",
+      "Herbruikbare voorzieningen bouwen",
+      "Grip op datastromen"
+    ],
+    "concerns": [
+      "Beveiliging en privacy",
+      "Architectuur en beheer",
+      "Vendor lock-in"
+    ],
+    "painPointIds": [],
+    "rootCauseIds": [],
+    "blueprintIds": [],
+    "valueDrivers": []
   },
   {
     "id": "onderzoeker",
     "name": "Onderzoeker",
     "role": "Analyseert literatuur, data en kennisproducten voor praktijkgericht onderzoek",
     "sector": "hbo",
-    "goals": ["Snellere analyse", "Kennis toegankelijk maken", "Hogere reproductie"],
-    "concerns": ["Bronkwaliteit", "Reproduceerbaarheid", "Hallucinaties in bronverwijzingen"]
+    "goals": [
+      "Snellere analyse",
+      "Kennis toegankelijk maken",
+      "Hogere reproductie"
+    ],
+    "concerns": [
+      "Bronkwaliteit",
+      "Reproduceerbaarheid",
+      "Hallucinaties in bronverwijzingen"
+    ],
+    "painPointIds": [
+      "pp-open-evaluaties"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwantiteit-documenten",
+      "rc-vorm-ongestructureerd"
+    ],
+    "blueprintIds": [
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "inzicht",
+      "kwaliteit",
+      "tijdswinst"
+    ]
   },
   {
     "id": "hr",
     "name": "HR-professional",
     "role": "Werkt aan professionalisering, rollen en organisatieontwikkeling",
     "sector": "breed",
-    "goals": ["AI-geletterdheid verhogen", "Loopbaanprocessen ondersteunen", "Onboarding versnellen"],
-    "concerns": ["Menselijke maat", "Bias in AI-tools", "Privacywetgeving"]
+    "goals": [
+      "AI-geletterdheid verhogen",
+      "Loopbaanprocessen ondersteunen",
+      "Onboarding versnellen"
+    ],
+    "concerns": [
+      "Menselijke maat",
+      "Bias in AI-tools",
+      "Privacywetgeving"
+    ],
+    "painPointIds": [],
+    "rootCauseIds": [],
+    "blueprintIds": [],
+    "valueDrivers": []
+  },
+  {
+    "id": "bestuurder",
+    "name": "Directeur / bestuurder",
+    "role": "Stuurt op portfolio, maatschappelijke waarde, risico en sectorbrede opschaling",
+    "sector": "breed",
+    "goals": [
+      "AI-investeringen prioriteren",
+      "Risico's bestuurbaar maken",
+      "Procesverbetering verbinden aan strategie"
+    ],
+    "concerns": [
+      "Fragmentatie van pilots",
+      "Onvoldoende bewijs voor opschaling",
+      "Governance en publieke waarden"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming",
+      "pp-open-evaluaties",
+      "pp-documentanalyse",
+      "pp-rapportage-verslaglegging"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwaliteit-interpretaties",
+      "rc-kwantiteit-documenten",
+      "rc-plaats-verspreid",
+      "rc-tijd-wachttijden",
+      "rc-vorm-herverwerking",
+      "rc-vorm-ongestructureerd"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05",
+      "BP-08",
+      "BP-09"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "innovatie",
+      "inzicht",
+      "kwaliteit",
+      "tijdswinst"
+    ]
+  },
+  {
+    "id": "informatiemanager",
+    "name": "Informatiemanager",
+    "role": "Verbindt procesbehoeften met informatievoorziening, applicaties en data",
+    "sector": "breed",
+    "goals": [
+      "Informatie vindbaar en betrouwbaar maken",
+      "Herbruikbare voorzieningen ontwerpen",
+      "Vraag en architectuur verbinden"
+    ],
+    "concerns": [
+      "Versnipperde tooling",
+      "Datakwaliteit",
+      "Beheerlast"
+    ],
+    "painPointIds": [
+      "pp-vragen-herhaling",
+      "pp-documentanalyse"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwantiteit-documenten",
+      "rc-kwantiteit-vragen",
+      "rc-plaats-niet-vindbaar",
+      "rc-plaats-verspreid",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprintIds": [
+      "BP-06",
+      "BP-08"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "inzicht",
+      "kwaliteit",
+      "personalisatie",
+      "tijdswinst"
+    ]
+  },
+  {
+    "id": "architect",
+    "name": "Architect",
+    "role": "Ontwerpt samenhang tussen processen, data, applicaties en AI-voorzieningen",
+    "sector": "breed",
+    "goals": [
+      "Patronen hergebruiken",
+      "Proces- en informatiearchitectuur expliciet maken",
+      "Schaalbare bouwblokken kiezen"
+    ],
+    "concerns": [
+      "Point solutions",
+      "Onheldere eigenaarschap",
+      "Niet-passende integraties"
+    ],
+    "painPointIds": [
+      "pp-curriculum-afstemming"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-interpretaties",
+      "rc-plaats-verspreid",
+      "rc-vorm-herverwerking"
+    ],
+    "blueprintIds": [
+      "BP-04",
+      "BP-05"
+    ],
+    "valueDrivers": [
+      "innovatie",
+      "inzicht",
+      "kwaliteit"
+    ]
+  },
+  {
+    "id": "privacy-governance",
+    "name": "Privacy/governance officer",
+    "role": "Bewaakt rechtmatigheid, uitlegbaarheid, risico's en verantwoord gebruik",
+    "sector": "breed",
+    "goals": [
+      "Risico's vroeg signaleren",
+      "Compliance in ontwerp borgen",
+      "Duidelijke besluitvorming organiseren"
+    ],
+    "concerns": [
+      "Persoonsgegevens",
+      "Bias en transparantie",
+      "Onduidelijke verantwoordelijkheid"
+    ],
+    "painPointIds": [
+      "pp-documentanalyse"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-betrouwbaarheid",
+      "rc-kwantiteit-documenten",
+      "rc-plaats-verspreid"
+    ],
+    "blueprintIds": [
+      "BP-08"
+    ],
+    "valueDrivers": [
+      "compliance",
+      "inzicht",
+      "tijdswinst"
+    ]
+  },
+  {
+    "id": "examencommissie",
+    "name": "Examencommissie",
+    "role": "Bewaakt toetskwaliteit, beoordeling, borging en examenbeleid",
+    "sector": "breed",
+    "goals": [
+      "Beoordelingskwaliteit borgen",
+      "Consistentie tussen beoordelaars verhogen",
+      "AI-gebruik toetsbaar maken"
+    ],
+    "concerns": [
+      "Validiteit",
+      "Fraude en integriteit",
+      "Uitlegbaarheid van feedback en scores"
+    ],
+    "painPointIds": [
+      "pp-feedback-tijd"
+    ],
+    "rootCauseIds": [
+      "rc-kwaliteit-inconsistent",
+      "rc-kwantiteit-opdrachten",
+      "rc-tijd-niet-beschikbaar"
+    ],
+    "blueprintIds": [
+      "BP-01",
+      "BP-02"
+    ],
+    "valueDrivers": [
+      "kwaliteit",
+      "personalisatie",
+      "tijdswinst"
+    ]
   }
 ]

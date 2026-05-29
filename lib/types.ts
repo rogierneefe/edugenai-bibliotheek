@@ -28,6 +28,7 @@ export interface UseCase {
     row: number;
     column: number;
   };
+  result?: string;
 }
 
 export interface Ingredient {
@@ -66,6 +67,21 @@ export interface Blueprint {
   evidence_label?: string;
   sectoren?: Sector[];
   sector_scope?: Sector | 'breed';
+  painPointIds: string[];
+  rootCauseIds: string[];
+  valueDrivers: ValueDriver[];
+  improvementGoals: ImprovementGoal[];
+  startedUseCaseIds?: string[];
+  pilotUseCaseIds?: string[];
+  validatedUseCaseIds?: string[];
+  hotspotDomains?: string[];
+  functionalPatterns?: string[];
+  communityStats?: {
+    ideaCount: number;
+    startedUseCaseCount: number;
+    pilotCount: number;
+    validatedCount: number;
+  };
   personaValues?: PersonaValue[];
   opportunityPosition?: OpportunityPosition;
 }
@@ -93,8 +109,30 @@ export type AIValue = 'automatiseren' | 'augmenteren' | 'versnellen' | 'verkenne
 export type Sector = 'mbo' | 'hbo' | 'wo';
 export type ProcessView = 'hora' | 'mora';
 export type UseCaseOrigin = 'idee' | 'pilot';
+export type CommunityStatus = 'gestarte-use-case' | 'pilot' | 'gevalideerde-aanpak';
 export type UseCaseMaturity = 'idee' | 'pilot' | 'bewezen' | 'schaalbaar';
 export type BlueprintMaturity = UseCaseMaturity;
+export type InformationDimension =
+  | 'kwaliteit'
+  | 'kwantiteit'
+  | 'vorm'
+  | 'plaats'
+  | 'tijd';
+export type ImprovementGoal =
+  | 'doorlooptijd'
+  | 'kwaliteit'
+  | 'consistentie'
+  | 'beschikbaarheid'
+  | 'personalisatie'
+  | 'kosten'
+  | 'compliance';
+export type ValueDriver =
+  | 'tijdswinst'
+  | 'kwaliteit'
+  | 'personalisatie'
+  | 'inzicht'
+  | 'compliance'
+  | 'innovatie';
 export type ProcessFrequency = 'incidenteel' | 'regelmatig' | 'frequent';
 export type ProcessVariability = 'gestandaardiseerd' | 'gemengd' | 'variabel';
 
@@ -118,4 +156,67 @@ export interface Persona {
   sector: 'mbo' | 'hbo' | 'wo' | 'breed';
   goals: string[];
   concerns: string[];
+  painPointIds: string[];
+  rootCauseIds: string[];
+  valueDrivers: ValueDriver[];
+  blueprintIds: string[];
+}
+
+export interface PainPoint {
+  id: string;
+  title: string;
+  description: string;
+  processIds: string[];
+  personaIds: string[];
+  rootCauseIds: string[];
+  blueprintIds: string[];
+  valueDrivers: ValueDriver[];
+  improvementGoals: ImprovementGoal[];
+}
+
+export interface RootCause {
+  id: string;
+  title: string;
+  description: string;
+  informationDimension: InformationDimension;
+  improvementGoals: ImprovementGoal[];
+  painPointIds: string[];
+  blueprintIds: string[];
+  valueDrivers: ValueDriver[];
+}
+
+export interface StartedUseCase {
+  id: string;
+  titel: string;
+  beschrijving: string;
+  instelling: string;
+  sector: Sector | 'breed' | 'onbekend';
+  status: CommunityStatus;
+  hotspotdomein: string;
+  functionelePatronen: string[];
+  processen: string[];
+  personas: string[];
+  painpoints: string[];
+  rootcauses: string[];
+  blueprints: string[];
+}
+
+export interface HotspotDomain {
+  id: string;
+  title: string;
+  count: number;
+  interpretation: string;
+  processIds: string[];
+  painPointIds: string[];
+  rootCauseIds: string[];
+  blueprintIds: string[];
+}
+
+export interface FunctionalPattern {
+  id: string;
+  title: string;
+  count: number;
+  interpretation: string;
+  blueprintIds: string[];
+  painPointIds: string[];
 }

@@ -4,12 +4,15 @@ import Link from 'next/link';
 import horaProcessen from '@/data/hora-processen.json';
 import usecasesData from '@/data/usecases.json';
 import sourceSummary from '@/data/source-summary.json';
-import { HoraProces, ProcessView, Sector, UseCase, UseCaseOrigin } from '@/lib/types';
+import communityInsights from '@/data/community-insights.json';
+import hotspotSummaryData from '@/data/hotspot-summary.json';
+import { HoraProces, HotspotDomain, ProcessView, Sector, UseCase, UseCaseOrigin } from '@/lib/types';
 import { aiValueConfig, getAIValue, getOpportunityLabel } from '@/lib/opportunity';
 import { getProcessId, getProcessLabel } from '@/lib/processViews';
 
 const processen = horaProcessen as HoraProces[];
 const usecases = usecasesData as UseCase[];
+const hotspotSummary = hotspotSummaryData as HotspotDomain[];
 
 const ROLLEN = ['docent', 'onderwijskundig adviseur', 'manager', 'student', 'medewerker', 'ict', 'hr', 'onderzoeker'];
 const ROL_MAP: Record<string, string> = {
@@ -78,15 +81,38 @@ export default function KaartPage() {
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {[
               { getal: String(sourceSummary.ideaUseCasesLoaded), label: 'ideeën uit xlsx' },
-              { getal: String(sourceSummary.mappedIdeaUseCases), label: 'gekoppeld aan proces' },
-              { getal: String(sourceSummary.unmappedIdeaUseCases + sourceSummary.notPrimaryIdeaUseCases), label: 'nog/niet primair' },
-              { getal: String(sourceSummary.pilotUseCasesLoaded), label: 'pilots geladen' },
+              { getal: String(communityInsights.totals.startedUseCases), label: 'gestarte use cases' },
+              { getal: String(communityInsights.totals.pilotExamples), label: 'pilotvoorbeelden' },
+              { getal: String(hotspotSummary.length), label: 'hotspotdomeinen' },
             ].map(item => (
             <div key={item.label} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
               <div className="text-2xl font-medium text-gray-900">{item.getal}</div>
               <div className="text-sm text-gray-500">{item.label}</div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 pb-2">
+        <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+          <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="text-sm font-semibold text-gray-900">Community-hotspots</h2>
+              <p className="mt-1 text-xs text-gray-500">Hotspotanalyse op basis van gestarte use cases, niet alleen ideeën.</p>
+            </div>
+            <span className="text-xs text-gray-400">{communityInsights.totals.pilotEvidenceNote}</span>
+          </div>
+          <div className="grid gap-2 md:grid-cols-3">
+            {hotspotSummary.slice(0, 6).map(domain => (
+              <div key={domain.id} className="rounded-lg bg-stone-50 p-3">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xs font-medium text-gray-800">{domain.title}</p>
+                  <span className="text-sm font-semibold text-gray-900">{domain.count}</span>
+                </div>
+                <p className="mt-1 line-clamp-2 text-[11px] leading-4 text-gray-500">{domain.interpretation}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
