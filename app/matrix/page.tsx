@@ -23,10 +23,11 @@ export default function MatrixPage() {
         <Link href="/" className="text-sm text-gray-500 hover:text-gray-700 mb-4 block">
           ← EduGenAI Bibliotheek
         </Link>
-        <h1 className="text-2xl font-medium text-gray-900 mb-2">Opportunity Matrix</h1>
-        <p className="text-sm text-gray-500 max-w-xl mb-4">
+        <h1 className="text-3xl font-semibold text-gray-950 mb-2">Opportunity Matrix</h1>
+        <p className="text-sm leading-6 text-gray-600 max-w-2xl mb-4">
           Waar kun je AI het best inzetten? De 11 HORA-processen gepositioneerd op frequentie en
-          variabiliteit — van volledig automatiseren tot verkennen.
+          variabiliteit. Niet als eindantwoord, maar als gespreksstarter voor prioritering,
+          randvoorwaarden en opschaling.
         </p>
 
         {/* Summary stats */}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import horaProcessen from '@/data/hora-processen.json';
 import usecasesData from '@/data/usecases.json';
 import { HoraProces, UseCase } from '@/lib/types';
+import { aiValueConfig, getAIValue, getOpportunityLabel } from '@/lib/opportunity';
 
 const processen = horaProcessen as HoraProces[];
 const usecases = usecasesData as UseCase[];
@@ -16,6 +17,7 @@ const ROL_MAP: Record<string, string> = {
 export default function KaartPage() {
   const [selectedProcess, setSelectedProcess] = useState<HoraProces | null>(null);
   const [activeRollen, setActiveRollen] = useState<string[]>([]);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const maxCount = Math.max(...processen.map(p => p.use_case_count));
   const sorted = [...processen].sort((a, b) => b.use_case_count - a.use_case_count);
@@ -44,25 +46,27 @@ export default function KaartPage() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className="min-h-screen surface-subtle">
       {/* Header */}
       <div className="max-w-5xl mx-auto px-4 pt-8 pb-6">
         <Link href="/" className="text-sm text-gray-500 hover:text-gray-700 mb-4 block">
           ← EduGenAI Bibliotheek
         </Link>
-        <h1 className="text-2xl font-medium text-gray-900 mb-2">
-          Waar in het onderwijsproces zit de energie?
+        <h1 className="text-3xl font-semibold text-gray-950 mb-2">
+          Waar zit energie, en waar zit de beste AI-kans?
         </h1>
-        <p className="text-sm text-gray-500 mb-6">
-          110+ ideeën van onderwijsprofessionals, gemapped op HORA en MORA.
+        <p className="text-sm leading-6 text-gray-600 mb-6 max-w-2xl">
+          Bekijk use case-dichtheid per HORA/MORA-proces. Combineer de beleving van onderwijsprofessionals
+          met opportunity-labels voor prioritering.
         </p>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {[
             { getal: '72', label: 'use cases in kaart' },
             { getal: '11', label: 'HORA-processen gedekt' },
             { getal: '10', label: 'recepten beschikbaar' },
+            { getal: '4', label: 'opportunity-routes' },
           ].map(item => (
-            <div key={item.label} className="bg-white border border-gray-200 rounded-lg p-4">
+            <div key={item.label} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
               <div className="text-2xl font-medium text-gray-900">{item.getal}</div>
               <div className="text-sm text-gray-500">{item.label}</div>
             </div>
@@ -71,9 +75,33 @@ export default function KaartPage() {
       </div>
 
       {/* Filterbalk */}
-      <div className="sticky top-0 z-10 bg-stone-50 border-b border-gray-200 px-4 py-3">
-        <div className="max-w-5xl mx-auto space-y-2">
-          <div className="flex flex-wrap gap-1.5">
+      <div className="sticky top-[61px] z-10 bg-stone-50/95 border-y border-gray-200 px-4 py-3 backdrop-blur">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-medium text-gray-900">Zoekcriteria</p>
+              <p className="text-xs text-gray-500">
+                {activeRollen.length > 0 ? `${activeRollen.length} rolfilter(s) actief` : 'Alle rollen en sectoren zichtbaar'}
+              </p>
+            </div>
+            <div className="flex gap-2">
+              {activeRollen.length > 0 && (
+                <button onClick={() => setActiveRollen([])} className="text-sm text-gray-500 underline">
+                  Wis filters
+                </button>
+              )}
+              <button
+                onClick={() => setFiltersOpen(!filtersOpen)}
+                className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50"
+              >
+                {filtersOpen ? 'Inklappen' : 'Uitklappen'}
+              </button>
+            </div>
+          </div>
+          {filtersOpen && (
+            <div className="mt-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-400">Sector</p>
+              <div className="flex flex-wrap gap-1.5">
             {(['Alle sectoren', 'mbo', 'hbo', 'wo'] as const).map(s => (
               <button
                 key={s}
@@ -82,8 +110,9 @@ export default function KaartPage() {
                 {s}
               </button>
             ))}
-          </div>
-          <div className="flex flex-wrap gap-1.5 items-center">
+              </div>
+              <p className="mb-2 mt-4 text-xs font-semibold uppercase tracking-wide text-gray-400">Rol</p>
+              <div className="flex flex-wrap gap-1.5 items-center">
             {ROLLEN.map(rol => (
               <button
                 key={rol}
@@ -97,16 +126,13 @@ export default function KaartPage() {
                 {rol}
               </button>
             ))}
-            {activeRollen.length > 0 && (
-              <button
-                onClick={() => setActiveRollen([])}
-                className="text-xs text-gray-400 underline ml-1"
-              >
-                Wis filters
-              </button>
-            )}
+              </div>
+              <p className="mt-4 text-xs leading-5 text-gray-500">
+                Tip: selecteer je rol om te zien in welke processen jouw werk het vaakst terugkomt.
+              </p>
+            </div>
+          )}
           </div>
-        </div>
       </div>
 
       {/* Kaart + Panel */}
@@ -116,6 +142,8 @@ export default function KaartPage() {
           {sorted.map(proces => {
             const barWidth = getBarWidth(proces);
             const isSelected = selectedProcess?.id === proces.id;
+            const value = getAIValue(proces);
+            const opportunity = aiValueConfig[value];
             return (
               <div
                 key={proces.id}
@@ -160,7 +188,7 @@ export default function KaartPage() {
                   <span className="text-sm font-medium text-gray-800">
                     {activeRollen.length > 0 ? getFilteredUseCases(proces).length : proces.use_case_count}
                   </span>
-                  <span className="text-xs text-gray-400 block">use cases</span>
+                  <span className={`text-[10px] block font-medium ${opportunity.color}`}>{opportunity.label}</span>
                 </div>
               </div>
             );
@@ -184,6 +212,13 @@ export default function KaartPage() {
                   >
                     ×
                   </button>
+                </div>
+                <hr className="my-3 border-gray-100" />
+                <div className={`rounded-lg border p-3 ${aiValueConfig[getAIValue(selectedProcess)].bg} ${aiValueConfig[getAIValue(selectedProcess)].border}`}>
+                  <p className={`text-xs font-semibold uppercase tracking-wide ${aiValueConfig[getAIValue(selectedProcess)].color}`}>
+                    {aiValueConfig[getAIValue(selectedProcess)].label}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-gray-600">{getOpportunityLabel(selectedProcess)}</p>
                 </div>
                 <hr className="my-3 border-gray-100" />
                 <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-2">

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { HoraProces } from '@/lib/types';
+import { aiValueConfig, getAIValue, getFrequencyLabel, getVariabilityLabel } from '@/lib/opportunity';
 
 interface Props {
   horaProcessen: HoraProces[];
@@ -67,24 +68,48 @@ const QUADRANTS: Quadrant[] = [
 
 export default function OpportunityMatrix({ horaProcessen }: Props) {
   const getProcessenForQuadrant = (aiValue: string) =>
-    horaProcessen.filter(p => p.ai_value === aiValue);
+    horaProcessen.filter(p => getAIValue(p) === aiValue);
 
   return (
     <div className="space-y-6">
+      <div className="grid gap-3 md:grid-cols-3">
+        {[
+          {
+            title: 'Voor onderwijsprofessionals',
+            text: 'Gebruik de matrix om te zien waar AI vooral tijd wint en waar je eigen oordeel belangrijk blijft.',
+          },
+          {
+            title: 'Voor adviseurs',
+            text: 'Gebruik de categorieën om experimenten, begeleiding en randvoorwaarden te kiezen.',
+          },
+          {
+            title: 'Voor bestuurders',
+            text: 'Gebruik de verdeling om portfolio-keuzes te maken: opschalen, versnellen of eerst leren.',
+          },
+        ].map(item => (
+          <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-4">
+            <h3 className="text-sm font-semibold text-gray-900">{item.title}</h3>
+            <p className="mt-2 text-xs leading-5 text-gray-500">{item.text}</p>
+          </div>
+        ))}
+      </div>
+
       {/* 2x2 Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {QUADRANTS.map(q => {
           const processen = getProcessenForQuadrant(q.aiValue);
+          const config = aiValueConfig[q.aiValue as keyof typeof aiValueConfig];
           return (
             <div
+              id={q.aiValue}
               key={q.key}
-              className={`rounded-xl border-2 ${q.border} ${q.bg} p-5`}
+              className={`rounded-xl border-2 ${q.border} ${q.bg} p-5 shadow-sm`}
             >
               {/* Quadrant header */}
               <div className="flex items-start justify-between mb-3">
                 <div>
                   <h3 className={`text-base font-semibold ${q.color}`}>{q.label}</h3>
-                  <p className="text-xs text-gray-500 mt-0.5 max-w-xs">{q.description}</p>
+                  <p className="text-xs text-gray-500 mt-0.5 max-w-xs">{config.description}</p>
                 </div>
                 <span className={`text-2xl font-light ${q.color} flex-shrink-0 ml-2`}>
                   {processen.length}
@@ -131,6 +156,14 @@ export default function OpportunityMatrix({ horaProcessen }: Props) {
                           {p.use_case_count} uc
                         </span>
                       </Link>
+                      <div className="ml-4 mt-1 flex flex-wrap gap-1">
+                        <span className="rounded-full bg-white px-2 py-0.5 text-[10px] text-gray-500">
+                          {getFrequencyLabel(p.frequency)}
+                        </span>
+                        <span className="rounded-full bg-white px-2 py-0.5 text-[10px] text-gray-500">
+                          {getVariabilityLabel(p.variability)}
+                        </span>
+                      </div>
                     </li>
                   ))}
                 </ul>

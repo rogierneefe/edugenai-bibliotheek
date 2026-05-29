@@ -2,150 +2,173 @@ import React from 'react';
 import Link from 'next/link';
 import blueprintsData from '@/data/blueprints.json';
 import horaProcessenData from '@/data/hora-processen.json';
-import { Blueprint, HoraProces } from '@/lib/types';
+import personasData from '@/data/personas.json';
+import usecasesData from '@/data/usecases.json';
+import { Blueprint, HoraProces, Persona, UseCase } from '@/lib/types';
 import BlueprintCard from '@/components/BlueprintCard';
+import { aiValueConfig, getAIValue, personaLensCopy } from '@/lib/opportunity';
 
 const blueprints = blueprintsData as Blueprint[];
 const horaProcessen = horaProcessenData as HoraProces[];
+const personas = personasData as Persona[];
+const usecases = usecasesData as UseCase[];
+
+const audienceOrder = ['docent', 'student', 'medewerker', 'manager', 'onderwijskundig'];
 
 export default function HomePage() {
-  const sortedProcessen = [...horaProcessen].sort((a, b) => b.use_case_count - a.use_case_count).slice(0, 5);
+  const sortedProcessen = [...horaProcessen].sort((a, b) => b.use_case_count - a.use_case_count).slice(0, 6);
   const maxCount = sortedProcessen[0]?.use_case_count ?? 1;
-  const featured = blueprints.find(bp => bp.id === 'BP-01');
+  const featured = blueprints.find(bp => bp.id === 'BP-01') ?? blueprints[0];
+  const aiValueCounts = horaProcessen.reduce<Record<string, number>>((acc, proces) => {
+    const value = getAIValue(proces);
+    acc[value] = (acc[value] ?? 0) + 1;
+    return acc;
+  }, {});
 
   return (
-    <div className="min-h-screen bg-stone-50">
-      {/* Hero */}
-      <section className="py-16 bg-white border-b">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="mb-4">
-            <span className="text-sm font-medium text-gray-400">EduGenAI Bibliotheek</span>
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded ml-2 text-gray-500">door Npuls</span>
-          </div>
-          <h1 className="text-4xl font-medium text-gray-900 max-w-2xl leading-tight">
-            Samen slimmer met AI in het onderwijs
-          </h1>
-          <p className="text-lg text-gray-500 mt-4 max-w-xl">
-            110+ ideeën van onderwijsprofessionals, vertaald naar herbruikbare recepten. Voor mbo, hbo en wo.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/kaart"
-              className="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
-            >
-              Bekijk de hotspot-kaart →
-            </Link>
-            <Link
-              href="/bibliotheek"
-              className="border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
-            >
-              Ga naar de bibliotheek
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Vier lenzen */}
-      <section className="py-12 bg-stone-50">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-xl font-medium text-gray-900 mb-2">Vier lenzen op AI in het onderwijs</h2>
-          <p className="text-sm text-gray-500 mb-6">Kies de invalshoek die bij je vraag past.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            {[
-              {
-                icon: '📊',
-                title: 'Hotspot-kaart',
-                text: 'Waar zit de meeste energie? Zie use case-dichtheid per HORA-proces in één oogopslag.',
-                link: '/kaart',
-                linkText: 'Bekijk de kaart →',
-              },
-              {
-                icon: '👤',
-                title: 'Persona Lens',
-                text: 'Welke AI-toepassingen zijn relevant voor jouw rol? Filter op docent, student, manager en meer.',
-                link: '/personas',
-                linkText: 'Verken per rol →',
-              },
-              {
-                icon: '🔲',
-                title: 'Opportunity Matrix',
-                text: 'Waar zet je AI het best in? Processen gepositioneerd op frequentie × variabiliteit.',
-                link: '/matrix',
-                linkText: 'Bekijk de matrix →',
-              },
-              {
-                icon: '📖',
-                title: 'Receptenbibliotheek',
-                text: '10 herbruikbare AI-patronen, elk uitgewerkt als stapsgewijs recept met ingrediënten en valkuilen.',
-                link: '/bibliotheek',
-                linkText: 'Bekijk de recepten →',
-              },
-            ].map(card => (
-              <div key={card.title} className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col">
-                <span className="text-2xl mb-3 block">{card.icon}</span>
-                <h3 className="text-base font-medium text-gray-900 mb-2">{card.title}</h3>
-                <p className="text-sm text-gray-500 mb-4 flex-1">{card.text}</p>
-                <Link href={card.link} className="text-sm text-gray-700 hover:text-gray-900 font-medium">
-                  {card.linkText}
+    <div className="min-h-screen surface-subtle">
+      <section className="border-b border-stone-200 bg-white/80">
+        <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_380px] lg:items-end">
+            <div>
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-gray-900 px-3 py-1 text-xs font-medium text-white">V2</span>
+                <span className="text-sm font-medium text-gray-500">EduGenAI Opportunity Bibliotheek · Npuls</span>
+              </div>
+              <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-gray-950 md:text-5xl">
+                Vind de AI-kansen die passen bij jouw onderwijspraktijk.
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-600">
+                Combineer de herkenbare recepten uit de EduGenAI Bibliotheek met een opportunity map op
+                procesfrequentie, variabiliteit en waarde: automatiseren, versnellen, augmenteren of verkennen.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/personas" className="rounded-lg bg-gray-950 px-5 py-3 text-sm font-medium text-white hover:bg-gray-800">
+                  Start bij mijn rol
+                </Link>
+                <Link href="/matrix" className="rounded-lg border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-50">
+                  Prioriteer kansen
+                </Link>
+                <Link href="/bibliotheek" className="rounded-lg border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-50">
+                  Bekijk recepten
                 </Link>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Top processen */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-xl font-medium text-gray-900 mb-2">Waar de meeste energie zit</h2>
-          <p className="text-sm text-gray-500 mb-6">
-            De vijf HORA-processen met de meeste AI-ideeën van onderwijsprofessionals.
-          </p>
-          <div className="space-y-3 mb-6">
-            {sortedProcessen.map(p => (
-              <div key={p.id} className="flex items-center gap-3">
-                <span className="w-48 text-sm text-gray-700 flex-shrink-0 truncate">{p.naam}</span>
-                <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all"
-                    style={{
-                      width: `${(p.use_case_count / maxCount) * 100}%`,
-                      backgroundColor: p.kleur,
-                    }}
-                  />
-                </div>
-                <span className="w-8 text-sm text-gray-400 text-right flex-shrink-0">{p.use_case_count}</span>
+            <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Databasis</p>
+              <div className="mt-4 grid grid-cols-3 gap-3">
+                <Metric value={usecases.length} label="use cases" />
+                <Metric value={horaProcessen.length} label="processen" />
+                <Metric value={blueprints.length} label="recepten" />
               </div>
-            ))}
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                {Object.entries(aiValueConfig).map(([value, config]) => (
+                  <Link
+                    href={`/matrix#${value}`}
+                    key={value}
+                    className={`rounded-lg border p-3 ${config.bg} ${config.border}`}
+                  >
+                    <div className={`text-lg font-semibold ${config.color}`}>{aiValueCounts[value] ?? 0}</div>
+                    <div className={`text-xs font-medium ${config.color}`}>{config.label}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-          <Link href="/kaart" className="text-sm text-gray-600 hover:text-gray-900">
-            Bekijk alle processen op de kaart →
-          </Link>
         </div>
       </section>
 
-      {/* Uitgelicht recept */}
-      {featured && (
-        <section className="py-12 bg-stone-50">
-          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-xl font-medium text-gray-900 mb-4">Uitgelicht recept</h2>
-            <div className="max-w-sm">
-              <BlueprintCard blueprint={featured} horaProcessen={horaProcessen} />
+      <section className="py-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-950">Start bij jouw vraag</h2>
+              <p className="mt-1 text-sm text-gray-500">Vijf routes voor verschillende gebruikers in het vervolgonderwijs.</p>
             </div>
-            <div className="mt-4">
-              <Link href="/bibliotheek" className="text-sm text-gray-600 hover:text-gray-900">
-                Bekijk alle {blueprints.length} recepten →
-              </Link>
-            </div>
+            <Link href="/personas" className="text-sm font-medium text-gray-700 hover:text-gray-950">
+              Alle persona’s →
+            </Link>
           </div>
-        </section>
-      )}
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {audienceOrder.map(personaId => {
+              const persona = personas.find(p => p.id === personaId);
+              const copy = personaLensCopy[personaId];
+              if (!persona || !copy) return null;
+              const count = usecases.filter(uc => uc.rol.includes(persona.id)).length;
+              return (
+                <Link
+                  href="/personas"
+                  key={persona.id}
+                  className="rounded-xl border border-stone-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <div className="text-xs font-medium text-gray-400">{persona.name}</div>
+                  <h3 className="mt-2 text-sm font-semibold leading-6 text-gray-950">{copy.startQuestion}</h3>
+                  <p className="mt-3 text-xs leading-5 text-gray-500">{copy.decisionNeed}</p>
+                  <div className="mt-4 rounded-lg bg-stone-50 p-3 text-xs text-gray-600">
+                    {count} use cases · {copy.preferredLens}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-      {/* Footer */}
-      <footer className="border-t py-8 text-center">
-        <p className="text-sm text-gray-400">EduGenAI Bibliotheek · Npuls · 2026</p>
-        <p className="text-sm text-gray-400 mt-1">Onderdeel van het nationaal groeifondsprogramma Npuls</p>
+      <section className="border-y border-stone-200 bg-white py-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-950">Waar de meeste energie zit</h2>
+              <p className="mt-1 text-sm text-gray-500">
+                HORA/MORA-processen met veel aangedragen ideeën, aangevuld met opportunity-labels.
+              </p>
+              <div className="mt-6 space-y-3">
+                {sortedProcessen.map(proces => {
+                  const value = getAIValue(proces);
+                  const config = aiValueConfig[value];
+                  return (
+                    <Link href={`/bibliotheek?hora=${proces.id}`} key={proces.id} className="grid gap-3 rounded-lg p-2 hover:bg-stone-50 sm:grid-cols-[240px_minmax(0,1fr)_128px] sm:items-center">
+                      <div>
+                        <div className="text-sm font-medium text-gray-800">{proces.naam}</div>
+                        <div className="text-xs text-gray-400">{proces.mora_equivalent}</div>
+                      </div>
+                      <div className="h-3 overflow-hidden rounded-full bg-gray-100">
+                        <div className="h-full rounded-full" style={{ width: `${(proces.use_case_count / maxCount) * 100}%`, backgroundColor: proces.kleur }} />
+                      </div>
+                      <div className="flex items-center justify-between gap-2 sm:justify-end">
+                        <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${config.bg} ${config.color}`}>
+                          {config.label}
+                        </span>
+                        <span className="text-sm font-medium text-gray-500">{proces.use_case_count}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+            {featured && (
+              <div>
+                <h2 className="mb-4 text-xl font-semibold text-gray-950">Aanbevolen startrecept</h2>
+                <BlueprintCard blueprint={featured} horaProcessen={horaProcessen} />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-8 text-center">
+        <p className="text-sm text-gray-400">EduGenAI Bibliotheek V2 · Npuls · 2026</p>
       </footer>
+    </div>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="rounded-lg bg-stone-50 p-3 text-center">
+      <div className="text-2xl font-semibold text-gray-950">{value}</div>
+      <div className="text-xs text-gray-500">{label}</div>
     </div>
   );
 }

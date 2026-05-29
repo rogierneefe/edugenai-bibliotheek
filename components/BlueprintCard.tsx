@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Blueprint, HoraProces } from '@/lib/types';
 import MaturityBadge from './MaturityBadge';
+import { aiValueConfig } from '@/lib/opportunity';
 
 interface Props {
   blueprint: Blueprint;
@@ -19,6 +20,11 @@ export default function BlueprintCard({ blueprint, horaProcessen, compact = fals
     laag: { label: 'Laag', color: 'text-blue-500' },
   };
   const auto = automatiseringConfig[blueprint.automatisering];
+  const opportunity = blueprint.opportunityPosition
+    ? aiValueConfig[blueprint.opportunityPosition.aiValue]
+    : proces?.ai_value
+      ? aiValueConfig[proces.ai_value]
+      : null;
 
   if (compact) {
     return (
@@ -48,6 +54,14 @@ export default function BlueprintCard({ blueprint, horaProcessen, compact = fals
           </div>
           <h3 className="text-base font-medium mt-2 mb-1 text-gray-900">{blueprint.title}</h3>
           <p className="text-sm text-gray-500 line-clamp-2 mb-3">{blueprint.tagline}</p>
+          {opportunity && (
+            <div className={`mb-3 rounded-lg border px-3 py-2 ${opportunity.bg} ${opportunity.border}`}>
+              <div className={`text-[11px] font-semibold uppercase tracking-wide ${opportunity.color}`}>
+                {opportunity.label}
+              </div>
+              <div className="mt-0.5 text-xs text-gray-600">{opportunity.short}</div>
+            </div>
+          )}
           <hr className="border-gray-100 mb-3" />
           <div className="flex flex-wrap gap-1 mb-3">
             {blueprint.rollen.slice(0, 3).map(rol => (

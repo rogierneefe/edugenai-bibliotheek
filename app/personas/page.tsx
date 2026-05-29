@@ -27,10 +27,11 @@ export default function PersonasPage() {
         </Link>
         <div className="flex items-start justify-between flex-wrap gap-4 mb-2">
           <div>
-            <h1 className="text-2xl font-medium text-gray-900 mb-2">Persona Lens</h1>
-            <p className="text-sm text-gray-500 max-w-xl">
+            <h1 className="text-3xl font-semibold text-gray-950 mb-2">Persona Lens</h1>
+            <p className="text-sm leading-6 text-gray-600 max-w-2xl">
               Welke AI-toepassingen zijn relevant voor jouw rol? Verken {totalUsecases} use cases en{' '}
-              {totalBlueprints} recepten door de bril van 8 onderwijsprofessionals.
+              {totalBlueprints} recepten door de bril van onderwijsprofessionals, studenten, ondersteuners,
+              adviseurs en leidinggevenden.
             </p>
           </div>
           <div className="flex gap-3">

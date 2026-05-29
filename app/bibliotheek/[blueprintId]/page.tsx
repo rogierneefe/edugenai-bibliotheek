@@ -10,6 +10,7 @@ import ProcessBadge from '@/components/ProcessBadge';
 import CopyButton from '@/components/CopyButton';
 import BlueprintCard from '@/components/BlueprintCard';
 import { getRelatedBlueprints } from '@/lib/filters';
+import { aiValueConfig, getFrequencyLabel, getVariabilityLabel } from '@/lib/opportunity';
 
 const blueprints = blueprintsData as Blueprint[];
 const usecases = usecasesData as UseCase[];
@@ -69,6 +70,7 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
   const prevBp = currentIndex > 0 ? blueprints[currentIndex - 1] : null;
   const nextBp = currentIndex < blueprints.length - 1 ? blueprints[currentIndex + 1] : null;
   const auto = automatiseringConfig[bp.automatisering];
+  const opportunity = bp.opportunityPosition ? aiValueConfig[bp.opportunityPosition.aiValue] : null;
 
   return (
     <div className="min-h-screen bg-stone-50">
@@ -108,6 +110,49 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
             ))}
           </div>
         </div>
+
+        {opportunity && bp.opportunityPosition && (
+          <section className={`mb-6 rounded-xl border p-4 ${opportunity.bg} ${opportunity.border}`}>
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <p className={`text-xs font-semibold uppercase tracking-wide ${opportunity.color}`}>Opportunity mapping</p>
+                <h2 className={`mt-1 text-lg font-semibold ${opportunity.color}`}>{opportunity.label}</h2>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-700">{opportunity.description}</p>
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="rounded-full bg-white px-2.5 py-1 text-gray-600">
+                  {bp.opportunityPosition.processFrequency}
+                </span>
+                <span className="rounded-full bg-white px-2.5 py-1 text-gray-600">
+                  {bp.opportunityPosition.processVariability}
+                </span>
+              </div>
+            </div>
+            {horaProces && (
+              <p className="mt-3 text-xs text-gray-500">
+                Procesinschatting: {getFrequencyLabel(horaProces.frequency)} frequentie · {getVariabilityLabel(horaProces.variability)} variabiliteit.
+              </p>
+            )}
+          </section>
+        )}
+
+        {bp.personaValues && bp.personaValues.length > 0 && (
+          <section className="mb-6">
+            <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Waarde per rol</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {bp.personaValues.map(value => (
+                <div key={value.personaId} className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="text-sm font-semibold text-gray-900">{value.personaId}</p>
+                  <p className="mt-2 text-sm leading-6 text-gray-600">{value.valueStatement}</p>
+                  <p className="mt-2 text-xs text-gray-500">{value.primaryBenefit}</p>
+                  {value.adoptionConcern && (
+                    <p className="mt-2 text-xs text-amber-700">Let op: {value.adoptionConcern}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Pijn */}
         <section className="mb-6">

@@ -26,12 +26,12 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body className={`${inter.className} bg-stone-50 text-gray-900 antialiased`}>
-        <nav className="sticky top-0 z-10 bg-white border-b border-gray-200 h-14 flex items-center px-4">
-          <div className="max-w-6xl mx-auto w-full flex items-center justify-between">
-            <Link href="/" className="text-sm font-medium text-gray-900 hover:text-gray-700">
-              EduGenAI Bibliotheek
+        <nav className="sticky top-0 z-20 border-b border-gray-200 bg-white/90 px-4 py-3 backdrop-blur">
+          <div className="max-w-6xl mx-auto w-full flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <Link href="/" className="text-sm font-semibold text-gray-900 hover:text-gray-700">
+              EduGenAI V2
             </Link>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <Link href="/kaart" className="text-sm text-gray-600 hover:text-gray-900">
                 Hotspot-kaart
               </Link>
@@ -39,7 +39,7 @@ export default function RootLayout({
                 Persona Lens
               </Link>
               <Link href="/matrix" className="text-sm text-gray-600 hover:text-gray-900">
-                Matrix
+                Opportunity Matrix
               </Link>
               <Link href="/bibliotheek" className="text-sm text-gray-600 hover:text-gray-900 font-medium">
                 Recepten

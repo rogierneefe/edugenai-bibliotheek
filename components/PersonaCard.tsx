@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Persona, UseCase, Blueprint, HoraProces } from '@/lib/types';
+import { aiValueConfig, getAIValue, personaLensCopy } from '@/lib/opportunity';
 
 interface Props {
   persona: Persona;
@@ -15,6 +16,15 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
 
   const relevantUsecases = usecases.filter(uc => uc.rol.includes(persona.id));
   const relevantBlueprints = blueprints.filter(bp => bp.rollen.includes(persona.id));
+  const copy = personaLensCopy[persona.id];
+  const opportunityCounts = relevantUsecases.reduce<Record<string, number>>((acc, uc) => {
+    const proces = horaProcessen.find(p => p.id === uc.hora_process);
+    if (!proces) return acc;
+    const value = getAIValue(proces);
+    acc[value] = (acc[value] ?? 0) + 1;
+    return acc;
+  }, {});
+  const topOpportunity = Object.entries(opportunityCounts).sort((a, b) => b[1] - a[1])[0]?.[0] as keyof typeof aiValueConfig | undefined;
 
   const sectorColors: Record<string, string> = {
     mbo: 'bg-purple-100 text-purple-700',
@@ -43,6 +53,13 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
           </div>
         </div>
 
+        {copy && (
+          <div className="mb-4 rounded-lg border border-gray-200 bg-stone-50 p-3">
+            <p className="text-xs font-semibold leading-5 text-gray-800">{copy.startQuestion}</p>
+            <p className="mt-1 text-xs leading-5 text-gray-500">{copy.decisionNeed}</p>
+          </div>
+        )}
+
         {/* Stats row */}
         <div className="flex gap-3 mb-4">
           <div className="flex-1 bg-stone-50 rounded-lg p-2.5 text-center">
@@ -53,6 +70,14 @@ export default function PersonaCard({ persona, usecases, blueprints, horaProcess
             <div className="text-sm font-medium text-gray-800">{relevantUsecases.length}</div>
             <div className="text-[10px] text-gray-400">use cases</div>
           </div>
+          {topOpportunity && (
+            <div className={`flex-1 rounded-lg border p-2.5 text-center ${aiValueConfig[topOpportunity].bg} ${aiValueConfig[topOpportunity].border}`}>
+              <div className={`text-xs font-semibold ${aiValueConfig[topOpportunity].color}`}>
+                {aiValueConfig[topOpportunity].label}
+              </div>
+              <div className="text-[10px] text-gray-500">dominant</div>
+            </div>
+          )}
         </div>
 
         {/* Goals & Concerns toggle */}
