@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Living Library — een visuele walkthrough</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF6; --ink:#22211D; --muted:#6B6960; --line:#E4E1D8;
+  --oranje:#D4541F;
+  --oogst:#0F6E56; --oogst-bg:#E6F3EE;
+  --eco:#534AB7;  --eco-bg:#EDECFA;
+  --weer:#993556; --weer-bg:#F8ECF1;
+  --knel:#993C1D; --knel-bg:#FAEDE6;
+  --display:'Space Grotesk',sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.75}
+a{color:var(--oranje);text-decoration:none}a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--oranje);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--oranje)}
+h1,h2,h3{font-family:var(--display);line-height:1.15;font-weight:600}
+h1{font-size:clamp(34px,6vw,58px);letter-spacing:-.02em}
+h2{font-size:clamp(24px,3.6vw,34px);letter-spacing:-.01em;margin:.55em 0 .5em}
+h3{font-size:18px;font-weight:500}
+.muted{color:var(--muted)}
+
+/* topnav */
+nav{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:10px 22px}
+nav a{font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:999px;white-space:nowrap;transition:all .2s}
+nav a:hover{color:var(--ink);background:#F1EFE7}
+nav a strong{color:var(--oranje);font-weight:500;margin-right:6px}
+
+/* persona-bar */
+.pbar{position:sticky;top:45px;z-index:19;background:rgba(251,250,246,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.pbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 22px}
+.pbar .plabel{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.pchip{font-family:var(--display);font-weight:500;font-size:13px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px 6px 10px;cursor:pointer;color:var(--muted);display:flex;align-items:center;gap:7px;transition:all .2s}
+.pchip i{width:9px;height:9px;border-radius:50%;background:var(--pc)}
+.pchip:hover{border-color:var(--pc);color:var(--ink)}
+.pchip[aria-pressed="true"]{border-color:var(--pc);background:var(--pb);color:var(--pc)}
+.pvraag{flex-basis:100%;font-style:italic;font-size:13.5px;color:var(--muted);padding:2px 0 1px}
+.pvraag b{font-family:var(--mono);font-style:normal;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--pc-act,var(--oranje));margin-right:6px}
+
+/* hero */
+header{padding:78px 0 64px;position:relative;overflow:hidden}
+header .draad{position:absolute;inset:auto 0 0 0;width:100%;height:120px;pointer-events:none}
+header .leap{margin-top:34px;border-left:3px solid var(--oranje);padding:6px 0 6px 20px;font-style:italic;font-size:clamp(17px,2.2vw,20px);max-width:640px}
+header .sub{margin-top:18px;font-family:var(--display);font-weight:500;font-size:clamp(17px,2.4vw,22px);color:var(--muted)}
+header .kern{margin-top:22px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+header .kern em{font-style:normal;color:var(--oranje)}
+
+/* chapters + verbindingsdraad */
+section{padding:74px 0;border-top:1px solid var(--line);position:relative}
+.ch{position:relative}
+@media(min-width:980px){
+  .ch{padding-left:64px}
+  .ch::before{content:"";position:absolute;left:18px;top:6px;bottom:-74px;width:2px;background:linear-gradient(var(--dr,#C9C5B8),var(--dr2,var(--dr,#C9C5B8)))}
+  .ch::after{content:"";position:absolute;left:11px;top:2px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--dr,#C9C5B8)}
+  section:last-of-type .ch::before{bottom:6px}
+}
+#s1 .ch{--dr:var(--knel);--dr2:var(--oogst)}
+#s2 .ch{--dr:var(--oogst);--dr2:var(--eco)}
+#s3 .ch{--dr:var(--eco);--dr2:var(--weer)}
+#s4 .ch{--dr:var(--weer);--dr2:var(--oranje)}
+#s5 .ch{--dr:var(--oranje);--dr2:var(--oranje)}
+#s6 .ch{--dr:var(--oranje);--dr2:var(--ink)}
+.intro{max-width:640px;margin-bottom:34px}
+
+/* punchlines (oneliners uit v1) */
+.punch{margin-top:26px;border-left:3px solid var(--oranje);padding:4px 0 4px 18px;font-style:italic;font-size:16.5px;max-width:620px}
+.punch b{font-style:normal;font-weight:600}
+
+/* casusblok */
+.casus{margin-top:30px;border:1px solid color-mix(in srgb,var(--pc-act,#185FA5) 35%, transparent);background:var(--pb-act,#E9F1F9);border-radius:14px;padding:18px 20px}
+.casus .clabel{display:block;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pc-act,#185FA5);margin-bottom:8px}
+.casus p{font-size:15px;line-height:1.65}
+.casus p+p{margin-top:8px}
+.casus .twolane{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+@media(max-width:560px){.casus .twolane{grid-template-columns:1fr}}
+.casus .lane{background:rgba(255,255,255,.7);border:1px solid color-mix(in srgb,var(--pc-act,#185FA5) 25%, transparent);border-radius:10px;padding:10px 13px;font-size:13.5px;line-height:1.55}
+.casus .lane b{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;display:block;color:var(--pc-act,#185FA5);margin-bottom:4px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* 1 — knelpunten */
+.knel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.knel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+.knel h3{color:var(--knel)}
+.knel .vraag{font-style:italic;font-size:14.5px;color:var(--ink);margin:6px 0 10px;line-height:1.5}
+.knel p{font-size:14px;line-height:1.6;color:var(--muted)}
+.knel-num{font-family:var(--mono);font-size:11px;color:#B9B5A8;display:block;margin-bottom:6px}
+
+/* 2 — SECI stepper */
+.stepper{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.fasen{display:flex;border-bottom:1px solid var(--line)}
+.fasen button{flex:1;font-family:var(--display);font-weight:500;font-size:14px;padding:14px 6px;background:none;border:none;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.fasen button[aria-selected="true"]{color:var(--eco);border-bottom-color:var(--eco);background:var(--eco-bg)}
+.fasen button:hover{color:var(--ink)}
+.fase-body{padding:26px 26px 22px}
+.ba{font-family:var(--mono);font-size:12.5px;color:var(--eco);margin-bottom:12px}
+.fase-body p.ll{font-size:16.5px;margin-bottom:18px}
+.an-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.an-grid{grid-template-columns:1fr}.fasen button{font-size:12px;padding:12px 4px}}
+.an{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+.an b{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:5px;color:var(--muted)}
+.an.nudge{border-color:var(--oranje);background:#FCF3EC}
+.an.nudge b{color:var(--oranje)}
+.fase-foot{display:flex;justify-content:space-between;align-items:center;padding:14px 26px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+.fase-foot button{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 16px;cursor:pointer;color:var(--ink);transition:all .2s}
+.fase-foot button:hover{border-color:var(--eco);color:var(--eco)}
+.spiraal-note{margin-top:14px;font-size:14.5px;color:var(--muted)}
+
+/* 3 — oogstmoment + pijlers */
+.tijdlijn{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:34px}
+.tl{background:#fff;border:1px solid var(--line);border-top:4px solid var(--oogst);border-radius:12px;padding:16px 18px}
+.tl h3{font-size:16px;color:var(--oogst)}
+.tl .tt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.tl ul{list-style:none;margin-top:10px}
+.tl li{font-size:13.5px;line-height:1.55;padding:5px 0;border-top:1px dashed var(--line)}
+.tl li b{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.tl li.nud b{color:var(--oranje)}
+.pijlers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.pijler{border-radius:16px;padding:20px;border:1px solid var(--line)}
+.pijler h3{font-size:20px;margin-bottom:4px}
+.pijler .rol{font-family:var(--mono);font-size:12px;margin-bottom:12px}
+.pijler p{font-size:15px;line-height:1.6}
+.pijler.po{background:var(--oogst-bg)}.pijler.po h3,.pijler.po .rol{color:var(--oogst)}
+.pijler.pe{background:var(--eco-bg)}.pijler.pe h3,.pijler.pe .rol{color:var(--eco)}
+.pijler.pw{background:var(--weer-bg)}.pijler.pw h3,.pijler.pw .rol{color:var(--weer)}
+.fund{margin-top:14px;border-top:1px dashed rgba(0,0,0,.18);padding-top:12px}
+.fund b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+.fund span{display:inline-block;font-family:var(--mono);font-size:12px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:3px 8px;margin:0 6px 6px 0}
+.dataset{margin-top:14px;background:var(--ink);color:#F4F2EA;border-radius:14px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.dataset .dl{font-family:var(--display);font-weight:500;font-size:15px;margin-right:8px}
+.dataset code{font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.12);border-radius:6px;padding:3px 9px}
+.lus{margin-top:16px;font-family:var(--mono);font-size:12.5px;color:var(--muted);line-height:2}
+.lus em{font-style:normal;color:var(--oranje);font-weight:500}
+.subkop{font-size:21px;margin:44px 0 6px}
+
+/* 4 — LPP + actoren */
+.lpp{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin-bottom:8px}
+.trede{flex:1;min-width:150px;position:relative;padding:16px 16px 14px;border:1px solid var(--line);border-radius:12px;margin:0 10px 12px 0;background:#fff}
+.trede:last-child{margin-right:0}
+.trede h3{font-size:16px}
+.trede .wat{font-size:13.5px;color:var(--muted);line-height:1.5;margin:6px 0 10px}
+.trede .ret{font-size:13px;line-height:1.5;border-top:1px dashed var(--line);padding-top:8px}
+.trede .ret b{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--oranje);display:block;margin-bottom:3px}
+.trede.t-per{border-top:4px solid #B4B2A9}
+.trede.t-act{border-top:4px solid var(--oogst)}
+.trede.t-kern{border-top:4px solid var(--eco)}
+.lpp-legend{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:36px}
+.lpp-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 5px 0 14px;vertical-align:-1px}
+.actoren{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:18px}
+details.actor{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0}
+details.actor summary{cursor:pointer;list-style:none;padding:14px 16px;font-family:var(--display);font-weight:500;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .2s}
+details.actor summary::-webkit-details-marker{display:none}
+details.actor summary .kant{font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}
+details.actor[open] summary{border-bottom:1px dashed var(--line);background:#F9F8F5}
+details.actor .abody{padding:12px 16px 16px;font-size:14px;line-height:1.6}
+details.actor .abody div{margin-bottom:10px}
+details.actor .abody b{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;display:block;color:var(--muted)}
+details.actor .abody .n b{color:var(--oranje)}
+.kn-tags{font-family:var(--mono);font-size:11px;color:var(--knel)}
+.kn-tags b{display:inline !important;color:var(--muted) !important;margin-right:6px}
+
+/* 5 — synthese */
+.syn{display:flex;flex-direction:column;gap:12px}
+.syn-rij{display:grid;grid-template-columns:140px 1fr;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+@media(max-width:620px){.syn-rij{grid-template-columns:1fr;gap:8px}}
+.syn-rij .kn{font-family:var(--display);font-weight:600;color:var(--knel);font-size:17px}
+.syn-rij .kn small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;color:var(--muted);margin-top:4px}
+.syn-rij p{font-size:15px;line-height:1.6;margin-bottom:10px}
+.tags span{display:inline-block;font-family:var(--mono);font-size:11.5px;border-radius:6px;padding:3px 9px;margin:0 6px 6px 0;border:1px solid transparent}
+.tg-o{background:var(--oogst-bg);color:var(--oogst)}
+.tg-e{background:var(--eco-bg);color:var(--eco)}
+.tg-w{background:var(--weer-bg);color:var(--weer)}
+.tg-t{background:#F1EFE7;color:var(--muted)}
+
+/* 6 — bewijs */
+.pilot{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:30px}
+.pst{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 15px}
+.pst .pn{font-family:var(--mono);font-size:11px;color:var(--oranje);display:block;margin-bottom:5px}
+.pst h3{font-size:15px;margin-bottom:5px}
+.pst p{font-size:13px;line-height:1.55;color:var(--muted)}
+.gng{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.gng{grid-template-columns:1fr}}
+.gng>div{border-radius:14px;padding:18px 20px;font-size:15px;line-height:1.65}
+.gng .go{background:var(--oogst-bg);border:1px solid color-mix(in srgb,var(--oogst) 30%,transparent)}
+.gng .nogo{background:var(--knel-bg);border:1px solid color-mix(in srgb,var(--knel) 30%,transparent)}
+.gng h3{margin-bottom:8px}
+.gng .go h3{color:var(--oogst)}.gng .nogo h3{color:var(--knel)}
+
+footer{border-top:1px solid var(--line);padding:46px 0 70px;font-size:14px;color:var(--muted)}
+footer .bron{font-family:var(--mono);font-size:12.5px;line-height:2}
+</style>
+</head>
+<body>
+
+<nav aria-label="Hoofdstukken"><div class="wrap">
+  <a href="#s1"><strong>01</strong>Het probleem</a>
+  <a href="#s2"><strong>02</strong>De spiraal</a>
+  <a href="#s3"><strong>03</strong>De architectuur</a>
+  <a href="#s4"><strong>04</strong>De mensen</a>
+  <a href="#s5"><strong>05</strong>De synthese</a>
+  <a href="#s6"><strong>06</strong>Het bewijs</a>
+</div></nav>
+
+<div class="pbar"><div class="wrap">
+  <span class="plabel">Volg een casus</span>
+  <button class="pchip" id="pc-hanna" style="--pc:#185FA5;--pb:#E9F1F9" aria-pressed="true" onclick="persona('hanna')"><i></i>Hanna · docent</button>
+  <button class="pchip" id="pc-joris" style="--pc:#534AB7;--pb:#EDECFA" aria-pressed="false" onclick="persona('joris')"><i></i>Joris · beleid</button>
+  <button class="pchip" id="pc-samira" style="--pc:#854F0B;--pb:#FAF0DD" aria-pressed="false" onclick="persona('samira')"><i></i>Samira · informatiemanagement</button>
+  <span class="pvraag" id="pvraag"></span>
+</div></div>
+
+<header><div class="wrap">
+  <p class="eyebrow">Geen platform, maar een lerende kennishuishouding</p>
+  <h1>De Living Library</h1>
+  <p class="sub">Van losse signalen naar levende sectorkennis — een ecosysteem dat niet wordt gebouwd, maar gecultiveerd.</p>
+  <p class="leap">De aanname waar alles op rust: sectorkennis kan ontstaan uit de systematische explicitering van lokale praktijkwijsheid. Dat is de leap of faith — al het andere volgt daaruit.</p>
+  <p class="kern">de kern in één beeld: signaal → patroon → <em>toepassing</em> → verrijking ↻</p>
+  <svg class="draad" viewBox="0 0 880 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 90 C 120 30, 230 110, 360 70 S 600 20, 740 80 S 860 60, 900 75" fill="none" stroke="#D4541F" stroke-width="2.5" opacity=".85"/>
+    <path d="M-20 100 C 140 60, 260 118, 400 88 S 640 48, 900 95" fill="none" stroke="#C9C5B8" stroke-width="1.5"/>
+  </svg>
+</div></header>
+
+<!-- ============ 01 PROBLEEM ============ -->
+<section id="s1"><div class="wrap"><div class="ch">
+  <p class="eyebrow">Hoofdstuk 01 — het probleem</p>
+  <h2>Kennis loopt op vijf dimensies tegelijk vast</h2>
+  <div class="intro"><p>Bij kennis toepassen loopt het niet op één punt vast. Dezelfde kennis kan onbetrouwbaar, te schaars, verkeerd verpakt, op de verkeerde plek of te laat beschikbaar zijn. Elke eerdere interventie — een kennisbank, een handreiking, een portaal — adresseerde één knelpunt en liet de andere vier staan. Daarom verdampte het effect.</p></div>
+  <div class="knel-grid">
+    <div class="knel rv"><span class="knel-num">1/5</span><h3>Kwaliteit</h3><p class="vraag">Is het patroon betrouwbaar, gevalideerd en evidence-informed genoeg?</p><p>Context verdampt in elke gewone kennisbank; niemand bewaakt of een praktijk elders óók werkt.</p></div>
+    <div class="knel rv"><span class="knel-num">2/5</span><h3>Kwantiteit</h3><p class="vraag">Is er genoeg expliciete kennis, of zit het belangrijkste nog in hoofden?</p><p>Delen kost tijd en levert de deler niets op — de wederkerigheidsbalans is negatief.</p></div>
+    <div class="knel rv"><span class="knel-num">3/5</span><h3>Vorm</h3><p class="vraag">Past de kennis bij rol, handeling en context?</p><p>De waardevolste kennis is impliciet: ervaringsoordelen die zich niet vanzelf in documenten laten vangen.</p></div>
+    <div class="knel rv"><span class="knel-num">4/5</span><h3>Plaats</h3><p class="vraag">Komt de kennis bij de instelling of community waar de vraag leeft?</p><p>Wat wél is vastgelegd staat verspreid over drives, sites en mailboxen.</p></div>
+    <div class="knel rv"><span class="knel-num">5/5</span><h3>Tijd</h3><p class="vraag">Komt de kennis op tijd voor besluit, interventie of verkenning?</p><p>Het veld en de technologie bewegen sneller dan revisieprocedures.</p></div>
+  </div>
+  <aside class="casus rv" aria-live="polite"><b class="clabel" id="cl1"></b><div id="cb1"></div></aside>
+  <p class="punch rv"><b>Living Library is geen extra kennisbank.</b> Het is een ontwerp voor kenniscirculatie dat deze vijf knelpunten tegelijk kleiner maakt.</p>
+</div></div></section>
+
+<!-- ============ 02 SPIRAAL ============ -->
+<section id="s2"><div class="wrap"><div class="ch">
+  <p class="eyebrow">Hoofdstuk 02 — de kenniscirculatie</p>
+  <h2>De SECI-spiraal, met voor elke fase een eigen ruimte</h2>
+  <div class="intro"><p>SECI is hier geen theorieplaat — het is hoe kennis sociaal ontstaat, expliciet wordt, gecombineerd wordt en handelen verandert. Het Ba-concept voegt toe dat elke conversie een eigen omgeving vraagt: andere mensen, andere faciliteit, ander tempo. Klik door de vier fasen; let op de nudge — de directe return die elke bijdrage in de fase zélf al terugbetaalt.</p></div>
+  <div class="stepper rv">
+    <div class="fasen" role="tablist" aria-label="SECI-fasen">
+      <button role="tab" id="tb0" aria-selected="true" onclick="fase(0)">Socialisatie</button>
+      <button role="tab" id="tb1" aria-selected="false" onclick="fase(1)">Externalisatie</button>
+      <button role="tab" id="tb2" aria-selected="false" onclick="fase(2)">Combinatie</button>
+      <button role="tab" id="tb3" aria-selected="false" onclick="fase(3)">Internalisatie</button>
+    </div>
+    <div class="fase-body" role="tabpanel">
+      <p class="ba" id="f-ba"></p>
+      <p class="ll" id="f-ll"></p>
+      <div class="an-grid">
+        <div class="an"><b>Wie</b><span id="f-actor"></span></div>
+        <div class="an nudge"><b>Nudge — direct terug</b><span id="f-nudge"></span></div>
+      </div>
+    </div>
+    <div class="fase-foot">
+      <button onclick="fase((f+3)%4)">← vorige</button>
+      <span id="f-pos">fase 1 van 4</span>
+      <button onclick="fase((f+1)%4)">volgende →</button>
+    </div>
+  </div>
+  <p class="spiraal-note">Na fase 4 begint de spiraal opnieuw — maar één winding hoger: het patroon is niet generieker geworden, maar rijker. Meer context, meer condities, meer bewijs. Dat is het verschil met een kennisbank, waar context verdampt; hier accumuleert die.</p>
+  <aside class="casus rv" aria-live="polite"><b class="clabel" id="cl2"></b><div id="cb2"></div></aside>
+</div></div></section>
+
+<!-- ============ 03 ARCHITECTUUR ============ -->
+<section id="s3"><div class="wrap"><div class="ch">
+  <p class="eyebrow">Hoofdstuk 03 — de architectuur</p>
+  <h2>Een bestaand moment wordt een oogstpunt</h2>
+  <div class="intro"><p>De oogst lift mee op events, webinars, sleutelteams, CTL-cohorten en communicatie-uitingen die er al zijn. Drie momenten, één ritme:</p></div>
+  <div class="tijdlijn">
+    <div class="tl rv"><span class="tt">moment 1</span><h3>Tijdens het event</h3><ul>
+      <li><b>brengt</b>vraag, blokkade, experiment</li>
+      <li class="nud"><b>nudge</b>QR bij afsluiting</li>
+      <li><b>terug</b>topvragen van de zaal + relevante lens</li></ul></div>
+    <div class="tl rv"><span class="tt">moment 2</span><h3>Binnen 48 uur</h3><ul>
+      <li><b>brengt</b>facilitator dropt 3 signalen + sporen</li>
+      <li><b>tags</b>thema · bron · actor · tijd · stevigheid</li>
+      <li class="nud"><b>nudge</b>AI-concept ter bevestiging + event-synthese</li></ul></div>
+    <div class="tl rv"><span class="tt">moment 3</span><h3>In de maandcyclus</h3><ul>
+      <li><b>stap</b>los signaal wordt cluster, cluster wordt patroon</li>
+      <li><b>terug</b>insight brief of radar</li>
+      <li><b>terug</b>kandidaat-sleutelvraag</li></ul></div>
+  </div>
+  <p class="punch rv"><b>De kleinste bijdrage moet al waarde geven.</b> Anders blijft het systeem afhankelijk van vrijwillige documentatiediscipline.</p>
+
+  <h3 class="subkop">Drie pijlers op één gedeelde dataset</h3>
+  <div class="intro"><p>Oogst, ecosysteem en weergave zijn afzonderlijk nuttig, maar pas samen vormen ze een werkende kennishuishouding — elk met een eigen theoretisch fundament, alle drie op dezelfde onderliggende dataset.</p></div>
+  <div class="pijlers">
+    <div class="pijler po rv">
+      <h3>Oogst</h3><p class="rol">signalen binnenhalen</p>
+      <p>Micro-surveys van twee minuten en slipstreaming — flipovers, chatlogs, debriefs — op natuurlijke momenten. Bijdragen wordt bijna gratis.</p>
+      <div class="fund"><b>Fundament</b><span>DFK</span><span>prompt-elicitatie</span></div>
+    </div>
+    <div class="pijler pe rv">
+      <h3>Ecosysteem</h3><p class="rol">verrijken, duiden, besturen</p>
+      <p>Signalen worden kennis door validatie, verrijking en toepassing: canvas en levend boek, maandelijkse patroonduiding, peer-review, spelregels als commons.</p>
+      <div class="fund"><b>Fundament</b><span>SECI &amp; Ba</span><span>Ostrom</span><span>LPP</span></div>
+    </div>
+    <div class="pijler pw rv">
+      <h3>Weergave</h3><p class="rol">levend toegankelijk maken</p>
+      <p>Dezelfde bronkennis verschijnt in de juiste vorm voor rol en timing: brief voor nu, radar voor nabij, scenario's voor toekomst, wiki-lenzen per rol. Het document veroudert niet — het is geen document.</p>
+      <div class="fund"><b>Fundament</b><span>karpathy-wiki</span><span>één dataset, vele lenzen</span></div>
+    </div>
+  </div>
+  <div class="dataset rv">
+    <span class="dl">Eén gedeelde dataset</span>
+    <code>thema</code><code>stakeholder</code><code>bron</code><code>betrouwbaarheid</code><code>horizon: nu · nabij · toekomst</code>
+  </div>
+  <p class="lus rv">de lus: kleine bijdrage → <em>nudge &lt; 1 dag</em> → patroon &lt; 1 maand → levende weergave ↻ terug naar het veld</p>
+  <aside class="casus rv" aria-live="polite"><b class="clabel" id="cl3"></b><div id="cb3"></div></aside>
+  <p class="punch rv"><b>Het is niet "we bouwen een wiki".</b> De wiki is één weergave op een onderliggende circulatie van kennis.</p>
+</div></div></section>
+
+<!-- ============ 04 MENSEN ============ -->
+<section id="s4"><div class="wrap"><div class="ch">
+  <p class="eyebrow">Hoofdstuk 04 — de mensen</p>
+  <h2>Van de rand naar de kern, met op elke trede een return</h2>
+  <div class="intro"><p>De grootste bedreiging voor elke kenniscommunity is dat ze een leesclubje wordt van de al-overtuigden. Het tegengif is Legitieme Perifere Participatie: nieuwkomers beginnen aan de rand en groeien organisch naar de kern — maar alleen als elke trede zijn eigen directe waarde heeft. De overgang is nooit verplichting, wel begeerlijk.</p></div>
+  <div class="lpp rv">
+    <div class="trede t-per"><h3>Consument</h3><p class="wat">Leest de wiki in de eigen rollens.</p><p class="ret"><b>Return</b>Direct nut, nul verplichting — consumeren is al lonend.</p></div>
+    <div class="trede t-per"><h3>Toepasser</h3><p class="wat">Probeert een patroon uit in de eigen context.</p><p class="ret"><b>Return</b>Maanden trial-and-error vermeden; AI-scenario's om te toetsen.</p></div>
+    <div class="trede t-act"><h3>Bijdrager</h3><p class="wat">Vult een micro-survey in, deelt een signaal.</p><p class="ret"><b>Return</b>De zaalspiegel: binnen dertig seconden zien dat je niet de enige bent.</p></div>
+    <div class="trede t-act"><h3>Verrijker</h3><p class="wat">Reviewt weergaven, voegt condities en bewijs toe.</p><p class="ret"><b>Return</b>Ziet nieuwe patronen als eerste; staat zichtbaar vermeld.</p></div>
+    <div class="trede t-kern"><h3>Kern</h3><p class="wat">Duidt patronen, bewaakt de spelregels.</p><p class="ret"><b>Return</b>Agenda-invloed met een herleidbare bewijslijn.</p></div>
+  </div>
+  <p class="lpp-legend">participatiegradiënt:<i style="background:#B4B2A9"></i>periferie<i style="background:var(--oogst)"></i>actief<i style="background:var(--eco)"></i>kern</p>
+
+  <h3 style="font-size:20px;margin-bottom:6px">Zeven actoren, twee kanten, één balans</h3>
+  <p class="muted" style="max-width:640px;font-size:15.5px">Iedere actor brengt iets kleins, krijgt direct een nudge terug, en haalt op termijn de grotere waarde — en maakt daarbij specifieke knelpunten kleiner. Open een actor voor de balans.</p>
+  <div class="actoren">
+    <details class="actor rv"><summary>Docent / onderwijsprofessional <span class="kant">instelling</span></summary>
+      <div class="abody"><div><b>Brengt</b>Eén micro-survey van twee minuten op een event: welke vraag neem je mee naar huis, waar loop je op vast?</div>
+      <div class="n"><b>Nudge — direct terug</b>Binnen dertig seconden de geaggregeerde antwoorden van de zaal: dit leeft bij je collega's.</div>
+      <div><b>Haalt</b>De maandelijkse insight brief en de levende wiki-pagina in docentlens — altijd de actuele stand.</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>vorm · plaats · tijd</div></div></details>
+    <details class="actor rv"><summary>CTL-cohortdeelnemer <span class="kant">instelling</span></summary>
+      <div class="abody"><div><b>Brengt</b>Micro-survey aan begin en eind van het cohort, plus reflectienotities als informele sporen (DFK).</div>
+      <div class="n"><b>Nudge — direct terug</b>De eigen ontwikkeling teruggespiegeld: dit is verschoven sinds je startmeting.</div>
+      <div><b>Haalt</b>Cohortpatronen en een rolspecifieke briefing die meegroeit met het traject.</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>kwaliteit · vorm</div></div></details>
+    <details class="actor rv"><summary>Beleidsadviseur <span class="kant">instelling</span></summary>
+      <div class="abody"><div><b>Brengt</b>Signalen uit de eigen instelling via het vaste vijf-minuten agendapunt in het sleutelteam.</div>
+      <div class="n"><b>Nudge — direct terug</b>Direct zien hoe het eigen signaal zich verhoudt tot andere instellingen: je bent niet de enige.</div>
+      <div><b>Haalt</b>De kwartaalradar met kandidaat-sleutelvragen en de wiki in beleidslens voor het volgende beleidsstuk.</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>plaats · tijd</div></div></details>
+    <details class="actor rv"><summary>Informatiemanager <span class="kant">instelling</span></summary>
+      <div class="abody"><div><b>Brengt</b>Peer-review van gegenereerde weergaven — kwaliteitsbewaking door de gemeenschap zelf (commons).</div>
+      <div class="n"><b>Nudge — direct terug</b>Reviewers zien nieuwe patronen als eerste en staan zichtbaar vermeld als verrijker.</div>
+      <div><b>Haalt</b>Het themalandschap met hotspots en witte vlekken, in de lens van de informatiemanager.</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>kwaliteit · vorm</div></div></details>
+    <details class="actor rv"><summary>Eventfacilitator <span class="kant">Npuls</span></summary>
+      <div class="abody"><div><b>Brengt</b>Tien minuten debrief plus slipstream: flipoverfoto's en chatlogs binnen 48 uur op één vaste plek.</div>
+      <div class="n"><b>Nudge — direct terug</b>Binnen een dag een AI-samenvatting van de eigen bijeenkomst — direct bruikbaar voor het verslag.</div>
+      <div><b>Haalt</b>Zicht op wat eerdere events ophaalden: scherpere voorbereiding van de volgende bijeenkomst.</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>kwantiteit · tijd</div></div></details>
+    <details class="actor rv"><summary>Synthese-duider <span class="kant">Npuls</span></summary>
+      <div class="abody"><div><b>Brengt</b>Maandelijkse menselijke duiding in vast format: patroon, interpretatie, implicatie, bron, betrouwbaarheid.</div>
+      <div class="n"><b>Nudge — direct terug</b>AI doet het cluster-voorwerk op de getagde signalen; de duiding kost uren in plaats van weken.</div>
+      <div><b>Haalt</b>Een herleidbare bewijslijn van veldsignaal naar patroon — de basis onder elke voordracht.</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>kwaliteit · tijd</div></div></details>
+    <details class="actor rv"><summary>Programmadirectie <span class="kant">Npuls</span></summary>
+      <div class="abody"><div><b>Brengt</b>Prioritering en go/no-go per pijler; hoeder van de commons-spelregels via de CTL-structuur.</div>
+      <div class="n"><b>Nudge — direct terug</b>Elke sleutelvraag-voordracht komt met bronherleiding — geen black box, geen aanvoelen alleen.</div>
+      <div><b>Haalt</b>Insight briefs (nu), de signaalradar (nabij) en scenario-verkenningen (toekomst).</div>
+      <div class="kn-tags"><b>knelpunt kleiner</b>kwaliteit · tijd</div></div></details>
+  </div>
+  <aside class="casus rv" aria-live="polite"><b class="clabel" id="cl4"></b><div id="cb4"></div></aside>
+  <p class="punch rv"><b>Elke actor is zowel gebruiker als onderhoudsbron.</b> De nudge maakt die onderhoudsbijdrage klein genoeg.</p>
+</div></div></section>
+
+<!-- ============ 05 SYNTHESE ============ -->
+<section id="s5"><div class="wrap"><div class="ch">
+  <p class="eyebrow">Hoofdstuk 05 — de synthese</p>
+  <h2>Vijf sloten, één sleutelbos</h2>
+  <div class="intro"><p>Hier komt alles samen. Elk knelpunt wordt niet door één losse maatregel opgelost, maar door een specifieke combinatie van pijler en theorie — en dat is precies waarom de synthese van SECI, knowledge commons, LPP en de karpathy-wiki méér is dan de som van haar delen.</p></div>
+  <div class="syn">
+    <div class="syn-rij rv">
+      <div class="kn">Kwaliteit<small>peer review en bronherleiding</small></div>
+      <div><p>Peer-monitoring legt kwaliteitsbewaking bij de gemeenschap zelf — reviews, validatiesessies, wederzijdse herkenning. Elk signaal draagt een betrouwbaarheidstag, en koppeling aan onderzoek voegt evidence toe. <em>Meet: correcties en vertrouwen.</em></p>
+      <p class="tags"><span class="tg-e">pijler: ecosysteem</span><span class="tg-t">Ostrom — commons</span><span class="tg-t">evidence-informed werken</span></p></div>
+    </div>
+    <div class="syn-rij rv">
+      <div class="kn">Kwantiteit<small>micro-signalen vergroten expliciete kennis</small></div>
+      <div><p>De oogst maakt bijdragen bijna gratis: twee minuten micro-survey, sporen die er toch al zijn. DFK telt informele fragmenten als volwaardige input, en LPP maakt consumeren al lonend vóórdat iemand bijdraagt. <em>Meet: bruikbare signalen per maand.</em></p>
+      <p class="tags"><span class="tg-o">pijler: oogst</span><span class="tg-t">DFK</span><span class="tg-t">Legitieme Perifere Participatie</span></p></div>
+    </div>
+    <div class="syn-rij rv">
+      <div class="kn">Vorm<small>een dataset voedt meerdere lenzen</small></div>
+      <div><p>Het levende boek en het canvas voeren de SECI-externalisatie uit: impliciete praktijkwijsheid wordt een overdraagbaar patroon mét het verborgen ingrediënt en de condities waaronder het werkt. De output is een spoor, geen vervanging. <em>Meet: bruikbaarheid per rol.</em></p>
+      <p class="tags"><span class="tg-e">pijler: ecosysteem</span><span class="tg-t">SECI — externalisatie</span><span class="tg-t">Dialoguing Ba</span></p></div>
+    </div>
+    <div class="syn-rij rv">
+      <div class="kn">Plaats<small>kennis komt naar de vraag toe</small></div>
+      <div><p>Alle signalen landen in één getagde dataset, en CTL's, sleutelteams en events brengen de kennis naar de plek waar de vraag leeft — elk door een eigen venster op dezelfde bron. <em>Meet: bereik en toepassing.</em></p>
+      <p class="tags"><span class="tg-w">pijler: weergave</span><span class="tg-t">karpathy-wiki — één dataset, vele lenzen</span></p></div>
+    </div>
+    <div class="syn-rij rv">
+      <div class="kn">Tijd<small>maandritme houdt kennis actueel</small></div>
+      <div><p>Pagina's worden gegenereerd op het moment van lezen, uit de actuele stand van de dataset, met horizon-tags voor nu, nabij en toekomst. Het "living" is geen marketing maar mechaniek. <em>Meet: tijd van signaal naar brief.</em></p>
+      <p class="tags"><span class="tg-w">pijler: weergave</span><span class="tg-t">karpathy-wiki — gegenereerd, niet geschreven</span><span class="tg-t">continue herijking</span></p></div>
+    </div>
+  </div>
+  <aside class="casus rv" aria-live="polite"><b class="clabel" id="cl5"></b><div id="cb5"></div></aside>
+  <p class="punch rv"><b>De toepassing is geen eindpunt.</b> Juist bij toepassen wordt zichtbaar welk knelpunt nog blokkeert.</p>
+</div></div></section>
+
+<!-- ============ 06 BEWIJS ============ -->
+<section id="s6"><div class="wrap"><div class="ch">
+  <p class="eyebrow">Hoofdstuk 06 — het bewijs</p>
+  <h2>Wat moet het eerste experiment aantonen?</h2>
+  <div class="intro"><p>De eerste pilot hoeft niet alles te bouwen. Hij moet één volledige lus aantonen — en de drie casussen in deze walkthrough zijn precies zulke lussen.</p></div>
+  <div class="pilot">
+    <div class="pst rv"><span class="pn">stap 1</span><h3>Oogstpilot</h3><p>Een event, sleutelteam of CTL-cohort levert signalen op.</p></div>
+    <div class="pst rv"><span class="pn">stap 2</span><h3>Living book</h3><p>Een practitioner externaliseert praktijkwijsheid.</p></div>
+    <div class="pst rv"><span class="pn">stap 3</span><h3>Synthese</h3><p>Losse signalen worden patroon en implicatie.</p></div>
+    <div class="pst rv"><span class="pn">stap 4</span><h3>Lens</h3><p>Kennis wordt docentlens, beleidslens en informatielens.</p></div>
+    <div class="pst rv"><span class="pn">stap 5</span><h3>Toepassing</h3><p>Een instelling probeert het en vult de knelpuntenkaart.</p></div>
+  </div>
+  <div class="gng">
+    <div class="go rv"><h3>Go als dit zichtbaar is</h3>Een herleidbare value-creation story: signaal, patroon, rolgerichte weergave, toepassing — plus terugkoppeling op kwaliteit, kwantiteit, vorm, plaats en tijd.</div>
+    <div class="nogo rv"><h3>No-go of bijstellen als dit breekt</h3>De oogst voelt als last, patronen blijven anekdotes, gebruikers vertrouwen de weergave niet, of de return komt te laat.</div>
+  </div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <p style="max-width:640px;margin-bottom:22px">De lappendeken van het Nederlandse onderwijs vraagt geen nieuw platform, maar een verbindingsdraad. Deze walkthrough toont de draad: van veldsignaal via spiraal en commons naar een levende weergave — en terug. Voor gesprek, besluitvorming en het eerste experiment.</p>
+  <p class="bron">Theoretische ankers — Nonaka &amp; Takeuchi (SECI, Ba) · Ostrom (commons governance) · Lave &amp; Wenger (Legitieme Perifere Participatie) · Karpathy (LLM-wiki) · Vermaak (lappendeken) · Liu &amp; Bridgeman (two-lane assessment) · Digital Fragmented Knowledge · Value-Creation Stories</p>
+</div></footer>
+
+<script>
+/* ---------- SECI stepper ---------- */
+const FASEN=[
+ {ba:"Originating Ba — de ruimte voor vertrouwen",
+  ll:"Het levende boek: een practitioner deelt ervaring in een veilig, persoonlijk gesprek. De persoon ís het boek — de kennis wordt overdraagbaar zonder de drager te verliezen.",
+  actor:"De docent als levend boek, met een kleine kring reviewers",
+  nudge:"Een rijke reflectie op de eigen praktijk, in de sessie zelf — niet als belofte achteraf. Return: herkenning."},
+ {ba:"Dialoguing Ba — de gestructureerde sessie",
+  ll:"Het canvas maakt impliciete kennis expliciet: niet alleen wát werkt, maar het verborgen ingrediënt en de condities waaronder. AI ondersteunt het interview en het expliciteerwerk.",
+  actor:"Facilitator en practitioner, samen aan het Recept-canvas",
+  nudge:"AI structureert het gesprek en levert de debrief binnen een dag terug. Return: reflectie."},
+ {ba:"Systemizing Ba — dataset en levende wiki",
+  ll:"Signalen en patronen worden getagd, gesynthetiseerd en als rolspecifieke lenzen gegenereerd — de karpathy-wiki in werking: doorzoekbaar, combineerbaar, altijd actueel.",
+  actor:"De synthese-duider, met AI als clusteraar",
+  nudge:"AI doet het voorsorteerwerk; menselijke duiding kost uren in plaats van weken. Return: patroon."},
+ {ba:"Exercising Ba — de echte praktijk",
+  ll:"Een tweede instelling past het patroon toe en koppelt verrijkt terug: meer context, meer condities, meer bewijs. De spiraal begint opnieuw — een winding rijker.",
+  actor:"De toepasser elders in de sector",
+  nudge:"Maanden trial-and-error vermeden; scenario's getoetst aan de eigen context. Return: voorsprong en expertvorming."}
+];
+let f=0;
+function fase(i){
+  f=i;
+  for(let j=0;j<4;j++) document.getElementById('tb'+j).setAttribute('aria-selected', j===i ? 'true':'false');
+  const d=FASEN[i];
+  document.getElementById('f-ba').textContent=d.ba;
+  document.getElementById('f-ll').textContent=d.ll;
+  document.getElementById('f-actor').textContent=d.actor;
+  document.getElementById('f-nudge').textContent=d.nudge;
+  document.getElementById('f-pos').textContent='fase '+(i+1)+' van 4';
+}
+fase(0);
+
+/* ---------- Persona-casussen ---------- */
+const PERSONAS={
+hanna:{
+ naam:"Hanna", kort:"Hanna · docent &amp; toetscoördinator, hogeschool",
+ kleur:"#185FA5", bg:"#E9F1F9",
+ vraag:"Studenten gebruiken GenAI bij elke opdracht. Hoe maak ik mijn toetsing toekomstbestendig?",
+ c1:"<p>Hanna's vraagstuk raakt alle vijf dimensies tegelijk. Adviezen over AI en toetsing spreken elkaar tegen (<b>kwaliteit</b>), collega's experimenteren volop maar leggen niets vast (<b>kwantiteit</b>), het instellingsbeleid is geen handvat voor haar toetsmatrix (<b>vorm</b>), het goede voorbeeld van een andere hogeschool is onvindbaar (<b>plaats</b>), en de handreiking uit 2024 gelooft nog in AI-detectietools (<b>tijd</b>).</p>",
+ c2:"<p>Op een Npuls-event hoort Hanna een collega vertellen over de <em>two-lane approach</em> (socialisatie). Die collega wordt levend boek: een sessie legt vast wáárom het werkt en onder welke condities — de toetsmatrix per leeruitkomst blijkt het verborgen ingrediënt (externalisatie). Het patroon krijgt evidence-tags en peer-review (combinatie). Hanna herontwerpt er één module mee en koppelt terug wat in haar context anders moest (internalisatie).</p><div class='twolane'><div class='lane'><b>Lane 1 — beveiligd</b>Toetst onder gecontroleerde condities wat de student zélf beheerst: assessment óf learning, zonder AI.</div><div class='lane'><b>Lane 2 — open</b>Toetst mét AI als expliciet onderdeel van de taak: assessment vóór learning, AI-gebruik benoemd en beoordeeld.</div></div>",
+ c3:"<p>De oogst ving haar eventvraag — \"hoe toets ik nog?\" — als signaal, samen met veertien vergelijkbare vragen van drie andere bijeenkomsten. Het ecosysteem leverde het gevalideerde two-lane-patroon, mét condities en bewijs. De weergave toont het in docentlens: wat betekent dit morgen voor mijn module, inclusief voorbeeldrubrics per lane.</p>",
+ c4:"<p>Hanna stapt in als <b>consument</b> (leest de docentlens), wordt <b>toepasser</b> (two-lane in haar eigen module) en daarna <b>bijdrager</b>: haar terugkoppeling — wat werkte bij eerstejaars, wat niet — verrijkt het patroon. Elke trede gaf eerst waarde, en vroeg pas daarna iets.</p>",
+ c5:"<p>Na drie maanden: module herontworpen langs twee lanes, toetscommissie akkoord, en Hanna's condities staan in het patroon dat inmiddels door drie andere opleidingen wordt gebruikt. Signaal → patroon → toepassing → verrijking: één herleidbare value-creation story.</p>"
+},
+joris:{
+ naam:"Joris", kort:"Joris · beleidsadviseur onderzoek, universiteit",
+ kleur:"#534AB7", bg:"#EDECFA",
+ vraag:"Hoe faciliteren we AI in het onderzoeksproces zonder de academische integriteit te ondermijnen?",
+ c1:"<p>Internationale integriteitscodes bestaan, maar zijn niet vertaald naar de Nederlandse onderzoekspraktijk (<b>vorm</b>). Onderzoekers gebruiken AI al volop — bij literatuur, analyse, schrijven — maar niemand deelt hoe (<b>kwantiteit</b>). Welke kaders evidence-based zijn is onduidelijk (<b>kwaliteit</b>), elke universiteit herontwerpt zelf het wiel (<b>plaats</b>), en de tools veranderen sneller dan een gedragscode-revisie (<b>tijd</b>).</p>",
+ c2:"<p>In het sleutelteam onderzoek wisselen adviseurs ervaringen uit (socialisatie). Eén universiteit met een werkend AI-in-onderzoek-protocol wordt casus: een canvas-sessie legt de afwegingen vast — transparantie-eisen, auteurschap, datagebruik, reproduceerbaarheid (externalisatie). Het patroon wordt gekoppeld aan de Europese gedragscode en NWO-richtlijnen (combinatie). Joris piloteert de richtlijn bij twee faculteiten en koppelt de fricties terug (internalisatie).</p>",
+ c3:"<p>De oogst haalt signalen op uit sleutelteams en onderzoekersnetwerken — inclusief de stille praktijk die nu nergens landt. Het ecosysteem koppelt er evidence en contra-signalen aan: onderzoekers reviewen zelf. De weergave levert de beleidslens: een radar met \"auteurschap en AI\" als opkomende sleutelvraag (nabij) en een scenarioverkenning over peer review in 2030 (toekomst).</p>",
+ c4:"<p>Joris stapt in als <b>bijdrager</b> — het vaste vijf-minuten agendapunt in het sleutelteam — en groeit naar <b>verrijker</b>: hij reviewt de beleidsweergaven en voegt de pilot-ervaringen van zijn faculteiten toe. Zijn return: elke beleidsnota staat op een herleidbare bewijslijn in plaats van op aanvoelen.</p>",
+ c5:"<p>Na drie maanden: een vastgestelde richtlijn AI in onderzoek, herleidbaar naar veldsignalen en evidence-bronnen. De radar agendeert auteurschap als sectorbrede sleutelvraag — en Joris hoefde het wiel niet zelf uit te vinden.</p>"
+},
+samira:{
+ naam:"Samira", kort:"Samira · informatiemanager, hogeschool",
+ kleur:"#854F0B", bg:"#FAF0DD",
+ vraag:"Vallen onze EdTech-systemen onder Annex III van de AI Act — en kunnen leveranciers dat aantonen?",
+ c1:"<p>Annex III merkt AI in het onderwijs als hoog-risico aan: toelating, beoordeling van leerresultaten, niveaubepaling en proctoring. Maar leveranciersclaims zijn niet verifieerbaar (<b>kwaliteit</b>), er is geen gedeelde beoordeling van dezelfde leveranciers (<b>kwantiteit</b>), de verordening is juridische tekst en geen werkbare checklist (<b>vorm</b>), elke instelling doet zijn eigen assessment (<b>plaats</b>), en de verplichtingen voor hoog-risicosystemen lopen al (<b>tijd</b>).</p>",
+ c2:"<p>In het IM-netwerk delen collega's leverancierservaringen (socialisatie). De assessmentaanpak van één instelling — proctoring, toetsbeoordeling en toelatingssystemen langs de Annex III-categorieën leggen — wordt als casus geëxpliciteerd (externalisatie). Daaruit groeit een gedeelde checklist, juridisch peer-reviewed en herleidbaar naar de verordening (combinatie). Samira toetst er drie contracten mee en vult de gaten aan die zij tegenkomt (internalisatie).</p>",
+ c3:"<p>De oogst vangt leveranciersignalen uit IM-overleggen en events. Het ecosysteem bewaakt de kwaliteit via juridische peer-review en bronherleiding naar de verordening. De weergave is een levende Annex III-checklist in IM-lens — die meebeweegt zodra nieuwe EU-guidance verschijnt, omdat de pagina gegenereerd wordt uit de actuele stand van de dataset.</p>",
+ c4:"<p>Samira stapt hoog in: als <b>verrijker</b> reviewt ze de checklist en voegt leverancierservaring toe; ze groeit door naar de <b>kern</b> als mede-hoeder van de spelregels rond het delen van leveranciersbeoordelingen — gevoelige informatie die juist commons-governance nodig heeft: heldere grenzen, peer-monitoring, geen enclosure.</p>",
+ c5:"<p>Na drie maanden: drie contracten getoetst, twee leveranciers leverden conformiteitsdocumentatie na, en de checklist is door een tiental instellingen hergebruikt. Eén instelling deed het werk, de sector plukt de vruchten — en andersom.</p>"
+}
+};
+const CLABELS={
+ c1:"in dit hoofdstuk: hoe de knelpunten zich aandienen",
+ c2:"in dit hoofdstuk: de casus door de spiraal",
+ c3:"in dit hoofdstuk: wat elke pijler oplevert",
+ c4:"in dit hoofdstuk: de route over de gradiënt",
+ c5:"na drie maanden: de value-creation story"
+};
+let act='hanna';
+function persona(id){
+  act=id;
+  const p=PERSONAS[id];
+  ['hanna','joris','samira'].forEach(k=>document.getElementById('pc-'+k).setAttribute('aria-pressed', k===id ? 'true':'false'));
+  document.documentElement.style.setProperty('--pc-act',p.kleur);
+  document.documentElement.style.setProperty('--pb-act',p.bg);
+  document.getElementById('pvraag').innerHTML='<b>'+p.naam+'</b>'+p.vraag;
+  for(let n=1;n<=5;n++){
+    document.getElementById('cl'+n).innerHTML='Casus · '+p.kort+' — '+CLABELS['c'+n];
+    document.getElementById('cb'+n).innerHTML=p['c'+n];
+  }
+}
+persona('hanna');
+
+/* ---------- scroll reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
